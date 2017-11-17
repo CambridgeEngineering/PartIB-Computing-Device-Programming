@@ -5,7 +5,7 @@
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
 
-this is a test.
+this is a test.  :ref:`README`
 
 .. toctree::
    :maxdepth: 2
