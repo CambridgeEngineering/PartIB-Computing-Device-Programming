@@ -4,7 +4,8 @@
    contain the root `toctree` directive.
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
-==========================================================
+
+this is a test.
 
 .. toctree::
    :maxdepth: 2
