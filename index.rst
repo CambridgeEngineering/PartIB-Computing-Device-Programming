@@ -13,10 +13,10 @@ this is a test.
    
    introduction
    getting-started
-   in-out-puts
+   input-outputs
    arrays
    interupts
-   
+   activity-a
 
 
 
