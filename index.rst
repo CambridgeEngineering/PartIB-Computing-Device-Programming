@@ -12,11 +12,14 @@ Welcome to CUED-PartIB-Device-Programming's documentation!
    :caption: Contents:
 
    introduction
-   getting-started
-   input-outputs
-   arrays
-   interupts
-   activity-a
+   
+   tutorial
+   
+   
+   activity-1
+   
+   activity-2
+
 
 
 Indices and tables

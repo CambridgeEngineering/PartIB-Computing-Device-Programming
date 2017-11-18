@@ -4,7 +4,7 @@ Getting started
 
 
 Requirements
------------------------
+------------
 
 #. STM32F746 STMicroelectronics development board (provided)
 #. Micro-USB to USB cable
@@ -13,19 +13,19 @@ Requirements
 
 
 What is a microcontroller?
------------------------
+--------------------------
 
 
 .. raw:: html
 
-	<iframe width="560" height="315" src="http://www.youtube.com/embed/BAzKg3vcB88" frameborder="0" allowfullscreen></iframe>
-	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/jKT4H0bstH8" frameborder="0" allowfullscreen></iframe>
+
 
 
 
 
 Unboxing and testing
------------------------
+--------------------
 
 - Remove the micro-controller from its packaging, and connect the micro-USB cable to USB PWR slot. Connect the other end to your computer. The microcontroller is powered on.
 - The micro-controller is loaded at the first start with a default program that blinks on of the LEDs. The device has 3 LEDs accessible to the user. Press the blue button at the bottom left corner to select another the LED. It should also blink at a different frequency. This is your first interaction with your new microcontroller!
@@ -39,9 +39,20 @@ Unboxing and testing
 
 
 
+ARM & mbed
+----------
 
-Register an account on the mbed development xxx
------------------------
+This video will explain to you the gist of how to program ARM based microcontrollers using their mbed development environment.
+
+.. raw:: html
+
+	<iframe width="560" height="315" src="http://www.youtube.com/embed/BAzKg3vcB88" frameborder="0" allowfullscreen></iframe>
+	
+
+
+
+Register an account on the mbed development platform
+----------------------------------------------------
 
 What is mbed?
 
@@ -58,7 +69,7 @@ You are ready to start coding!
 
 
 Create and test first project
-----------------------
+-----------------------------
 
 - create new project.
 - select Nucleo_blink_LED template.
@@ -84,7 +95,7 @@ Create and test first project
 
 
 Install code on your micro-controller 
---------------------------------
+-------------------------------------
 
 - Connect the micro-controller
 - It should be visible as a USB drive on the computer
@@ -99,29 +110,4 @@ Install code on your micro-controller
 
 
 
-
-
-
-.. raw:: html
-
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/XmWqP8laxxk" frameborder="0" allowfullscreen></iframe>
-
-
-
-
-
-
-.. note::
-
-  This is a note - test.
-
-
-
-Sub heading
-^^^^^^^^^^^
-
-.. code-block:: bash
-
-   $ git config --global user.name "John Doe"
-   $ git config --global user.email johndoe@example.com
 
