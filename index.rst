@@ -5,8 +5,7 @@
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
 
-
-*Under development*
+*Material under development*
 
 .. toctree::
    :maxdepth: 2
