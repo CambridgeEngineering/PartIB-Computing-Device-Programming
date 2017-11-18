@@ -5,11 +5,18 @@
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
 
-this is a test.  :ref:`README`
+this is a test. 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   introduction
+   getting-started
+   in-out-puts
+   arrays
+   interupts
+   
 
 
 
