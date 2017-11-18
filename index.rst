@@ -5,19 +5,18 @@
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
 
-this is a test. 
+*Material under development*
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
+
    introduction
    getting-started
    input-outputs
    arrays
    interupts
    activity-a
-
 
 
 Indices and tables
