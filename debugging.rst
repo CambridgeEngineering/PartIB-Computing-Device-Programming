@@ -16,16 +16,83 @@ https://os.mbed.com/handbook/Debugging
 Errors
 ------
 
-- Compile time errors
+Compile time errors
+^^^^^^^^^^^^^^^^^^^
 
-- Execution time errors
+.. admonition:: Exercise
+
+	Try to compile the code below. Read the three errors, and fix them!
+
+.. code-block:: c
+
+	#include "mbed.h"
+
+	DigitalOut myled(LED1);
+
+	int main() {
+		while(1) {
+			led1 = 1; // LED is ON
+			wait(0.2); // 200 ms
+			led1 = OFF; // LED is OFF
+			wait(1.0) // 1 sec
+		}
+	}
+
+
+Execution time errors
+^^^^^^^^^^^^^^^^^^^^^
+
+.. admonition:: Exercise
+
+	Try to compile the code below. Read the errors, and fix them!
+
+.. code-block:: c
+
+	#include "mbed.h"
+
+	DigitalOut myled(LED1);
+
+	int main() {
+		while(1) {
+			led1 = 1; // LED is ON
+			wait(0.2); // 200 ms
+			led1 = OFF; // LED is OFF
+			wait(1.0); // 1 sec
+		}
+	}
+
 
 
 Communications between the computer and the microcontroller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------------
 
 This is more advanced, but really useful once you get it to work.
 
-- Using printf, or 
-- the serial port.
+Printing text on a terminal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For a beginner, a useful way to debug a program is to print statements using the printf function:
+
+.. code-block:: c
+	printf("test\r\n");
+
+The above statement prints out the string "test" followed by a carriage return and a line feed to standard out. 
+It is included in the code you copied over to the Mbed compiler above. 
+To find out how to view the output of printf statements, see the following support page (precise instructions depend on your operating system):
+
+https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/
+
+Click "Compile" in the Mbed Compiler enironment. 
+Save the executable to the Mbed drive and you should see all three leds (green, blue, red) switch on and off in tandem at a regular interval. By following the instructions in the above link you should also see the text "test" appear on a separate line at the same regular interval. Ensure you can see the text sent to standard out via the printf function, as this will greatly simplify debugging later.
+
+
+Serial communication
+^^^^^^^^^^^^^^^^^^^^
+
+Serial is a common protocal to communicate with microcontrollers and exchange data in a bidirectional manner. 
+It is easy to implement on the microcontroller, but the most challenging part is to get your computer to talk to it!
+
+There are loads of tutorials online, for each platform. Try to find a way that works for you!
+
+[add links and comments]
 

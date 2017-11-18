@@ -15,6 +15,7 @@ Requirements
 What is a microcontroller?
 --------------------------
 
+Watch this short video if you are not sure what a micro-controller is.
 
 .. raw:: html
 
@@ -24,8 +25,12 @@ What is a microcontroller?
 
 
 
+ARM & mbed microcontrollers
+---------------------------
+
+
 Unboxing and testing
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 - Remove the micro-controller from its packaging, and connect the micro-USB cable to USB PWR slot. Connect the other end to your computer. The microcontroller is powered on.
 - The micro-controller is loaded at the first start with a default program that blinks on of the LEDs. The device has 3 LEDs accessible to the user. Press the blue button at the bottom left corner to select another the LED. It should also blink at a different frequency. This is your first interaction with your new microcontroller!
@@ -38,9 +43,10 @@ Unboxing and testing
 
 
 
+Working with ARM' mbed development environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ARM & mbed
-----------
+
 
 This video will explain to you the gist of how to program ARM based microcontrollers using their mbed development environment.
 
@@ -52,9 +58,7 @@ This video will explain to you the gist of how to program ARM based microcontrol
 
 
 Register an account on the mbed development platform
-----------------------------------------------------
-
-What is mbed?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Open an account. Visit http://os.mbed.com/
 
@@ -68,8 +72,11 @@ You are ready to start coding!
 
 
 
-Create and test first project
+A first project
 -----------------------------
+
+Creation of a new project
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - create new project.
 - select Nucleo_blink_LED template.
@@ -95,7 +102,7 @@ Create and test first project
 
 
 Install code on your micro-controller 
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Connect the micro-controller
 - It should be visible as a USB drive on the computer
@@ -103,6 +110,8 @@ Install code on your micro-controller
 - LED at top right corner should be temporarily flashing to indicate that the transfer is happening. The program starts automatically after that.
 - You should see a LED blinking!
 
+
+To develop your understanding of this code and its execution, please look at the following movie. You used the internal LED, they use an external circiut on a breadboard connected to different pins on a different board, but that is exactly the same problem otherwise.
 
 .. raw:: html
 
