@@ -44,24 +44,34 @@ Execution time errors
 
 .. admonition:: Exercise
 
-	Try to compile the code below. Read the errors, and fix them!
+	Compile the code below. It should not give you any error. 
+	Move it to your controller. 
 
 .. code-block:: c
 
 	#include "mbed.h"
 
-	DigitalOut myled(LED1);
+	// Pin D9 supports Pulse Width Modulation (PWM)
+	// Pin D8 does not support Pulse Width Modulation (PWM) --> run time error expected.
+
+	PwmOut led(D9);
 
 	int main() {
-		while(1) {
-			led1 = 1; // LED is ON
-			wait(0.2); // 200 ms
-			led1 = OFF; // LED is OFF
-			wait(1.0); // 1 sec
-		}
+		led = (float)0.5;
+		while(1) {    }
 	}
 
+You would not see much, but it sends on pin D8 a square signal that you could detect on an oscilloscope. 
+This is what Pulse Width Modulation (PWM) does. 
+This is very handy to control the brightness of LEDs for instance.
+Look for it on the internet if you wnat to know more about it, but this is not important for us right now. 
+As it happens, the pin D9 does support PWM, so all works fine. But pin D8 does not.
+Try changing D9 for D8 in the code.
 
+**LED 1 will start flashing with a pattern of 4 long and 4 short blink. 
+This is the signal that the controller has experienced a runtime error.**
+
+The compiler does not check for the suitability of the pins when the code is compiled, causing the microcontroller to crash when it tried to execute the program.
 
 Communications between the computer and the microcontroller
 -----------------------------------------------------------
