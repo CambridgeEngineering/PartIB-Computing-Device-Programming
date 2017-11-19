@@ -8,7 +8,6 @@ Activity 1: Memory and interupts
    :maxdepth: 2
    :caption: Contents:
    
-   functions
    pointers
    arrays
    interupts

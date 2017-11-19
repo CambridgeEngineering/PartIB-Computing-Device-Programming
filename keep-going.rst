@@ -3,13 +3,65 @@ Keep going
 
 
 
+Functions
+---------
+
+Try the following code. What does the select_led function do? If you are intrguiged by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
+
+.. code-block:: c
+
+	#include "mbed.h"
+
+	// Green LED
+	DigitalOut led1(LED1);
+	// Blue LED
+	DigitalOut led2(LED2);
+	// Red LED
+	DigitalOut led3(LED3);
+
+
+	void select_led(int l)
+	{
+		if (l==1) {
+			led1 = true;
+			led2 = false;
+			led3 = false;
+		}
+		else if (l==2) {
+			led1 = false;
+			led2 = true;
+			led3 = false;
+		}
+		else if (l==3) {
+			led1 = false;
+			led2 = false;
+			led3 = true;
+		}
+	}
 
 
 
+	int main() {
+		 int t=0;
+		 while(1) {           
+			select_led(t);
+			wait(0.5);
+			t=(t%3)+1;
+		}
+	}
 
 
-A more complex program
-----------------------
+
+.. admonition:: Exercise
+
+	**Modify the programme so that select_led(0) turns all the LEDs off, and select_led(-1) turns them all on.**
+
+	**Change the sequence such that the pattern is {all off, led 1, led 2, led 3, all on, all off, etc.}.**
+
+
+
+Physical input with a push button
+---------------------------------
 
 The code below exploits a useful inclusion in your development board, a push button!
 
