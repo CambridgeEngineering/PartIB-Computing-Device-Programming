@@ -52,12 +52,19 @@ Try the following code. What does the select_led function do? If you are intrgui
 
 
 
-.. admonition:: Exercise
+.. admonition:: Task
 
 	**Modify the programme so that select_led(0) turns all the LEDs off, and select_led(-1) turns them all on.**
 
 	**Change the sequence such that the pattern is {all off, led 1, led 2, led 3, all on, all off, etc.}.**
 
+	For a more immersive experience, try your code while visiting `this page <http://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
+
+
+
+.. admonition:: Task (optional)
+
+	**Program a LED sequence inspired by this** `video clip <http://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
 
 
 Physical input with a push button
@@ -82,7 +89,7 @@ The code below exploits a useful inclusion in your development board, a push but
 	}
 
 
-.. admonition:: Exercise
+.. admonition:: Task
 
 	**Create a new project for it, compile it, install it on your board, and try it. What happens with you press the button? Is that what you expected?**
 
@@ -101,9 +108,9 @@ The movie clip below explains some of this using external LED and switch. Look a
 |
 |
 
-.. admonition:: Exercise
+.. admonition:: Task
 
-	**Would you be able to edit the code so that the blue LED is on when   
+	**Edit the code so that the blue LED is on when   
 	the button is pressed, but the red LED is on when the button is not  
-	pressed?**                                                             
+	pressed, or any other LED combinations you could think about.**                                                             
 

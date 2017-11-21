@@ -1,4 +1,4 @@
-Exercise 1 - Extension
+Project 1 - Extension
 ======================
 
 This section of the activity is optional, and directed towards students who would like to explore higher levels of control of memory management with C++.
@@ -18,6 +18,8 @@ The main implication is that we can't initiate the array in the same; we need to
 * Learn about dynamics memory allocation
 * Detect more complex button events - the double click!
 
+
+Working code for the extension project: :download:`code <./solutions/solution_project_1_ext.cpp>`.
 
 
 
