@@ -6,7 +6,11 @@ Keep going
 Functions
 ---------
 
-Try the following code. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
+
+
+Create a new project based on the same template (Blink), but with a different name. If you start with a blank project, you will miss the mbed.h library that contains many important elements.
+
+Replace the demo code with the code below. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
 
 .. code-block:: c
 

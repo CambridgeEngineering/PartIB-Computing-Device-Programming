@@ -6,12 +6,12 @@ Introduction
 Device Programming activity
 -----------------------
 
-Why such activity?
+Why such an activity?
 ^^^^^^^^^^^^^^^^^^
 
 Across all branches of Engineering, the use of sensor networks and embedded computation has become ubiquitous. 
 Whether you look at the building industry, transportation or biomedical engineering, networks of interconnected sensors able to process and communicate data are increasingly involved in the control and diagnostic of complex operations.
-This technological trend has now reached most corner of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things. 
+This technological trend has now reached most corners of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things. 
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Internet_of_Things.jpg/1280px-Internet_of_Things.jpg
    :scale: 50 %
@@ -19,8 +19,8 @@ This technological trend has now reached most corner of not only industrial proc
    
    Source: Wilgengebroed on Flickr.
 
-The modern engineering must therefore embrace this ubiquity, and make sure that whatever their specialisation is, they master the basic aspects of sensing and communication.
-This practical series of activities is here to fill this gap and deliver all part I Engineers with the computational and experimental skills to approach with more confidence the development of simple embedded device to perform common tasks.
+The modern Engineer must therefore embrace this ubiquity, and make sure that whatever their specialisation is, they master the basic aspects of sensing and communication.
+This practical series of activities is here to fill this gap and deliver all part I Engineers with the computational and experimental skills to approach with more confidence the development of simple embedded devices to perform common tasks.
 The tasks selected cover the basic operations of a common ARM based microcontroller.
 Once familiar with a microcontroller, you will soon appreciate that they are all similar, and that your skill are amazingly transferable.
 

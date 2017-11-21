@@ -58,9 +58,9 @@ Register an account on the mbed development platform
 
 - Click login/sign-up. Create a new account if you don't have one already.
 
-- Once you are logged in, click on ``Compiler'' to access the development environment.
+- Once you are logged in, click on ``Compiler'' (top horizontal menu) to access the development environment.
 
-- Select board NUCLEO-F746ZG.
+- If this is the first time you use the board with the online mbed environment: at the top right of the screen, click 'no device selected', then 'add platform' and find device 'NUCLEO-F746ZG'.
 
 You are ready to start coding!
 
@@ -73,7 +73,7 @@ Creation of a new project
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - create new project by clicking on ``New'',
-- Make sure that the platform is correct, and select the template ``Nucleo_blink_LED'',
+- Make sure that the platform is correct, and select the template ``Blinky LED test for the ST Nucleo boards'',
 - Open the "main.cpp" file. The code should look like this:
 
 .. code-block:: c
@@ -91,6 +91,8 @@ Creation of a new project
 		}
 	}
 
+This code is fairly self-explanatory. The variable ``myled'' controls the state of LED1. Although it is manipulated as an integer, it is an instance of the class `DigitalOut <https://os.mbed.com/handbook/DigitalOut>`_. The pin number is specified when the object is declared, and remains attached to it. LED1 is a shortcut for the pin number associated with the user LED1. These associations are board specific, and defined in the "mbed.h" header file.
+
 
 - Press the compile button. If there is no error in your code, a file is then downloaded on your computer, ready to be installed on your microcontroller.
 
@@ -98,7 +100,7 @@ Creation of a new project
 Install code on your micro-controller 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Connect the micro-controller to your computer using a micro-USB cable. The board should be visible as a USB drive on the computer. If it isn't, you may need to install specific drivers; consult `this page <https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html>`_ to get support.
+- Connect the micro-controller to your computer using a micro-USB cable. The board should be visible as a USB drive on the computer. If it isn't, you may need to install specific drivers; consult `this page <https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html>`_ to get support. If you are using Windows on versions older than Win 10, try ignoring warnings such as ``Driver not installed correctly''; it may work well enough already.
 
 - drag and drop the .bin file obtained at the previous step on the board
 

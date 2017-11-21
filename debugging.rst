@@ -17,7 +17,7 @@ Compile time errors
 
 .. admonition:: Exercise
 
-	Try to compile the code below. Read the three errors, and fix them!
+	**Try to compile the code below. Read the three errors; they can be seen in the compile output section at the bottom of the window, or by hovering your mouse over relevant red line in the scroll bar. Fix the errors.**
 
 .. code-block:: c
 
@@ -57,8 +57,8 @@ Execution time errors
 		while(1) {    }
 	}
 
-You would not see much, but it sends on pin D8 a square signal that you could detect on an oscilloscope. 
-You don't need to look at this now, but you are curious and have a bit of spare time, feel free to read about what `Pulse Width Modulation (PWM) <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ does.  
+You would not see much, but it sends on pin D9 a square signal that you could detect on an oscilloscope. 
+If you are curious and have a bit of spare time, feel free to read about what `Pulse Width Modulation (PWM) <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ does; you don't need to look at this now though.
 This is very handy to control the brightness of LEDs for instance.
  
 As it happens, the pin D9 does support PWM, so all works fine. But pin D8 does not.
@@ -74,7 +74,7 @@ Debugging strategies
 ^^^^^^^^^^^^^^^^^^^^
 
 
-There is a lot more information online on this topic. You'll find a few ideas there:
+There is a lot more information online on this topic. You will find a few more ideas there:
 
 https://os.mbed.com/handbook/Debugging
 
@@ -88,7 +88,7 @@ This section is more advanced, but really useful once you get it to work. What i
 
 
 
-Read the first half of the mbed doc on `debugging with printf() calls <https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/>`, until the section *Printf() from an interrupt context*.
+Read the first half of the mbed doc on `debugging with printf() calls <https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/>`_, until the section *Printf() from an interrupt context*.
 
 
 
@@ -136,7 +136,7 @@ The program below should cycle the three LEDs, but doesn't work quite as expecte
 		
 	int main() {
 	    pc.baud(9600);
-	    int t=1;Compile and run the program below.
+	    int t=1;
 	    
 	    pc.printf("Start!\r\n", t);
 	
@@ -150,7 +150,7 @@ The program below should cycle the three LEDs, but doesn't work quite as expecte
 	}
 
 
-But the output of the printf function looks like this: 
+But the output of the program looks like this: 
 
 
 .. code-block:: c
