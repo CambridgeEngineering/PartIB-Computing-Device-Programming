@@ -5,7 +5,15 @@
 
 Welcome to CUED-PartIB-Device-Programming's documentation!
 
-*Material under development*
+The tutorial section is now ready.
+
+Two activities will follow:
+
+- Activity 1, on memory and interrupts, will be published mid Dec.
+
+- Activity 2, on sensors, will be published mid January.
+
+
 
 .. toctree::
    :maxdepth: 2
@@ -16,9 +24,9 @@ Welcome to CUED-PartIB-Device-Programming's documentation!
    tutorial
    
    
-   activity-1
+..   activity-1
    
-   activity-2
+..   activity-2
 
 
 

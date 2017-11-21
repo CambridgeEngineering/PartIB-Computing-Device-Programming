@@ -9,10 +9,6 @@ But luckily it is also possible, with a bit of extra effort, to establish text c
  
 In this section, we will explore different types or errors, and techniques to detect them and try to address them.
 
-There is a lot of information online on this topic!
-
-https://os.mbed.com/handbook/Debugging
-
 Errors
 ------
 
@@ -44,8 +40,8 @@ Execution time errors
 
 .. admonition:: Exercise
 
-	Compile the code below. It should not give you any error. 
-	Move it to your controller. 
+	**Compile the code below. It should not give you any error. 
+	Move it to your controller. **
 
 .. code-block:: c
 
@@ -62,47 +58,116 @@ Execution time errors
 	}
 
 You would not see much, but it sends on pin D8 a square signal that you could detect on an oscilloscope. 
-This is what Pulse Width Modulation (PWM) does. 
+You don't need to look at this now, but you are curious and have a bit of spare time, feel free to read about what `Pulse Width Modulation (PWM) <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ does.  
 This is very handy to control the brightness of LEDs for instance.
-Look for it on the internet if you wnat to know more about it, but this is not important for us right now. 
+ 
 As it happens, the pin D9 does support PWM, so all works fine. But pin D8 does not.
-Try changing D9 for D8 in the code.
+**Try changing D9 for D8 in the code and observe the result.**
 
-**LED 1 will start flashing with a pattern of 4 long and 4 short blink. 
+**The code should compile without error. But LED 1 will start flashing with a pattern of 4 long and 4 short blink. 
 This is the signal that the controller has experienced a runtime error.**
 
-The compiler does not check for the suitability of the pins when the code is compiled, causing the microcontroller to crash when it tried to execute the program.
+The compiler does not fully check the suitability of the pins when the code is compiled, causing the microcontroller to crash when it tries to execute the program on inappropriate pins.
+
+
+Debugging strategies
+^^^^^^^^^^^^^^^^^^^^
+
+
+There is a lot more information online on this topic. You'll find a few ideas there:
+
+https://os.mbed.com/handbook/Debugging
+
+
+
 
 Communications between the computer and the microcontroller
 -----------------------------------------------------------
 
-This is more advanced, but really useful once you get it to work.
+This section is more advanced, but really useful once you get it to work. What is difficult here is that it depends on the computer connected to the board. Different operating systems will use different software (that you may need to  install) in order to talk to the board, and they would behave differently. Give it a try, but don't panic if it does not work for you. You can go through the next activity without reading text from the board.
 
-Printing text on a terminal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For a beginner, a useful way to debug a program is to print statements using the printf function:
+
+Read the first half of the mbed doc on `debugging with printf() calls <https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/>`, until the section *Printf() from an interrupt context*.
+
+
+
+Example
+^^^^^^^
+
+
+.. admonition:: Exercise
+
+The program below should cycle the three LEDs, but doesn't work quite as expected. You suspect at first that your third LED is faulty.
 
 .. code-block:: c
-	printf("test\r\n");
 
-The above statement prints out the string "test" followed by a carriage return and a line feed to standard out. 
-It is included in the code you copied over to the Mbed compiler above. 
-To find out how to view the output of printf statements, see the following support page (precise instructions depend on your operating system):
+	#include "mbed.h"
+	
+	Serial pc(SERIAL_TX, SERIAL_RX);
+	
+	// Green LED
+	DigitalOut led1(LED1);
+	// Blue LED
+	DigitalOut led2(LED2);
+	// Red LED
+	DigitalOut led3(LED3);
+	
+	
+	void select_led(int l)
+	{
+	        if (l==1) {
+	                led1 = true;
+	                led2 = false;
+	                led3 = false;
+	        }
+	        else if (l==2) {
+	                led1 = false;
+	                led2 = true;
+	                led3 = false;
+	        }
+	        else if (l==3) {
+	                led1 = false;
+	                led2 = false;
+	                led3 = true;
+	        }
+	}
+	
+		
+	int main() {
+	    pc.baud(9600);
+	    int t=1;Compile and run the program below.
+	    
+	    pc.printf("Start!\r\n", t);
+	
+	    while(1) {
+	          select_led(t);
+	          pc.printf("LED %d is ON.\r\n", t);
+	          wait(0.5);
+	          t=(t+1)%3;
+	
+	    }
+	}
 
-https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/
 
-Click "Compile" in the Mbed Compiler enironment. 
-Save the executable to the Mbed drive and you should see all three leds (green, blue, red) switch on and off in tandem at a regular interval. By following the instructions in the above link you should also see the text "test" appear on a separate line at the same regular interval. Ensure you can see the text sent to standard out via the printf function, as this will greatly simplify debugging later.
+But the output of the printf function looks like this: 
 
 
-Serial communication
-^^^^^^^^^^^^^^^^^^^^
+.. code-block:: c
 
-Serial is a common protocal to communicate with microcontrollers and exchange data in a bidirectional manner. 
-It is easy to implement on the microcontroller, but the most challenging part is to get your computer to talk to it!
+	Start!
+	LED 1 is ON.
+	LED 2 is ON.
+	LED 0 is ON.
+	LED 1 is ON.
+	LED 2 is ON.
+	LED 0 is ON.
+	LED 1 is ON.
+	LED 2 is ON.
+	LED 0 is ON.
+	LED 1 is ON.
+	...
 
-There are loads of tutorials online, for each platform. Try to find a way that works for you!
+Use this information to find the problem!
 
-[add links and comments]
 

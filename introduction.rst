@@ -11,7 +11,7 @@ Why such activity?
 
 Across all branches of Engineering, the use of sensor networks and embedded computation has become ubiquitous. 
 Whether you look at the building industry, transportation or biomedical engineering, networks of interconnected sensors able to process and communicate data are increasingly involved in the control and diagnostic of complex operations.
-This technological trend has now reached most corner of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things. Internet of Things 
+This technological trend has now reached most corner of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things. 
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Internet_of_Things.jpg/1280px-Internet_of_Things.jpg
    :scale: 50 %
