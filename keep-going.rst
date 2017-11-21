@@ -6,7 +6,7 @@ Keep going
 Functions
 ---------
 
-Try the following code. What does the select_led function do? If you are intrguiged by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
+Try the following code. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
 
 .. code-block:: c
 
