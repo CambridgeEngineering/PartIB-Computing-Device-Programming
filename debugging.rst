@@ -84,7 +84,7 @@ https://os.mbed.com/handbook/Debugging
 Communications between the computer and the microcontroller
 -----------------------------------------------------------
 
-This section is more advanced, but really useful once you get it to work. What is difficult here is that it depends on the computer connected to the board. Different operating systems will use different software (that you may need to  install) in order to talk to the board, and they would behave differently. Give it a try, but don't panic if it does not work for you. You can go through the next activity without reading text from the board.
+This section is more advanced, but really useful once you get it to work. What is difficult here is that it depends on the computer connected to the board. Different operating systems will use different software (that you may need to  install) in order to talk to the board, different names for the port used to connect the board, and they would behave differently. Give it a try, but don't panic if it does not work for you straight away. You can go through the next activity without reading text from the board.
 
 
 
@@ -170,4 +170,29 @@ But the output of the program looks like this:
 
 Use this information to find the problem!
 
+
+
+Catching the output from python
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Serial communications can be used for much more than debugging. The example below shows how to catch the text in python (running on your computer) using the `pySerial library<https://pythonhosted.org/pyserial/>`_. You could process it further if needed. 
+
+.. code-block:: python
+
+	import serial
+	board = serial.Serial("/dev/ttyACM0", 9600)
+	# This creates an object able to establish a serial communication channel 
+	# with the board. The first parameter depends on your operating system 
+	# and probably needs to be updated.
+	# The second is the baud rate. It needs to match the board's settings.
+
+	while True:
+	   line = board.readline()
+	   print line
+
+Feel free to test this script. If you are using Linux, you may need to run it as a super-user to gain access to the port, i.e. launch it from a terminal using `sudo python script_name.py''.
+
+Of course you can also communicate the other way around. Serial communication is very handy to get devices to interact with computers, or with each other. More information is available on the arm/mbed website:
+
+https://os.mbed.com/handbook/SerialPC#serial-communication-with-a-pc
 
