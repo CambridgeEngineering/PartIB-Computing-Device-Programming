@@ -41,11 +41,12 @@ A few words about sponsors
 
 This activity has been made possible by two sponsors.
 
-- The University of Cambridge provided financial support through a Teaching And Learning Innovation Fund to run a number of student projects and promote the use of Open Source tools in our undergraduate education. This grant covers in particular the cost of the IIA project GM2, Technology for the poorest billion, as well as part of the running costs of this IB activity.
+- The University of Cambridge provided financial support through a Teaching And Learning Innovation Fund to run a number of student projects and promote the use of Open Source tools in undergraduate education. This grant currently covers the cost of the IIA project GM2, Technology for the poorest billion, as well as part of the running costs of this second year activity.
 
 - ARM and STMicroelectronics have donated the microcontrollers, one for each undergraduate student. We are very grateful to them, and hope that this arrangement will be maintained in future.
 
-To make this activity viable on the long run, we will need to show that the approach has been effective, i.e. that the lab gave you confidence in your DIY skills with hardware prototyping and device programming. The University and our partners will want to know what you did with your micro-controllers!
+To make this activity viable on the long run, we will need to show that the approach has been effective, i.e. that the activity boosted your confidence in hardware prototyping and device programming. 
+The University and our partners will want to know what you did with your micro-controllers!
 
 
 
