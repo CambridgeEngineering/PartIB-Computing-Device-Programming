@@ -1,22 +1,20 @@
 Introduction
-===============
+============
 
-
-
-Device Programming activity
------------------------
+Device programming activity
+---------------------------
 
 Why such an activity?
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
-Across all branches of Engineering, the use of sensor networks and embedded computation has become ubiquitous. 
+Across all branches of Engineering, the use of sensor networks and embedded computation has become ubiquitous.
 Whether you look at the building industry, transportation or biomedical engineering, networks of interconnected sensors able to process and communicate data are increasingly involved in the control and diagnostic of complex operations.
-This technological trend has now reached most corners of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things. 
+This technological trend has now reached most corners of not only industrial processes, but also personal life, encompassed by the fairly generic expression of Internet of Things.
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Internet_of_Things.jpg/1280px-Internet_of_Things.jpg
    :scale: 50 %
    :alt: Wilgengebroed on Flickr
-   
+
    Source: Wilgengebroed on Flickr.
 
 The modern Engineer must therefore embrace this ubiquity, and make sure that whatever their specialisation is, they master the basic aspects of sensing and communication.
@@ -45,7 +43,7 @@ This activity has been made possible by two sponsors.
 
 - ARM and STMicroelectronics have donated the microcontrollers, one for each undergraduate student. We are very grateful to them, and hope that this arrangement will be maintained in future.
 
-To make this activity viable on the long run, we will need to show that the approach has been effective, i.e. that the activity boosted your confidence in hardware prototyping and device programming. 
+To make this activity viable on the long run, we will need to show that the approach has been effective, i.e. that the activity boosted your confidence in hardware prototyping and device programming.
 The University and our partners will want to know what you did with your micro-controllers!
 
 
@@ -57,9 +55,9 @@ Structure and timing
 Tutorial
 ^^^^^^^^
 
-This will kick off at the end of Mich 2017. 
+This will kick off at the end of Mich 2017.
 
-You'll have to collect your boards, and will be encouraged to get started asap with the introductory tasks: 
+You'll have to collect your boards, and will be encouraged to get started asap with the introductory tasks:
 watching tutorials, compiling and testing the boards, and modifying simple test code. The tutorial will also get you to practice debugging.
 
 
@@ -77,12 +75,3 @@ In Lent, weeks 3 to 8, we will give you all a temperature sensor to play with! Y
 
 
 After this, you should realise that the world is your oyster, in case you did not realise this already. The internet is full of sensors, actuators, tutorials and spec sheets. With a bit of patience and creativity, no task will be too complex for you! So the only question is what you will do with it...
-
-
-
-
-
-
-
-
-
