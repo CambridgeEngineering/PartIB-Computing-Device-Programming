@@ -3,8 +3,8 @@
 Tutorial
 ========
 
-Introduction
-------------
+**Introduction**
+
 
 This part of the device programming activity can be done as soon as
 the boards are in your hands.  Watch a few videos (curated from the
@@ -26,8 +26,8 @@ computer to get it to work. See if you can make it work, but don't
 panic if you can't!
 
 
-Requirements
-------------
+**Requirements**
+
 
 #. STM32F746 STMicroelectronics development board (provided)
 #. Micro-USB to USB cable

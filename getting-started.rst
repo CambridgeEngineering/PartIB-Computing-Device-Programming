@@ -82,14 +82,10 @@ A first project
 Creation of a new project
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-<<<<<<< HEAD
-- create new project by clicking on "New",
+- Create new project by clicking on "New",
+
 - Make sure that the platform is correct, and select the template "Blinky LED test for the ST Nucleo boards",
-=======
-- Create new project by clicking on ``New'',
-- Make sure that the platform is correct, and select the template
-  ``Blinky LED test for the ST Nucleo boards'',
->>>>>>> 95f31c122e8faf9be75ebdfcd8811ee92e630283
+
 - Open the "main.cpp" file. The code should look like this:
 
 .. code-block:: c
