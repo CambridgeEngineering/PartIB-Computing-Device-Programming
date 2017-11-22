@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'CUED-PartIB-Device-Programming'
-copyright = u'2017, AJ Kabla, PO Kristensson, J Durrell'
-author = u'AJ Kabla, PO Kristensson, J Durrell'
+project = u'CUED PartIB Device Programming'
+copyright = u'2017, A.J. Kabla, P.O. Kristensson, J. Durrell'
+author = u'A.J. Kabla, P.O. Kristensson, J. Durrell'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -169,6 +169,3 @@ texinfo_documents = [
      author, 'CUED-PartIB-Device-Programming', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
