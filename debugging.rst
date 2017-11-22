@@ -175,7 +175,7 @@ Use this information to find the problem!
 Catching the output from python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Serial communications can be used for much more than debugging. The example below shows how to catch the text in python (running on your computer) using the `pySerial library<https://pythonhosted.org/pyserial/>`_. You could process it further if needed. 
+Serial communications can be used for much more than debugging. The example below shows how to catch the text in python (running on your computer) using the `pySerial library <https://pythonhosted.org/pyserial/>`_. You could process it further if needed. 
 
 .. code-block:: python
 

@@ -6,11 +6,11 @@ Keep going
 Functions
 ---------
 
+Let's refresh your mind regarding the declaration and use of functions in C/C++.
 
+- Create a new project on the mbed development site. Select the same template ("Blinky LED test for the ST Nucleo boards"), but give it a new project name. If you were to select a blank template, you would miss the mbed.h library that contains many important elements for your code.
 
-Create a new project based on the same template (Blink), but with a different name. If you start with a blank project, you will miss the mbed.h library that contains many important elements.
-
-Replace the demo code with the code below. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
+- Replace the demo code with the code below. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
 
 .. code-block:: c
 
@@ -58,7 +58,7 @@ Replace the demo code with the code below. What does the **select_led** function
 
 .. admonition:: Task
 
-	**Modify the programme so that select_led(0) turns all the LEDs off, and select_led(-1) turns them all on.**
+	**Modify the program so that select_led(0) turns all the LEDs off, and select_led(-1) turns them all on.**
 
 	**Change the sequence such that the pattern is {all off, led 1, led 2, led 3, all on, all off, etc.}.**
 
@@ -70,6 +70,8 @@ Replace the demo code with the code below. What does the **select_led** function
 
 	**Program a LED sequence inspired by this** `video clip <http://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
 
+|
+|
 
 Physical input with a push button
 ---------------------------------
@@ -79,18 +81,23 @@ The code below exploits a useful inclusion in your development board, a push but
 
 .. code-block:: c
 
-	#include "mbed.h"
-	 
-	DigitalIn button(USER_BUTTON);
-	DigitalOut led1(LED1);
-	 
-	int main() {
-	  led1=0;
-	  while(1) {
-	   led1= !(button == 0);
-	   wait(0.02); // 20 ms
-	  }
-	}
+    #include "mbed.h"
+     
+    DigitalIn button(USER_BUTTON);
+    DigitalOut led2(LED2);
+     
+    int main() {
+      led2=0;
+      while(1) {
+        if (button == 0)
+             led2 = true;
+        else led2 = false;
+        // Fyi, C programmers often like to turn such tests into logical statements:
+        //   led2= !(button == 0);
+        // The "!" presents the logical negation. 
+       wait(0.02); // 20 ms
+      }
+    }
 
 
 .. admonition:: Task
@@ -116,5 +123,5 @@ The movie clip below explains some of this using external LED and switch. Look a
 
 	**Edit the code so that the blue LED is on when   
 	the button is pressed, but the red LED is on when the button is not  
-	pressed, or any other LED combinations you could think about.**                                                             
+	pressed (or any other LED combinations you could think about).**                                                             
 
