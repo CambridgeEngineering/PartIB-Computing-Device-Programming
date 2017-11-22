@@ -16,13 +16,13 @@ and learn how to use the push button integrated with the board.
 
 The debugging section will make sure you are familiar with what
 happens when you make errors. It is quite difficult to understand what
-problems you have when you don't have a screen to tell what the
-problem is.
+problems you have when you don't have a screen to report messages - 
+but there are techniques available.
 
 Many people find it useful to pass text to the computer connected to
 the board for debugging purpose. While the corresponding
 microcontroller code is easy, it is more difficult to configure your
-computer to get it to work. See if you can make it work, but don't
+computer to get it to work. Give a try, but don't
 panic if you can't!
 
 
