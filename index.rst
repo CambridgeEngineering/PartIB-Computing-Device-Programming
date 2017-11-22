@@ -3,16 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to CUED-PartIB-Device-Programming's documentation!
 
-The tutorial section is now ready.
+
+This page contains the online material for the Computing activity on Device Programming, for the Second year Engineering students at the University of Cambridge.
+
+
+The **tutorial** section is now ready.
 
 Two activities will follow:
 
-- Activity 1, on memory and interrupts, will be published mid Dec.
+**Activity 1**: on memory and interrupts, will be published mid Dec.
 
-- Activity 2, on sensors, will be published mid January.
+**Activity 2**: on sensors, will be published mid January.
 
+|
+|
 
 
 .. toctree::
@@ -29,10 +34,11 @@ Two activities will follow:
 ..   activity-2
 
 
+More to come in due course...
 
-Indices and tables
-==================
+..	Indices and tables
+..	==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+..	* :ref:`genindex`
+..	* :ref:`modindex`
+..	* :ref:`search`
