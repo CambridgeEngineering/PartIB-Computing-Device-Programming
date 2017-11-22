@@ -1,16 +1,18 @@
 Keep going
 ==========
 
-
-
 Functions
 ---------
 
+Create a new project based on the same template (Blink), but with a
+different name. If you start with a blank project, you will miss the
+mbed.h library that contains many important elements.
 
-
-Create a new project based on the same template (Blink), but with a different name. If you start with a blank project, you will miss the mbed.h library that contains many important elements.
-
-Replace the demo code with the code below. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
+Replace the demo code with the code below. What does the
+**select_led** function do? If you are intrigued by the expression
+"t%3", look for its definition; it is the remainder after division of
+t by 3, also called `modulo
+<https://en.wikipedia.org/wiki/Modulo_operation>`_.
 
 .. code-block:: c
 
@@ -47,7 +49,7 @@ Replace the demo code with the code below. What does the **select_led** function
 
 	int main() {
 		 int t=0;
-		 while(1) {           
+		 while(1) {
 			select_led(t);
 			wait(0.5);
 			t=(t%3)+1;
@@ -58,32 +60,34 @@ Replace the demo code with the code below. What does the **select_led** function
 
 .. admonition:: Task
 
-	**Modify the programme so that select_led(0) turns all the LEDs off, and select_led(-1) turns them all on.**
+   **Modify the programme so that select_led(0) turns all the LEDs
+   off, and select_led(-1) turns them all on.**
 
-	**Change the sequence such that the pattern is {all off, led 1, led 2, led 3, all on, all off, etc.}.**
+   **Change the sequence such that the pattern is {all off, led 1, led
+   2, led 3, all on, all off, etc.}.**
 
-	For a more immersive experience, try your code while visiting `this page <http://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
-
+    For a more immersive experience, try your code while visiting
+    `this page <http://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
 
 
 .. admonition:: Task (optional)
 
-	**Program a LED sequence inspired by this** `video clip <http://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
+   **Program a LED sequence inspired by this** `video clip <http://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
 
 
 Physical input with a push button
 ---------------------------------
 
-The code below exploits a useful inclusion in your development board, a push button!
-
+The code below exploits a useful inclusion in your development board,
+a push button!
 
 .. code-block:: c
 
 	#include "mbed.h"
-	 
+
 	DigitalIn button(USER_BUTTON);
 	DigitalOut led1(LED1);
-	 
+
 	int main() {
 	  led1=0;
 	  while(1) {
@@ -95,26 +99,29 @@ The code below exploits a useful inclusion in your development board, a push but
 
 .. admonition:: Task
 
-	**Create a new project for it, compile it, install it on your board, and try it. What happens with you press the button? Is that what you expected?**
+   **Create a new project for it, compile it, install it on your
+   board, and try it. What happens with you press the button? Is that
+   what you expected?**
 
 
-USER_BUTTON is a constant defined to correspond to the pin number attached to the blue button.
+``USER_BUTTON`` is a constant defined to correspond to the pin number
+attached to the blue button.
 
-When pressed button is true (1) and false (0) otherwise. By assigning its value to the LED, we can control the LED with the button.
+When pressed button is true (1) and false (0) otherwise. By assigning
+its value to the LED, we can control the LED with the button.
 
-
-The movie clip below explains some of this using external LED and switch. Look at it if you would like more information.
+The movie clip below explains some of this using external LED and
+switch. Look at it if you would like more information.
 
 .. raw:: html
 
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/XmWqP8laxxk" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/XmWqP8laxxk" frameborder="0" allowfullscreen></iframe>
 
 |
 |
 
 .. admonition:: Task
 
-	**Edit the code so that the blue LED is on when   
-	the button is pressed, but the red LED is on when the button is not  
-	pressed, or any other LED combinations you could think about.**                                                             
-
+   **Edit the code so that the blue LED is on when the button is
+   pressed, but the red LED is on when the button is not pressed, or
+   any other LED combinations you could think about.**

@@ -7,10 +7,11 @@
 Part IB Computing Device Programming Activity
 =============================================
 
-This page contains the online material for the Computing activity on Device Programming, for the Second year Engineering students at the University of Cambridge.
+This page contains the online material for the Computing activity on
+Device Programming, for the Second year Engineering students at the
+University of Cambridge.
 
-
-The **tutorial** section is now ready.
+The :ref:`tutorial-sec` section is now ready.
 
 Two activities will follow:
 
@@ -21,18 +22,14 @@ Two activities will follow:
 |
 |
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    introduction
-
    tutorial
 
-
 ..   activity-1
-
 ..   activity-2
 
 
