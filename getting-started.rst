@@ -103,19 +103,41 @@ Creation of a new project
 		}
 	}
 
-This code is fairly self-explanatory. The variable ``myled'' controls
-the state of LED1. Although it is manipulated as an integer, it is an
-instance of the class `DigitalOut
-<https://os.mbed.com/handbook/DigitalOut>`_. The pin number is
-specified when the object is declared, and remains attached to
-it. LED1 is a shortcut for the pin number associated with the user
-LED1. These associations are board specific, and defined in the
-"mbed.h" header file.
-
 
 - Press the compile button. If there is no error in your code, a file
   is then downloaded on your computer, ready to be installed on your
   microcontroller.
+
+
+
+Dissecting the sample code
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+This code is fairly self-explanatory, if you remember some of what you
+learned with the `Mars Lander exercise <https://www.vle.cam.ac.uk/pluginfile.php/1510531/mod_resource/content/6/handout.pdf>`_.
+Here are a few comments that may be helpful:
+
+- "main()" is the function that is
+  executed when the microcontroller starts.
+
+- In C/C++, a block is delimited by curly brackets, {}, and not
+  indentation as in python.
+  Python style indentation is however good practice for the readability of your code.
+
+- The main program contains a single "while" loop.
+  The term between parentheses after while should be 0 or false for the
+  loop to end, so this loops never ends.
+
+- The variable "myled" controls the state of LED1.
+  Although it is manipulated as an integer, it is an
+  instance of the class `DigitalOut
+  <https://os.mbed.com/handbook/DigitalOut>`_. The pin number is
+  specified when the object is declared, and remains attached to
+  it. LED1 is a shortcut for the pin number associated with the user
+  LED1. These associations are board specific, and defined in the
+  "mbed.h" header file - so we don't need to worry about them.
+
 
 
 Install code on your micro-controller
@@ -127,8 +149,8 @@ Install code on your micro-controller
   consult `this page
   <https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html>`_
   to get support. If you are using Windows on versions older than Win
-  10, try ignoring warnings such as ``Driver not installed
-  correctly''; it may work well enough already.
+  10, try ignoring warnings such as "*Driver not installed
+  correctly*"; it may work well enough already.
 
 - Drag and drop the .bin file obtained at the previous step on the
   board
