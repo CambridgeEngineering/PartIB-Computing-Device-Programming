@@ -62,9 +62,6 @@ Let's refresh your mind regarding the declaration and use of functions in C/C++.
 	**Change the sequence such that the pattern is {all off, led 1, led 2, led 3, all on, all off, etc.}.**
 
 
-   **Change the sequence such that the pattern is {all off, led 1, led
-   2, led 3, all on, all off, etc.}.**
-
     For a more immersive experience, try your code while visiting
     `this page <http://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
 

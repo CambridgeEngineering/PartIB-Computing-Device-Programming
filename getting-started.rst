@@ -116,7 +116,13 @@ Dissecting the sample code
 
 This code is fairly self-explanatory, if you remember some of what you
 learned with the `Mars Lander exercise <https://www.vle.cam.ac.uk/pluginfile.php/1510531/mod_resource/content/6/handout.pdf>`_.
-Here are a few comments that may be helpful:
+Do not hesitate to consult online documentation about C/C++
+when appropriate. There are so many good sources available to you!
+See for instance:
+
+http://www.tutorialspoint.com/cprogramming/
+
+Here are a few comments that may be helpful at this point:
 
 - "main()" is the function that is
   executed when the microcontroller starts.
@@ -125,7 +131,7 @@ Here are a few comments that may be helpful:
   indentation as in python.
   Python style indentation is however good practice for the readability of your code.
 
-- The main program contains a single "while" loop.
+- The main program contains a single `"while" loop <https://www.tutorialspoint.com/cprogramming/c_while_loop.htm>`_.
   The term between parentheses after while should be 0 or false for the
   loop to end, so this loops never ends.
 
@@ -140,8 +146,8 @@ Here are a few comments that may be helpful:
 
 
 
-Install code on your micro-controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing the code on your micro-controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Connect the micro-controller to your computer using a micro-USB
   cable. The board should be visible as a USB drive on the
