@@ -86,16 +86,18 @@ a push button!
     DigitalIn button(USER_BUTTON);
     DigitalOut led2(LED2);
      
-    int main() {
+    int main()
+    {
       led2=0;
-      while(1) {
-        if (button == 0)
+      while(1)
+      {
+        if (button == 1)
              led2 = true;
         else led2 = false;
         // Fyi, C programmers often like to turn such tests into logical statements:
         //   led2= !(button == 0);
         // The "!" presents the logical negation. 
-       wait(0.02); // 20 ms
+        wait(0.02); // 20 ms
       }
     }
 
