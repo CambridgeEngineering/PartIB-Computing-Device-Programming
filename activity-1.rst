@@ -1,4 +1,4 @@
-Activity 1: Memory and interupts
+Activity 1: Memory and interrupts
 ================================
 
 
@@ -48,7 +48,7 @@ low level programming:
 
 - The record a sequence, a data structure is needed.
 	In python, or during the Mars Lander exercise, you used clever data
-	structures that could easily change size to accomodate more data.
+	structures that could easily change size to accommodate more data.
 	When programming simple devices, one tends to keep tighter control on
 	memory, allocating buffers with a specific size. We will look at how
 	simple arrays work in C and study examples to store and access data in them.
@@ -56,32 +56,32 @@ low level programming:
 - User interactions, such as pressing a button, are events that need to be monitored.
 	Micro-controllers have a mechanism for this called interupts, whereby you
 	can attach specific actions to specific events. You will learn how to
-	handle these interupts effectively.
+	handle these interrupts effectively.
 
 - Talking about memory at a low level requires to learn about pointers.
 	A pointer is essentially a number that corresponds to the location in memory
 	of a particular data structure or function code.
-	Pointers will be useful to tell interupts which function to call when
+	Pointers will be useful to tell interrupts which function to call when
 	the button is pressed, or to keep track of where the memory buffer containing
-	your data is located in mamery.
+	your data is located in memory.
 
 
 Structure of the activity
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before getting started with the main task, you are invited to follow a
-tutorial to learn about the prerequisote above.
+tutorial to learn about the prerequisite above.
 
 This should give you the background knowledge needed to tackle the
 option (i) of the task, where the number of colour to record is set in
-the code iteself.
+the code itself.
 
 Students willing to try option (ii) will be given additional information
 to tackle dynamic memory management.
 If you don't know how many colour
 to record, you will need to resize the buffer of memory when more data
 storage is required.
-We'll shpow you how to do that bofore you attempt the problem.
+We'll shpow you how to do that before you attempt the problem.
 
 
 

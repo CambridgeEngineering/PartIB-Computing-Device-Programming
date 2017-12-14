@@ -5,7 +5,7 @@ Interrupts
 LED toggle
 ----------
 
-Let's look at one of the previous tutorial 's example:
+Let's look at one of the previous tutorial's example:
 
 
 .. code-block:: c
@@ -18,7 +18,7 @@ Let's look at one of the previous tutorial 's example:
     int main()
     {
       led2=0;
-      while(1)
+      while(true)
       {
 		led2= !(button == 0);
        wait(0.02); 
@@ -44,7 +44,7 @@ Instinctively one would want to write the code below:
 	int main() 
 	{
 	  led1=0;
-	  while(1) 
+	  while(true) 
 	  {
 		if (button == 0) led1= !led1;
 		wait(0.02); 
@@ -99,7 +99,7 @@ Let's look at the code:
 	int main() 
 	{   // attach the address of the callback function to the rising edge
 		button.rise(&onButtonPress);  
-		while(1) 
+		while(true) 
 		{   // You could do something useful here
 		}
 	}

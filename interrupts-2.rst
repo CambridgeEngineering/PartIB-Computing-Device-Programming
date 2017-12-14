@@ -29,8 +29,8 @@ We could start with the following code:
 	 
 	int main() 
 	{
-		button.rise(&onButtonPress);  
-		while(1) 
+		button.rise(onButtonPress);  
+		while(true) 
 		{   // This is where important calculations are made...
 			led3 = !led3;
 			wait(0.1);
@@ -100,19 +100,19 @@ Look at the following code, and try it on your board.
 	{
 		led1 = !led1;
 		button.rise(NULL);
-		button_debounce_timeout.attach(&onButtonStopDebouncing, debounce_time_interval);
+		button_debounce_timeout.attach(onButtonStopDebouncing, debounce_time_interval);
 		
 	}
 
 	void onButtonStopDebouncing(void)
 	{
-		button.rise(&onButtonPress);
+		button.rise(onButtonPress);
 	}
 	 
 	int main() 
 	{
-		button.rise(&onButtonPress);  
-		while(1) 
+		button.rise(onButtonPress);  
+		while(true) 
 		{   // This is where important calculations are made...
 			led3 = !led3;
 			wait(0.1);
@@ -128,9 +128,9 @@ No time to waste!
 -----------------
 
 The solution above is very satisfactory. We are not wasting time
-anymore in the interupt.
+any more in the interrupt.
 But we are still spending time waiting for no reason in the main function.
-It is not as bad as in the interupt, but could we make sure that the
+It is not as bad as in the interrupt, but could we make sure that the
 main function is fully available for more interesting tasks to be carried?
 
 Try the code below. Search the mbed documentation to know more about the
@@ -163,13 +163,13 @@ the button or LEDs at any time.
 	{
 		led1 = !led1;
 		button.rise(NULL);
-		button_debounce_timeout.attach(&onButtonStopDebouncing, debounce_time_interval);
+		button_debounce_timeout.attach(onButtonStopDebouncing, debounce_time_interval);
 		
 	}
 
 	void onButtonStopDebouncing(void)
 	{
-		button.rise(&onButtonPress);
+		button.rise(onButtonPress);
 	}
 
 
@@ -182,9 +182,9 @@ the button or LEDs at any time.
 	int main() 
 	{   
 		button.rise(&onButtonPress);  
-		cycle_ticker.attach(&onCycleTicker, cycle_time_interval);
+		cycle_ticker.attach(onCycleTicker, cycle_time_interval);
 
-		while(1) 
+		while(true) 
 		{   // Even more important code could be placed here
 		}
 	}

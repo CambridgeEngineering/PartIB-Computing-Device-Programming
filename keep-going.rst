@@ -46,7 +46,7 @@ Let's refresh your mind regarding the declaration and use of functions in C/C++.
 
 	int main() {
 		 int t=0;
-		 while(1) {
+		 while(true) {
 			select_led(t);
 			wait(0.5);
 			t=(t%3)+1;
@@ -89,7 +89,7 @@ a push button!
     int main()
     {
       led2=0;
-      while(1)
+      while(true)
       {
         if (button == 1)
              led2 = true;

@@ -24,7 +24,7 @@ For instance:
 	a[0]=2;
 	x=a[0]+3;
 
-The whole array can also be initated at the point of declaration:
+The whole array can also be initiated at the point of declaration:
 
 
 .. code-block:: c
@@ -37,7 +37,7 @@ In memory, arrays are as contiguous sections of memory.
 
 
 
-Passing arrays to fucntions
+Passing arrays to functions
 ---------------------------
 
 
@@ -106,7 +106,7 @@ Study the code below, guess what it would do and try it on your board.
 
 	int main() {
 		 int t=0;
-		 while(1) {           
+		 while(true) {           
 			select_led(led_cycle[t]);
 			wait(0.5);
 			t=(t+1)%N;

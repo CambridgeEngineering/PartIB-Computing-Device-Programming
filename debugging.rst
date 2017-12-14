@@ -32,7 +32,7 @@ Compile time errors
 	DigitalOut myled(LED1);
 
 	int main() {
-		while(1) {
+		while(true) {
 			led1 = 1; // LED is ON
 			wait(0.2); // 200 ms
 			led1 = OFF; // LED is OFF
@@ -60,7 +60,7 @@ Execution time errors
 
 	int main() {
 		led = (float)0.5;
-		while(1) {    }
+		while(true) {    }
 	}
 
 You would not see much, but it sends on pin D9 a square signal that
@@ -162,7 +162,7 @@ Example
 
 	    pc.printf("Start!\r\n", t);
 
-	    while(1) {
+	    while(true) {
 	          select_led(t);
 	          pc.printf("LED %d is ON.\r\n", t);
 	          wait(0.5);

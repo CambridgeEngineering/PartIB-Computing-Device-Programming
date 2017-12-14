@@ -39,7 +39,7 @@ In this section, we will discuss about how to manipulate variables (and function
 Considering again the variable x, one can get its address using the notation &x.
 The type of &x is not necessarily the same as x. It is called a *pointer*, which is defined as the type of an address.
 
-You can decrale pointers like other variables, although the syntax is a bit unusual.
+You can declare pointers like other variables, although the syntax is a bit unusual.
 
 .. code-block:: c
 
@@ -134,7 +134,7 @@ Function pointers
 -----------------
 
 Pointers can also contain the address of a section of code, rather than data.
-this is how one can pass a function as a paramater to another function... by passing the address of its code in memory.
+this is how one can pass a function as a parameter to another function... by passing the address of its code in memory.
 We will use this to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
 
 For now, let's just look at a typical situation where this would be useful.
