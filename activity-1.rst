@@ -33,6 +33,13 @@ and might be selected by more experienced (or keen) students.
 
 
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/NxvF4u7iIuE" frameborder="0" allowfullscreen></iframe>
+
+
+
+
 Learning objectives
 ^^^^^^^^^^^^^^^^^^^
 

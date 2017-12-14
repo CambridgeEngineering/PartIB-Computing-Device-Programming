@@ -72,7 +72,7 @@ don't need to look at this now though.  This is very handy to control
 the brightness of LEDs for instance.
 
 As it happens, the pin D9 does support PWM, so all works fine. But pin
-D8 does not.  **Try changing D9 for D8 in the code and observe the
+D8 does not.  **Try changing the pin D9 to D8 in the code and observe the
 result.**
 
 **The code should compile without error. But LED 1 will start flashing

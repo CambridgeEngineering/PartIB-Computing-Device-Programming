@@ -6,7 +6,7 @@ Functions
 
 Let's refresh your mind regarding the declaration and use of functions in C/C++.
 
-- Create a new project on the mbed development site. Select the same template ("Blinky LED test for the ST Nucleo boards"), but give it a new project name. If you were to select a blank template, you would miss the mbed.h library that contains many important elements for your code.
+- Create a new project on the mbed development site. Select the same template ("Blinky LED test for the ST Nucleo boards"), but give it a new project name. If you were to select a blank template, you would miss the mbed.h header file that contains many important elements for your code.
 
 - Replace the demo code with the code below. What does the **select_led** function do? If you are intrigued by the expression "t%3", look for its definition; it is the remainder after division of t by 3, also called `modulo <https://en.wikipedia.org/wiki/Modulo_operation>`_.
 

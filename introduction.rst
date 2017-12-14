@@ -98,7 +98,7 @@ learn about more sophisticated aspects of C++ device programming, such
 as memory allocation, and how microcontrollers use their physical pins
 to directly change their behaviour.  Through a series of gradual
 examples, you will end up transforming the board into what might look
-like a proper device already. Students with priori experience will
+like a proper device already. Students with prior experience will
 have the opportunity to do a more challenging version of the project,
 if they wish.
 
