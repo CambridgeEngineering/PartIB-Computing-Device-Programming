@@ -76,7 +76,7 @@ D8 does not.  **Try changing the pin D9 to D8 in the code and observe the
 result.**
 
 **The code should compile without error. But LED 1 will start flashing
-with a pattern of 4 long and 4 short blink.  This is the signal that
+with a pattern of 4 long and 4 short blinks.  This is the signal that
 the controller has experienced a runtime error.**
 
 The compiler does not fully check the suitability of the pins when the

@@ -8,7 +8,7 @@ Declaring arrays and accessing their elements
 
 
 Arrays in C/C++ are structures containing a set number **N** of elements of a given type **T**.
-To declare an array *a* of 10 integer, one would write:
+To declare an array **a** of 10 integers, one would write:
 
 
 .. code-block:: c
@@ -17,7 +17,7 @@ To declare an array *a* of 10 integer, one would write:
 
 Elements in the array are indexed between 0 and N-1.
 Brackets are used to access the content of each element.
-For instance:
+Here are two examples:
 
 .. code-block:: c
 
@@ -33,7 +33,14 @@ The whole array can also be initiated at the point of declaration:
 
 
 
-In memory, arrays are as contiguous sections of memory.
+In memory, arrays are contiguous sections of memory that are allocated to contain exactly
+the amount of data requested.
+If you try to acces the content of an array beyond the range allocated,
+expect to get random results, or a crash at execution time.
+
+**Always double check what you are doing with arrays!**
+
+The lack of reproducibility of the errors they generate make debugging sometimes difficult.
 
 
 
@@ -42,30 +49,29 @@ Passing arrays to functions
 
 
 Because arrays can be large structures, arrays are not passed to functions by being copied.
-In fact, the variable *a* declared above is de facto a pointer:
-*a would return the first element of the array.
+In fact, the variable **a** declared above is de facto a pointer.
+The expression *a in your code would return the first element of the array.
 
 The following function would for instance set all the elements of an array to zero:
 
 .. code-block:: c
 
-	int data[5];
-	
-	void set_to_zero{int a[], n}
-	{
-		int i=0;
-		while(i<n)
-		{
-			a[i]=0;
-			i=i+1;
-		}
-	}
+    int data[5];
+    
+    void set_to_zero(int* a, int n)
+    {
+        int i=0;
+        while(i<n)
+        {
+            a[i]=0;
+            i=i+1;
+        }
+    }
 
-	main()
-	{		
-		set_to_zero{data, 5}
-	}
-
+    main()
+    {       
+        set_to_zero(data, 5);
+    }
 
 
 

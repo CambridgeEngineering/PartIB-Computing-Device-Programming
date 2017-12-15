@@ -1,8 +1,8 @@
 Pointers
 ========
 
-This section provides some background information to better understand the techniques used in this activity.
-You will find a lot more information online about memory management if you look, possible too much.
+This page provides background information to better understand the techniques used in this activity.
+You will find a lot more information online about this topic online, possibly too much.
 The paragraphs below are really highlighting the minimum required to not be surprised by the some the syntax used later.
 
 
@@ -20,9 +20,9 @@ When a variable is declared in a program:
 
 	int x;
 
-The compiler allocates a region of the available memory to contain data of the type specified.
+the compiler allocates a region of the available memory to contain data of the type specified.
 For an integer, it would allocate 4 bytes (32 bits) to store it.
-Whenever you refer to x in your code, the compiler understands that you talk about the area in the memory that was created when you created the variable x.
+Whenever you refer to x in your code, the compiler understands that you talk about the content stored in the area of memory that was allocated when you created the variable x.
 
 When you write:
 
@@ -30,16 +30,18 @@ When you write:
 
 	x=5;
 	
-The compiler writes in the block of memory associated with x the binary representation of the integer 5.
+the compiler writes in the block of memory associated with x the binary representation of the integer 5.
 
 In general, you don't need to know where your variable is in memory; you just need to know it is called x.
-In some occasions it is however convenient to be able to access the location in memory of a variable, its *address*.
+In some occasions it is however convenient to know the location in memory of a variable, called its *address*.
 In this section, we will discuss about how to manipulate variables (and functions) using their memory address.
 
 Considering again the variable x, one can get its address using the notation &x.
-The type of &x is not necessarily the same as x. It is called a *pointer*, which is defined as the type of an address.
+The type of &x is generally not the same as the type of x.
+An objects storing an address of a particular datatype is called a *pointer*.
 
 You can declare pointers like other variables, although the syntax is a bit unusual.
+The code:
 
 .. code-block:: c
 
@@ -47,10 +49,10 @@ You can declare pointers like other variables, although the syntax is a bit unus
 	p = &x;
 
 
-Declares a pointer to an integer.
-In a way, it does not really matter what types in points to, as all data is stored in the memory in the same way.
+declares a pointer to an integer.
+In principle, it does not really matter whether the pointers to an int or anything else; an address in memory is just a number regardless of what it points to.
 A pointer to an integer could in practice point to an area of memory where you stored a float or even some code.
-The compiler uses this information to help you check consistency, but you could do horrible things with pointer if you don't use them properly.
+The compiler uses however this information to help you check consistency - you could do horrible things with pointer if you don't use them properly.
 The following code should for instance return an error:
 
 .. code-block:: c
@@ -63,15 +65,13 @@ The following code should for instance return an error:
 How to manipulate data stored at a particular address? 
 
 While &x represents the address of x, *p represents the object stored at the address p.
+The line:
 
 .. code-block:: c
 
-	int x;
-	int* p;
-	p=&x;
 	*p=3;
 
-Would store 3 in the variable x.
+would store 3 in the variable x.
 
 
 Why is this useful?
@@ -93,7 +93,7 @@ You could write something like this:
 		b=temp;
 	}
 
-But this would not work, because if you call swap(x,y), the variables a and b in the swap function would contain copies of the values of x and y, stored at different location in memory.
+But this would not work, because if you call swap(x,y), the variables a and b in the swap function would relate to new integer variables that contain copies of the values of x and y.
 
 Pointers offer a way to solve this issue.
 Look at the following code and try to understand what it does.
@@ -133,17 +133,23 @@ to swap the content of the variable x and y;
 Function pointers
 -----------------
 
-Pointers can also contain the address of a section of code, rather than data.
-this is how one can pass a function as a parameter to another function... by passing the address of its code in memory.
-We will use this to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
+Pointers can also contain the address of a section of compiled code in memory, rather than data.
+This allows us to pass a function as a parameter to another function... by passing the address of its code.
+We will use later this to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
 
 For now, let's just look at a typical situation where this would be useful.
-Imagine that you want to find the second derivative of a function *f*.
+Imagine that you want to find the second derivative of a function :math:`f`.
 To find a good numerical estimate, you have to calculate:
 
-The algorithm is generic enough that you would like to allow it to work for any function.
-This is a case where passing the function as a parameter is useful.
+.. math::
 
+   \frac{d^2f}{dx^2} = \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2}
+
+Your implementation is likely to be generic enough to be applied to any function.
+Passing the function as a parameter is useful to make sure that such numerical methods
+can be applied to any suitable function.
+
+Study the code below:
 
 .. code-block:: c
 
@@ -178,7 +184,7 @@ This is a case where passing the function as a parameter is useful.
 
 	}
 
-You can then calculate the second derivative of *f_1* for *x=1* using second_derivative(f_1, 1).
+
 
 **Comment**: This example may look confusing if you are reading attentively enough.
 Why didn't we pass the address of the function, using second_derivative(&f_1, 1)?
@@ -197,17 +203,18 @@ and for the function call:
 
 	second_derivative(&f_1, 1)
 
-
+but this is less readable.
+Feel free to try it.
 
 .. admonition:: Task
 
 	**Start a new project with the code above, add a function called first_derivative
 	to calculate the first derivative of a function using the approach above,
-	and print both the first and second derivative of f(x)=x*x for x=2.**
+	and print both the first and second derivative of** :math:`f(x)=x^2` **for** :math:`x=2`.
 
-	**Note that this requires you to get the text output
-	as presented in the tutorial. If you can't get the text output to work at this stage, just skip
-	this exercise for the moment.**
+	**Note that this requires you to be able to read the text output
+	as presented in the debugging section. If you can't get the text output to work at this stage,
+	just think about what you would do but don't worry too much about executing the code.**
 
 
 

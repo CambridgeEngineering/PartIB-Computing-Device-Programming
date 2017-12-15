@@ -2,12 +2,15 @@ Interrupts (continued)
 ======================
 
 
-LED toggle
-----------
+LED toggle 2.0
+--------------
 
-Let's assume that we want to toggle the LED while the microcontroller is
-busy doing something very important, such as flashing another LED!
-(there is not much we can do with 3 LEDs, but you get the idea...)
+Let's assume that we want to toggle the state ``LED1`` with the push button,
+while the microcontroller is busy doing something very important,
+such as monitoring the temperature of a nuclear plant.
+To illustrate the progress of this other important task with the hardware present on the board,
+we will simply get the micro-controller to flash another LED,
+and assume that it is important to do it in a very regular manner.
 
 We could start with the following code:
 
@@ -38,20 +41,20 @@ We could start with the following code:
 	}
 
 
+Try the code. ``LED3`` should blink, and the button toggle the state of ``LED1``.
+So all seems to work. But...
 
-Here, there is no debouncing code by default.
-Try the code, and observe that the toggle fails as in the earlier example.
-Uncomment the wait statement in the callback function.
-Fixed!
-Or is it?
+
+
 
 Focus now on what happens to the very important task, flashing the LED.
-It stops while running the wait statement in the callback function.
-This is time wasted, and time that may cause problems down the line.
-What if other interrupts are required to handle other events in a more
-complex application?
-You could miss them if you stay too long in the interrupt.
-It is a general rule to spend as little time as possible in interrupts.
+It stops for a little while when the button is pressed,
+when the micro-controller is running the wait statement in the callback function.
+We need this time delay to prevent bouncing.
+But this prevent the important tasks to be performed properly.
+It woud also block other interrupts that may be required to handle additional events in a more
+complex application.
+**It is a general rule to spend as little time as possible in interrupts.**
 
 The wait statement is only here to prevent the button to trigger multiple
 interrupts when pressed.
@@ -68,9 +71,9 @@ We could deactivate an interrupt with the following statement:
 
 which essentially replaces the pointer to callback function with a pointer to nothing.
 
-But how to reattach the interrupt to the callback function without using
-the wait statement?
-Time to talk about timers and time interrupts.
+But how to reattach the interrupt to the callback function after a while,
+without using a wait statement?
+Time to talk about timers and time interrupts!
 
 Time interrupts
 ---------------
@@ -118,6 +121,33 @@ Look at the following code, and try it on your board.
 			wait(0.1);
 		}
 	}
+
+Is the problem fixed?
+
+**Comment about function declarations**
+
+Note the line:
+
+.. code-block:: c
+
+	void onButtonStopDebouncing(void);
+
+It seems that we declare the function twice. Why?
+
+This is because the functions onButtonStopDebouncing and onButtonPress
+call each other.
+
+If you remove the first declaration of onButtonStopDebouncing, the compiler will
+tell you that onButtonStopDebouncing is not defined in function onButtonPress,
+which is true, because it is define further down in the code. 
+But if you swap the order of the function, then the compiler will complain that
+onButtonPress is not declared in onButtonStopDebouncing.
+
+This is why we have to introduce an early declaration of
+onButtonStopDebouncing
+before we write the code of the function onButtonPress.
+It tells the compiler what the function onButtonPress will be (types of parameters and output)
+which is essentially the information needed to compile onButtonPress properly.
 
 
 

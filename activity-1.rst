@@ -3,35 +3,45 @@ Activity 1: Memory and interrupts
 
 
 
-*Material under development*
 
+Learning objectives
+^^^^^^^^^^^^^^^^^^^
+
+
+This activity will teach you way to catch unser input, respond to it, and
+record data based on these events.
+These are very generic aspect of device programming.
+
+For practical reasons, you will learn and practice these skills using the
+embedded LEDs and button, which somehow constrains what can be done.
+This activity however sets the funcdations to handle more complex sensor data.
 
 
 Brief
 ^^^^^
 
 
+The aim is to program your microcontroller to record a sequence of colours
+entered by the user, and then play it back. Here is the proposed approach:
 
-You have to program your microcontroller to record a sequence of colours
-entered by the user, and then play it back. This has to be done using
-your Nucleo boards only, i.e. using a push button and the three user LEDs
-present on the board. Here is the approach:
+- The board starts by cycling the three LEDs, turning them on one at time, and switching every second:
+	``LED1`` (green) for 1s --> ``LED2`` (blue) for 1 sec --> ``LED3`` (red) for 1s --> ``LED1`` for 1 sec, etc.
 
-- The board starts by cycling the three LEDs, turning on one of them at time for 1 sec and then switching to the next:
-	Red on for 1s --> blue on for 1 sec --> green on for 1s --> red again, etc.
-
-- The user selects a colour by pressing the button.
-	The colour that is on at this time is recorded.
+- While the colours are cycling, the user selects a colour by pressing the button.
+  The colour that is ON at this time is recorded.
 
 - The process continues until either:
-	- Option 1: N colours have been entered (where N is defined in the code), or
-	- Option 2: the user double-clicks the button to indicate the end of the sequence.
+	- **Option 1**: N colours have been entered (the size of the sequence N is set in the code), or
+	- **Option 2**: the user double-clicks the button to indicate the end of the sequence.
 
-Option (i) is simpler, and is
-the recommanded task for most students. Option (ii) is more challenging
-and might be selected by more experienced (or keen) students.
+Option 1 is simpler, and is
+the recommanded task for most students.
+Option 2 is more challenging
+and may be preferred by students who have more experience, and/or those who
+want to extend develop their skills beyond what is required for this activity.
 
 
+The video below presents a demo of the first option, so that you know what to aim for.
 
 .. raw:: html
 
@@ -39,14 +49,13 @@ and might be selected by more experienced (or keen) students.
 
 
 
+What you may need to learn
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Learning objectives
-^^^^^^^^^^^^^^^^^^^
-
-To complete the task, you may need to learn two important aspects of
+To complete the task, you may need to learn a few important aspects of
 low level programming:
 
-- The record a sequence, a data structure is needed.
+- To record a sequence, a data structure is needed.
 	In python, or during the Mars Lander exercise, you used clever data
 	structures that could easily change size to accommodate more data.
 	When programming simple devices, one tends to keep tighter control on
@@ -54,12 +63,12 @@ low level programming:
 	simple arrays work in C and study examples to store and access data in them.
 
 - User interactions, such as pressing a button, are events that need to be monitored.
-	Micro-controllers have a mechanism for this called interupts, whereby you
+	Micro-controllers have a mechanism for this called *interrupts*, whereby you
 	can attach specific actions to specific events. You will learn how to
 	handle these interrupts effectively.
 
 - Talking about memory at a low level requires to learn about pointers.
-	A pointer is essentially a number that corresponds to the location in memory
+	A pointer is essentially a number that represents to the location in memory
 	of a particular data structure or function code.
 	Pointers will be useful to tell interrupts which function to call when
 	the button is pressed, or to keep track of where the memory buffer containing
@@ -70,18 +79,16 @@ Structure of the activity
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before getting started with the main task, you are invited to follow a
-tutorial to learn about the prerequisite above.
+tutorial to learn about the prerequisites above.
+Please take them in the right order.
 
 This should give you the background knowledge needed to tackle the
-option (i) of the task, where the number of colour to record is set in
+the tasks, where the number of colour to record is set in
 the code itself.
 
-Students willing to try option (ii) will be given additional information
-to tackle dynamic memory management.
-If you don't know how many colour
-to record, you will need to resize the buffer of memory when more data
-storage is required.
-We'll shpow you how to do that before you attempt the problem.
+The section on dynamic memory allocation is most relevant to students
+tackling the second variant of the activity, where you don't know at the start how many colour
+to record in the sequence.
 
 
 
