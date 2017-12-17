@@ -29,7 +29,7 @@ Two activities will follow:
    introduction
    tutorial
 
-..   activity-1
+   activity-1
 ..   activity-2
 
 

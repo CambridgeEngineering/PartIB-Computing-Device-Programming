@@ -30,7 +30,7 @@ panic if you can't!
 
 
 #. STM32F746 STMicroelectronics development board (provided)
-#. Micro-USB to USB cable
+#. Micro-USB to USB cable (transmitting power & data)
 #. Computer with web browser, internet connection and USB port available.
 
 

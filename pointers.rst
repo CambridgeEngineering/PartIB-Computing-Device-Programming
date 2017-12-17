@@ -38,7 +38,7 @@ In this section, we will discuss about how to manipulate variables (and function
 
 Considering again the variable x, one can get its address using the notation &x.
 The type of &x is generally not the same as the type of x.
-An objects storing an address of a particular datatype is called a *pointer*.
+An object storing an address of a particular data-type is called a *pointer*.
 
 You can declare pointers like other variables, although the syntax is a bit unusual.
 The code:
@@ -64,7 +64,7 @@ The following code should for instance return an error:
 
 How to manipulate data stored at a particular address? 
 
-While &x represents the address of x, *p represents the object stored at the address p.
+While &x represents the address of x, \*p represents the object stored at the address p.
 The line:
 
 .. code-block:: c
@@ -110,7 +110,7 @@ Look at the following code and try to understand what it does.
 	}
 
 Now instead of passing the values to the function, we provide the location of the data in memory.
-The function can now manipulate the content stored in memory to achive the swap.
+The function can now manipulate the content stored in memory to achieve the swap.
 
 This function would work. To call it, we would need to pass the address of the variable instead of their values, i.e. call it with:
 
@@ -124,8 +124,8 @@ to swap the content of the variable x and y;
 
 .. admonition:: Task
 
-	**Write a function neg(x) such that it changes the sign of the variable x.
-	Hint: it would be called using neg(&x)...**
+	**Without writing a full program and compiling it, think about how you would create a function neg(x) that changes the sign of the variable x.
+	Hint: the function would be called using neg(&x)...**
 
 
 
@@ -135,11 +135,12 @@ Function pointers
 
 Pointers can also contain the address of a section of compiled code in memory, rather than data.
 This allows us to pass a function as a parameter to another function... by passing the address of its code.
-We will use later this to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
+We will use this later to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
 
 For now, let's just look at a typical situation where this would be useful.
 Imagine that you want to find the second derivative of a function :math:`f`.
-To find a good numerical estimate, you have to calculate:
+To find a good numerical estimate, you can use the `central finite different
+<https://en.wikipedia.org/wiki/Finite_difference_coefficient>`_ relationship that you studied in first year:
 
 .. math::
 
@@ -149,7 +150,11 @@ Your implementation is likely to be generic enough to be applied to any function
 Passing the function as a parameter is useful to make sure that such numerical methods
 can be applied to any suitable function.
 
-Study the code below:
+Study the code below and focus on the implementation of the second_derivative function.
+It uses the USB Serial communication method introduced in the tutorial section
+to output results, which is useful if you can get your computer to capture it.
+
+
 
 .. code-block:: c
 
@@ -186,9 +191,9 @@ Study the code below:
 
 
 
-**Comment**: This example may look confusing if you are reading attentively enough.
+This example may look confusing if you are reading attentively enough.
 Why didn't we pass the address of the function, using second_derivative(&f_1, 1)?
-Why didn't we call the function f using (*f)(x) in the second_derivative function?
+Why didn't we call the function f using (\*f)(x) in the second_derivative function?
 
 The reason is that a function name is treated by the compiler as a pointer.
 You could also have used the following syntax for the calculation of the second derivative:
@@ -206,15 +211,27 @@ and for the function call:
 but this is less readable.
 Feel free to try it.
 
+**Comment**: Note that we used again the printf function to display the output of the calculation.
+The expression %f indicates that we want to insert there a float number.
+All the parameters to be inserted in the output are additional parameters to the printf function.
+Printf is a very powerful function to produce text output.
+Feel free to explore further the range of `printf formatting options <https://www.cprogramming.com/tutorial/printf-format-strings.html>`_.
+
 .. admonition:: Task
 
 	**Start a new project with the code above, add a function called first_derivative
 	to calculate the first derivative of a function using the approach above,
 	and print both the first and second derivative of** :math:`f(x)=x^2` **for** :math:`x=2`.
 
-	**Note that this requires you to be able to read the text output
-	as presented in the debugging section. If you can't get the text output to work at this stage,
-	just think about what you would do but don't worry too much about executing the code.**
+
+.. math::
+
+   \frac{df}{dx} = \frac{f(x+h) - f(x-h)}{2h}
+
+
+**Note that this requires you to be able to read the text output
+as presented in the debugging section. If you can't get the text output to work at this stage,
+just think about what you would do but don't worry too much about executing the code.**
 
 
 

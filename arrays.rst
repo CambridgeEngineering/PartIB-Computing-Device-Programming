@@ -35,12 +35,18 @@ The whole array can also be initiated at the point of declaration:
 
 In memory, arrays are contiguous sections of memory that are allocated to contain exactly
 the amount of data requested.
-If you try to acces the content of an array beyond the range allocated,
+Because all entries in an array are of the same type (and the same size in memory),
+accessing the elements of an array is very fast:
+to find the location in memory of the nth element, you add to the address
+of the first element n times the size on an element.
+To find the location of the next element, simply add the size of the element to the address current element.
+
+If you try to access the content of an array beyond the range allocated,
 expect to get random results, or a crash at execution time.
 
 **Always double check what you are doing with arrays!**
 
-The lack of reproducibility of the errors they generate make debugging sometimes difficult.
+The lack of reproducibility of the errors they generate makes debugging sometimes difficult.
 
 
 
@@ -125,13 +131,5 @@ Study the code below, guess what it would do and try it on your board.
 .. admonition:: Task
 
    **Change the code to repeat the sequence {Red, Blue, Red, Green, Blue, Green}.**
-
-
-
-Optional - Dynamic memory allocation
-------------------------------------
-
-This section of the tutorial is useful for the second variant of the activity.
-
 
 

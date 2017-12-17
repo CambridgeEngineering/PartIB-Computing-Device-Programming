@@ -31,7 +31,7 @@ Let's look at one of the previous tutorial's example:
 
 What if we would like now to toggle the state of the LED each time we
 press the button: if the LED is off, pressing the button turns it on,
-but if the LED is off, pressing the button turns in off.
+but if the LED is off, pressing the button turns it off.
 
 Instinctively one would want to write the code below:
 
@@ -49,7 +49,7 @@ Instinctively one would want to write the code below:
 	  while(true) 
 	  {
 		if (button == 1)
-			 led2 = ! led2;
+			 led1 = ! led1;
 			 // The symbol ! is the logical NOT
  		wait(0.02); 
 	  }
@@ -70,7 +70,7 @@ button, but a particular
 
 You could increase the duration of the wait, hoping that the user would
 release the button by the time it ends.
-But then you may as well miss the input all together.
+But then you might miss the input all together.
 
 One could monitor carefully the state of the button, and
 switch colour when the state changes.
@@ -128,7 +128,11 @@ The line:
     button.rise(onButtonPress);  
 
 assigns a particular function with the "rise" event on the pin, which
-corresponds here to the button being pressed (transition low to high on the pin).
+corresponds here to the button being pressed.
+It may appears slightly counter intuitive that the event is called
+rise when you are pushing the button down... but this refers to the
+fact that the input (voltage) on the corresponding pin is transitioning
+from O to 1 (Vcc).
 
 The function onButtonPress is called a *callback function*.
 It doesn't take any parameter, and doesn't return anything either.
@@ -141,6 +145,12 @@ You will find that this somehow works, but it is still slightly random.
 This is because the button is not perfect.
 When you press it, its state can fluctuate for a short time, a process
 called *bouncing*.
+
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/hAVQpKVck9s" frameborder="0" allowfullscreen></iframe>
+
 
 
 
@@ -183,7 +193,7 @@ Hooray!
 
 
 In the next section, we will explain why this solution is not really good practice,
-and develop a more complex example that will show youhow to properly
+and develop a more complex example that will show you how to properly
 use interrupts.
 
 
