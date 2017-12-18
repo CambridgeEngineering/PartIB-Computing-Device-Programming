@@ -11,16 +11,6 @@ This page contains the online material for the Computing activity on
 Device Programming, for the Second year Engineering students at the
 University of Cambridge.
 
-The :ref:`tutorial-sec` section is now ready.
-
-Two activities will follow:
-
-**Activity 1**: on memory and interrupts, will be published mid Dec.
-
-**Activity 2**: on sensors, will be published mid January.
-
-|
-|
 
 .. toctree::
    :maxdepth: 2
@@ -32,8 +22,10 @@ Two activities will follow:
    activity-1
 ..   activity-2
 
+**Activity 2**: on sensors, will be published mid January.
 
-More to come in due course...
+
+
 
 ..	Indices and tables
 ..	==================
