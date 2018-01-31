@@ -24,14 +24,14 @@ the fairly generic expression of Internet of Things.
 
 The modern Engineer must therefore embrace this ubiquity, and make
 sure that whatever their specialisation is, they master the basic
-aspects of sensing and communication.  This practical series of
+aspects of sensing and communication.  This series of practical
 activities is here to fill this gap and deliver all part I Engineers
 with the computational and experimental skills to approach with more
 confidence the development of simple embedded devices to perform
 common tasks.  The tasks selected cover the basic operations of a
 common ARM based microcontroller.  Once familiar with a
 microcontroller, you will soon appreciate that they are all similar,
-and that your skill are amazingly transferable.
+and that your new skills are amazingly transferable.
 
 
 This activity is not meant to stop at the end of the last exercise,

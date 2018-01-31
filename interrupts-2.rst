@@ -242,7 +242,7 @@ We don't even need the while loop in the main function.
 	 
 	int main() 
 	{   
-		button.rise(&onButtonPress);  
+		button.rise(onButtonPress);  
 		cycle_ticker.attach(onCycleTicker, cycle_time_interval);
 
 		// Even more important code could be placed here
