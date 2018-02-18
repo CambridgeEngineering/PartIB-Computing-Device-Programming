@@ -1,4 +1,4 @@
-Activity 2: I2C bus and sensors
+Activity 2: I\ :sup:`2`\ C bus and sensors
 ===============================
 
 
@@ -13,8 +13,8 @@ The aim of the activity is to illustrate simple ways to monitor, log and transfe
 It builds up on the skills you learned in the first activity - you'll get to use arrays and interrupts again!
 
 
-This activity will teach you how to interact with a large class of devices communicating with the ubiquitous I2C bus and protocol.
-You will also have to polish your soldering skills, and learn how to navigate a complex datasheet to find the information you need.
+This activity will teach you how to interact with a large class of devices communicating with the ubiquitous I\ :sup:`2`\ C bus and protocol.
+You will also have to polish your soldering skills, and learn how to navigate a complex data-sheet to find the information you need.
 
 
 
@@ -22,13 +22,15 @@ Task to complete
 ----------------
 
 
-You have to collect from the Teaching Office a sensor and a strip of 5 jumper wires that you'll need to connect the sensor to your board. The EIETL has facilities you can use to solder the headers to the sensor breadboard.
+You have to collect from the Teaching Office a sensor and a strip of 5 jumper wires that you'll need to connect the sensor to your board.
+The EIETL has facilities you can use to solder the headers to the sensor breadboard.
 
-The datasheet of your sensor is available here. More information about how it is assembled on the chip we give you can be found here.
+The data-sheet of your sensor is available :download:`here <docs/temp_sensor_lm75b.pdf>`.
+The sensor is assembled on a breakout board to make it more convenient to use.
 
 Using the sensor and your micro-controller, you will have to:
 
-- record a temprature value every second in a buffer that will always contain the last minute of data.
+- record a temperature value every second in a buffer that will always contain the last minute of data.
 
 - if the temperature goes above a threshold value, trigger an interrupt that will get the LEDs to flash an alarm signal (for you to imagine), and dump all the data in the buffer through the USB serial communication so that you computer can analyse it.
 
@@ -40,11 +42,9 @@ What you may need to learn
 
 To complete the task, you may need to learn the following elements
 
-- What are I2C devices and how to communicate with them?
-	Intro. 
+- What are I\ :sup:`2`\ C devices and how to communicate with them?
 
-- Preparing your sensor
-	Soldering info and demo.
+- Soldering and testing your sensor.
 
 
 

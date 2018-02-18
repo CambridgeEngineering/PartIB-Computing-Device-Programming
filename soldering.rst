@@ -89,6 +89,20 @@ Note the safety warning:
    <iframe width="560" height="315" src="http://www.youtube.com/embed/1SItk_6e-mc" frameborder="0" allowfullscreen></iframe>
 
 
+.. DANGER::
+   Be very careful not to shortcut VCC and GND when you connect the address pads. It is easy to link the three of them together if you are not paying attention. Such a shortcut will prevent the system to work, and would probably damage your board and/or sensor. So check that the soldering is fine, and use an R-meter to make sure that VCC is not connected to GND if needed. If you made a mistake? Don't panic, and read below!
+
+
+**Removing solder**
+
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/mcc2kdqpvKg" frameborder="0" allowfullscreen></iframe>
+
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/pWi0EyEDnEU" frameborder="0" allowfullscreen></iframe>
+
+
 
 |
 |
@@ -107,7 +121,7 @@ The `Wikipedia page on solder <https://en.wikipedia.org/wiki/Solder>`_  is very 
 
 .. admonition:: Task
 
-   **Look at the lead-tin (Pb-Sn) phase diagram on your "teach yourself phase diagrams" handouts, and check on the wikipedia page that the composition of lead-based solder used in electronics is eutectic.
+   **Look at the lead-tin (Pb-Sn) phase diagram on your "teach yourself phase diagrams" handouts, and check on the Wikipedia page that the composition of lead-based solder used in electronics is eutectic.
    Find evidence that the composition of lead based solders used in plumbing tend to be set away from the eutectic point.**
 
 Link to the relevant file of Moodle (2017): `teach yourself phase diagrams <https://www.vle.cam.ac.uk/mod/resource/view.php?id=452751>`_

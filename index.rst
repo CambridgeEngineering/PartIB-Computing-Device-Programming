@@ -20,9 +20,7 @@ University of Cambridge.
    tutorial
 
    activity-1
-..   activity-2
-
-**Activity 2**: on sensors, will be published mid January.
+   activity-2
 
 
 
