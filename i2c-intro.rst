@@ -50,6 +50,7 @@ You can also find the description of the pins on the `spec sheet online <https:/
 
 
 Most of the microcontrollers will come with libraries and tutorials to quickly get your system to communication through I\ :sup:`2`\ C.
+Here is the link to the mbed documentation: `mbed I2c class <https://docs.mbed.com/docs/mbed-os-api/en/mbed-os-5.5/api/classmbed_1_1I2C.html>`_.
 Note that the protocol is simple enough that with a bit of experience it is easy to understand what signals microcontroller and attached devices are exchanging.
 
 

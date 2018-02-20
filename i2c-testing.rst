@@ -8,7 +8,8 @@ Connecting the device
 
 Hopefully you found already that the default pins for I\ :sup:`2`\ C communication on your microcontroller board are 
 
-Use the jumper wires to connect VCC and GND, as well as SDA and SCL to the pins D14 and D15.
+While your board is disconnected from the computer, use the jumper wires to connect VCC to the 3.3V pin of the board, and GND to GND.
+Then connect SDA and SCL to the pins D14 and D15, respectively, in order to use the default I2C pins.
 
 
 
@@ -59,8 +60,8 @@ It also uses led flashes to communicate visually the address.
 	// For recording the address of the last device found
 	unsigned int address=0;
 	
-	int main() {
-	
+	int main()
+	{
 	    green=0;
 	    blue=0;
 	
@@ -79,74 +80,76 @@ It also uses led flashes to communicate visually the address.
 	    t.reset();
 	    t.start();
 	
-	    // Address '0' is all call and it is undefined how this would work so we run from address 1 to 127
+	    // Address '0' is all call and it is undefined how this would work
+	    // so we run from address 1 to 127
 	
-	  for(i = 1; i < 128 ; i++)
+	    for(i = 1; i < 128 ; i++)
 	
-			{
-			// Read one byte from whatever the default read register is from every I2C address.
-			// i2c.read returns the I2C ACK bit sent by the slave, if anyone answered the call:
-			// 0 on success (ack), non-0 on failure (nack)
+	        {
+	        // Read one byte from whatever the default read register is from every I2C address.
+	        // i2c.read returns the I2C ACK bit sent by the slave, if anyone answered the call:
+	        // 0 on success (ack), non-0 on failure (nack)
 
-			// Note that while I2C addresses are from 1-127 we need to left-shift one bit
-			// as the address sent on the I2C bus is 8bits 
-			// with the lowest but indicating if this is a write or read transaction.	
-			// The operation i<<1 does the bit shifting.
+	        // Note that while I2C addresses are from 1-127 we need to left-shift one bit
+	        // as the address sent on the I2C bus is 8bits 
+	        // with the lowest but indicating if this is a write or read transaction.	
+	        // The operation i<<1 does the bit shifting.
 			
-			if(i2c.read(i<<1, read_data, 1)==0)
-				{
+	        if(i2c.read(i<<1, read_data, 1)==0)
+	            {
 				
-				// Print the address at which we found a device as a hex and as a decimal number
-				pc.printf ("I2C device found at address Hex: %x Decimal: %d\r\n",i,i);
+	            // Print the address at which we found a device as a hex and as a decimal number
+	            pc.printf ("I2C device found at address Hex: %x Decimal: %d\r\n",i,i);
 	
-				// If we find one device at least light the green LED and save its address
-				green=1;
-				address=i;
-				}
-			// Flash the blue LED to show we are scanning - only slow if no devices connected
-			blue=!blue;
-			}
+	            // If we find one device at least light the green LED and save its address
+	            green=1;
+	            address=i;
+	            }
+	        // Flash the blue LED to show we are scanning - only slow if no devices connected
+	        blue=!blue;
+	        }
 	
 	    // Stop the timer and report time to scan
 	    t.stop();
 	    pc.printf("Bus scanned in %d ms\r\n",t.read_ms());
 	
-		// If device not found flash both red & blue LEDs	
-	    if (address==0){
-			red=0;green=0;blue=1;
-			while(1){
-				red=!red;
-				blue=!blue;
-				wait(0.25);
-				}
-			}
+	    // If device not found flash both red & blue LEDs	
+	    if (address==0)
+	        {
+		    red=0;green=0;blue=1;
+		    while(1)
+		        {
+		        red=!red;
+		        blue=!blue;
+		        wait(0.25);
+		        }
+		    }
 	
-		// If we find at least one device
-		// Flash address using LEDs:
-		// Red flashes first digit and blue second
+	    // If we find at least one device
+	    // Flash address using LEDs:
+	    // Red flashes first digit and blue second
 	
 	    red=0;	blue=0;
 	
-	    while(1) {
-		  wait(2);
-		  for (i=0;i<(address/16);i++)
-			{
-			wait(0.25);
-			red=1;
-			wait(0.25);
-			red=0;
-			}
-	
-		  wait(0.5);
-	
-		  for (i=0;i<(address%16);i++)
-			{
-			wait(0.25);
-			blue=1;
-			wait(0.25);
-			blue=0;
-			}
-		}
+	    while(1)
+	        {
+	        wait(2);
+	        for (i=0;i<(address/16);i++)
+	            {
+	            wait(0.25);
+	            red=1;
+	            wait(0.25);
+	            red=0;
+	            }
+	        wait(0.5);
+	        for (i=0;i<(address%16);i++)
+	            {
+	            wait(0.25);
+	            blue=1;
+	            wait(0.25);
+	            blue=0;
+	            }
+	        }
 	}
 	
 
@@ -156,7 +159,9 @@ Getting your first temperature measurements
 
 .. admonition:: Task
 
-   **Start a new project, and select the template called** *Read external LM75 temperature sensor using I2C master*. **The code below should now be available to you. Compile it and try it on your board. You will need to catch the serial output to read the temperature.**
+   **Start a new project, and select the template called** *Read external LM75 temperature sensor using I2C master*. **The code below should now be available to you.
+   Compile it and try it on your board. You will need to catch the serial output to read the temperature.
+   Hold the sensor between your fingers, and monitor the evolution of the temperature.**
 
 
 .. code-block:: c
