@@ -6,9 +6,9 @@ Connecting and testing the device
 Connecting the device
 ---------------------
 
-Hopefully you found already that the default pins for I\ :sup:`2`\ C communication on your microcontroller board are 
+You were previously asked to identify the default I2C pins on your micro-controller, called I2C1_SCL and I2C1_SDA in the pin layout; they are D14 and D15, on the top-right section of the board. 
 
-While your board is disconnected from the computer, use the jumper wires to connect VCC to the 3.3V pin of the board, and GND to GND.
+While your board is disconnected from the computer, use the male end of the jumper wires to connect VCC to the 3.3V pin of the board, and GND to GND.
 Then connect SDA and SCL to the pins D14 and D15, respectively, in order to use the default I2C pins.
 
 
