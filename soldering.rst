@@ -113,10 +113,10 @@ The Science of soldering
 ------------------------
 
 Did you know that the composition of Lead-based solder is determined to match a eutetic transition?
-Why not try to relate your knowledge of Materials to understand how solder works?
+You can use your knowledge of Materials to understand how solder works!
 
-Have a look at this nice page from `DoITPoMS - Cambridge University Materials Science <https://www.doitpoms.ac.uk/tlplib/phase-diagrams>`_ on the science of soldering.
-The `Wikipedia page on solder <https://en.wikipedia.org/wiki/Solder>`_  is very informative.
+Have a look at this nice page from `DoITPoMS - Cambridge University Materials Science <https://www.doitpoms.ac.uk/tlplib/phase-diagrams/uses.php>`_ on the science of soldering.
+The `Wikipedia page on solder <https://en.wikipedia.org/wiki/Solder>`_  is very informative too.
 
 
 .. admonition:: Task

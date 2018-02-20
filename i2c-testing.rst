@@ -8,7 +8,7 @@ Connecting the device
 
 Hopefully you found already that the default pins for I\ :sup:`2`\ C communication on your microcontroller board are 
 
-Use your jumper wires to connect xxxx
+Use the jumper wires to connect VCC and GND, as well as SDA and SCL to the pins D14 and D15.
 
 
 
@@ -17,7 +17,7 @@ Testing that the device is able to communicate and check its address
 
 The code below will help you test communications with your device.
 It scans all I\ :sup:`2`\ C addresses on the bus connected to the default I\ :sup:`2`\ C pins.
-For each address it tries to read something.
+For each address, it tries to read something.
 If it manages to find a device, it returns the address on the serial port so that you can catch it on your terminal.
 It also uses led flashes to communicate visually the address.
 
@@ -33,30 +33,30 @@ It also uses led flashes to communicate visually the address.
 	
 	// Create an I2C object on the defeault pins D15 and D14
 	I2C i2c(I2C_SDA, I2C_SCL);
+	// There are other pins that can be used for I2C the above is the default bus
+	// See the board pinout on the mbed webpage for more details.
 	
-	//Use the built in serial bridge to output
+	
+	// Use the built in serial bridge to output
 	Serial pc(USBTX, USBRX);
 	
-	//Some flashy lights
+	
+	// Some flashy lights
 	DigitalOut green(LED1);
 	DigitalOut blue(LED2);
 	DigitalOut red(LED3);
+
 	
-	//There are other pins that can be used for I2C the above is the default bus
-	//For example you could use these
-	//I2C i2c(PB_11, PB_10);
-	//See the board pinout on the mbed webpage for more details]
-	
-	//Create a timer so we can time the bus scan
+	// Create a timer so we can time the bus scan
 	Timer t;
 	
-	//Buffer for read data
+	// Buffer for read data
 	char read_data[2];
 	
-	//A variable for counting
+	// A variable for counting
 	unsigned int i=0;
 	
-	//For recording the address of the last device found
+	// For recording the address of the last device found
 	unsigned int address=0;
 	
 	int main() {
@@ -65,72 +65,72 @@ It also uses led flashes to communicate visually the address.
 	    blue=0;
 	
 	
-	// Make sure you set your serial terminal to match this
+		// Make sure you set your serial terminal to match this
+	    pc.baud(9600);
 	
-	    pc.baud(115200);
-	
-	    //Most I2C devices can cope with 400 kHz bus speed. If you have any problems reduce it to 100 kHz
-	    //Try changing the I2C speed and seeing what the effect on the speed of the program is.
+	    // Most I2C devices can cope with 400 kHz bus speed.
+	    // If you have any problems reduce it to 100 kHz.
+	    // Try changing the I2C speed and seeing what the effect on the speed of the program is.
 	
 	    i2c.frequency(400000);
 	    pc.printf("Starting Bus Scan....\r\n");
 	
-	    //Reset and start timer
+	    // Reset and start timer
 	    t.reset();
 	    t.start();
 	
-	    //Address '0' is all call and it is undefined how this would work so we run from address 1 to 127
+	    // Address '0' is all call and it is undefined how this would work so we run from address 1 to 127
 	
-	    for(i = 1; i < 128 ; i++)
+	  for(i = 1; i < 128 ; i++)
 	
-	        {
+			{
+			// Read one byte from whatever the default read register is from every I2C address.
+			// i2c.read returns the I2C ACK bit sent by the slave, if anyone answered the call:
+			// 0 on success (ack), non-0 on failure (nack)
+
+			// Note that while I2C addresses are from 1-127 we need to left-shift one bit
+			// as the address sent on the I2C bus is 8bits 
+			// with the lowest but indicating if this is a write or read transaction.	
+			// The operation i<<1 does the bit shifting.
+			
+			if(i2c.read(i<<1, read_data, 1)==0)
+				{
+				
+				// Print the address at which we found a device as a hex and as a decimal number
+				pc.printf ("I2C device found at address Hex: %x Decimal: %d\r\n",i,i);
 	
-	//Read one byte from whatever the default read register is from every I2C address. If no error then device present.
-	//Note that while I2C addresses are from 1-127 we need to left shift one bit as the address sent on the I2C bus
-	//is 8bits with the lowest but indicating if this is a write or read transaction.
-	
-	// Read one byte from address i<<1 and place it in the first element of the array of char 'read_data'
-	        if(i2c.read(i<<1, read_data, 1)==0)
-	                {
-	
-	//Print the address at which we found a device as a hex and as a decimal number
-	
-			pc.printf ("I2C device found at address Hex: %x Decimal: %d\r\n",i,i);
-	
-	//If we find one device at least light the green LED and save its address
-			green=1;
-			address=i;
+				// If we find one device at least light the green LED and save its address
+				green=1;
+				address=i;
+				}
+			// Flash the blue LED to show we are scanning - only slow if no devices connected
+			blue=!blue;
 			}
-		//Flash the blue LED to show we are scanning - only slow if no devices connected
-		blue=!blue;
-	    }
 	
-	    //Stop the timer and report time to scan
+	    // Stop the timer and report time to scan
 	    t.stop();
 	    pc.printf("Bus scanned in %d ms\r\n",t.read_ms());
 	
-	
-	//If device not found flash red LED quickly
-	
+		// If device not found flash both red & blue LEDs	
 	    if (address==0){
-		red=0;green=0;blue=1;
-		while(1){
-			red=!red;
-			blue=!blue;
-			wait(0.25);
+			red=0;green=0;blue=1;
+			while(1){
+				red=!red;
+				blue=!blue;
+				wait(0.25);
+				}
 			}
-		}
 	
-	// If we find at least device
-	// Flash address using LEDs: Red flashes first digit and blue second
+		// If we find at least one device
+		// Flash address using LEDs:
+		// Red flashes first digit and blue second
 	
-	
-	    red=0;
-	    blue=0;
+	    red=0;	blue=0;
 	
 	    while(1) {
 		  wait(2);
-		  for (i=0;i<(address/16);i++) {
+		  for (i=0;i<(address/16);i++)
+			{
 			wait(0.25);
 			red=1;
 			wait(0.25);
@@ -139,12 +139,13 @@ It also uses led flashes to communicate visually the address.
 	
 		  wait(0.5);
 	
-		  for (i=0;i<(address%16);i++) {
-	        wait(0.25);
-	        blue=1;
-	        wait(0.25);
-	        blue=0;
-	        }
+		  for (i=0;i<(address%16);i++)
+			{
+			wait(0.25);
+			blue=1;
+			wait(0.25);
+			blue=0;
+			}
 		}
 	}
 	
@@ -155,7 +156,7 @@ Getting your first temperature measurements
 
 .. admonition:: Task
 
-   **Start a new project, and select the template called** *Read external LM75 temperature sensor using I\ :sup:`2`\ C master*. **The code below should now be available to you. Compile it and try it on your board. You will need to catch the serial output to read the temperature.**
+   **Start a new project, and select the template called** *Read external LM75 temperature sensor using I2C master*. **The code below should now be available to you. Compile it and try it on your board. You will need to catch the serial output to read the temperature.**
 
 
 .. code-block:: c
@@ -210,7 +211,7 @@ Getting your first temperature measurements
 				tempval = 512 - tempval;
 			}
 	 
-			// Decimal part (0.5Â°C precision)
+			// Decimal part (0.5°C precision)
 			if (tempval & 0x01) {
 				TempCelsiusDisplay[5] = 0x05 + 0x30;
 			} else {
@@ -232,3 +233,11 @@ Getting your first temperature measurements
 	}
 	 
 
+This code is fairly complex, and it will be difficult to understand what it does at a glance.
+To understand what happens with the different registers, you will need to dive into the sensor data sheet
+and study what the different registers are for, and how to use them to configure the device.
+
+You can certainly give it a go now, but we will tell you more about this at the start of Easter vacation...
+
+
+ 
