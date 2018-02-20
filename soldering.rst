@@ -114,7 +114,7 @@ Note the safety warning:
 The Science of soldering
 ------------------------
 
-Did you know that the composition of Lead-based solder is determined to match a eutetic transition?
+Did you know that the composition of Lead-based solder is determined to match a eutectic transition?
 You can use your knowledge of Materials to understand how solder works!
 
 Have a look at this nice page from `DoITPoMS - Cambridge University Materials Science <https://www.doitpoms.ac.uk/tlplib/phase-diagrams/uses.php>`_ on the science of soldering.
