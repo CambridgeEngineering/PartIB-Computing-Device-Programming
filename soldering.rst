@@ -53,7 +53,7 @@ DIY in the EIETL
    **Book a slot in the EIETL weeks 5-8, solder the headers and set the I2C address of your device**
 
 
-*How to book for a slot to solder the components?*
+**How to book for a slot to solder the components?**
 
 Please use `this link <http://to.eng.cam.ac.uk/teaching/apps/cuedle/index.php?context=HeaderSoldering>`_ to sign up for a slot at the soldering station.
 
@@ -90,7 +90,9 @@ Note the safety warning:
 
 
 .. DANGER::
-   Be very careful not to shortcut VCC and GND when you connect the address pads. It is easy to link the three of them together if you are not paying attention. Such a shortcut will prevent the system to work, and would probably damage your board and/or sensor. So check that the soldering is fine, and use an R-meter to make sure that VCC is not connected to GND if needed. If you made a mistake? Don't panic, and read below!
+   Be very careful not to shortcut VCC and GND when you connect the address pads. It is easy to link the three of them together if you are not paying attention. Such a shortcut will prevent the system to work, and would probably damage your board and/or sensor. So check that the soldering is fine, and use an R-meter to make sure that VCC is not connected to GND. 
+
+**Have you made a mistake? Don't panic, and read below!**
 
 
 **Removing solder**

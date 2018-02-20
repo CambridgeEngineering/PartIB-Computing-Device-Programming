@@ -239,10 +239,14 @@ Getting your first temperature measurements
 	 
 
 This code is fairly complex, and it will be difficult to understand what it does at a glance.
-To understand what happens with the different registers, you will need to dive into the sensor data sheet
-and study what the different registers are for, and how to use them to configure the device.
+Note first that the address set as a constant at the top of the code include already the 1 bit shift.
+The functions of the different registers are explained in the sensor data sheet.
+Some are used to configure the device, others to recover sensor data, and in particular temperature.
 
-You can certainly give it a go now, but we will tell you more about this at the start of Easter vacation...
+There is enough information in the data sheet to allow you to complete the task at this stage.
+We will nonetheless provide more guidance by releasing another tutorial section at the start of Easter vacation.
+
+
 
 
  

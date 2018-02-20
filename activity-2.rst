@@ -8,7 +8,7 @@ Learning objectives
 -------------------
 
 
-In this second activity, you will learn about a very common aspect of device programming: monitoring, logging and transfering sensor data.
+In this second activity, you will learn about a very common aspect of device programming: monitoring, logging and transferring sensor data.
 It builds up on the skills you learned in the first activity - you will get to use arrays and interrupts again!
 
 
