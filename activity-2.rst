@@ -2,7 +2,6 @@ Activity 2: I\ :sup:`2`\ C bus and sensors
 ===============================
 
 
-*Material under development*
 
 
 Learning objectives
