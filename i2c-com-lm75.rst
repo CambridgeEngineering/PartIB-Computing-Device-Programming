@@ -190,7 +190,7 @@ This is the content of the buffer data_read at the start:
 
 |
 
-These 11 bits represents the whole temperature range, with a 0.125 degree Celcius precision, i.e. 1/8 of a degree.
+These 11 bits represents the whole temperature range, with a 0.125 degree Celsius precision, i.e. 1/8 of a degree.
 The binary value of each bit, including sign, is detailed in the table below:
 
 .. raw:: html
@@ -241,7 +241,7 @@ You may want to learn a bit about `bitwise operations in C++ <https://en.wikiped
 The mbed example code for the LM75 sensor does something really complicated and long winded to build the temperature as a text.
 The appendix below explains what it does, but we are going to explain here a much simpler method.
 
-The representation we get from the sensor, stored in data_read, is not too far from the represenntaion of a 16-bit signed integer: 
+The representation we get from the sensor, stored in data_read, is not too far from the representation of a 16-bit signed integer: 
 
 .. raw:: html
 
@@ -452,7 +452,7 @@ This is done using the bitwise OR operator, "|", between data_read[0] << 8 and d
 
 |
 
-To get the temperature in degree Celcius, we need to divide this number by 256, making sure the output is a floating point number.
+To get the temperature in degree Celsius, we need to divide this number by 256, making sure the output is a floating point number.
 To indocate to the compiler that we want the floating point division, we write 256 with a decimal point, 256.0.
 The conversion code therefore becomes:
 
@@ -537,7 +537,7 @@ We encourage you to use the method explained above to record and display tempera
 
 Note that a string is an array of bytes representing text characters according to what is called the `ascii table <https://www.asciitable.com/>`_.
 The characters "0" to "9" corresponds to values 30 to 39 in hexadecimal representation.
-So "k + 0x30" represents the ascii value of the character corresding to the digit value k, with 0<=k<=9.
+So "k + 0x30" represents the ascii value of the character corresponding to the digit value k, with 0<=k<=9.
 
 
 

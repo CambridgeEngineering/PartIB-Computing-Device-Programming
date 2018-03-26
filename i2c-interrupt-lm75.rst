@@ -22,13 +22,13 @@ The sensor needs to be connected as previously, with in addition the OS pin link
 
 The code contains a couple of new elements:
 
-- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registeres; the operation " & 0xFF80" essentially makes sure that we set to 0 the 7 least significant bits of i16.
+- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registers; the operation " & 0xFF80" essentially makes sure that we set to 0 the 7 least significant bits of i16.
 
 - The interrupt pin is active when its value is low, so we should trigger the interrupt when OS goes from high to low, hence the use of the function "fall" rather than "rise" as introduced in the previous activity.
 
 When the code is running, you should be able to raise the temperature enough with your fingers to trigger the interrupt and turn the blue led on.
 As the sensor cools down, as new interrupt is triggered once the temperature goes below 26 degree Celsius, turning the blue led off.
-Everytime an interrupt is triggered, a red led should also flash on the sensor.
+Each time an interrupt is triggered, a red led should also flash on the sensor.
 
 .. code-block:: c
 
