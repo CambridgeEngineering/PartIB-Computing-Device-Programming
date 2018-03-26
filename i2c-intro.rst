@@ -89,6 +89,6 @@ Of course, we will use this to make sure that we have an easy start.
 
 .. admonition:: Task
 
-   **Look at the data-sheet of the sensor. What is the address range? How to set it? You sensor is already soldered to a breakout board. Look at the back of the breakout board, and try to understand how to set the address of the device. The next section will show you how to do it.**
+   **Look at the data-sheet of the sensor. What is the address range? How to set it? Your sensor is already soldered to a breakout board. Look at the back of the breakout board, and try to understand how to set the address of the device. The next section will show you how to implement it.**
 
 

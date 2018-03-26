@@ -93,6 +93,9 @@ few more ideas there:
 https://os.mbed.com/handbook/Debugging
 
 
+
+.. _serial-tuto-label:
+
 Communications between the computer and the microcontroller
 -----------------------------------------------------------
 

@@ -153,6 +153,12 @@ It also uses led flashes to communicate visually the address.
 	}
 	
 
+
+
+
+.. _i2c-sample-code:
+
+
 Getting your first temperature measurements
 -------------------------------------------
 
@@ -160,8 +166,11 @@ Getting your first temperature measurements
 .. admonition:: Task
 
    **Start a new project, and select the template called** *Read external LM75 temperature sensor using I2C master*. **The code below should now be available to you.
-   Compile it and try it on your board. You will need to catch the serial output to read the temperature.
+   Compile it and try it on your board. 
    Hold the sensor between your fingers, and monitor the evolution of the temperature.**
+
+   You will need to catch the serial output to read the temperature, as explained in the corresponding tutorial section:
+   :ref:`serial-tuto-label`
 
 
 .. code-block:: c
@@ -236,15 +245,11 @@ Getting your first temperature measurements
 		}
 	 
 	}
-	 
-
-This code is fairly complex, and it will be difficult to understand what it does at a glance.
-Note first that the address set as a constant at the top of the code include already the 1 bit shift.
+	
 The functions of the different registers are explained in the sensor data sheet.
 Some are used to configure the device, others to recover sensor data, and in particular temperature.
 
-There is enough information in the data sheet to allow you to complete the task at this stage.
-We will nonetheless provide more guidance by releasing another tutorial section at the start of Easter vacation.
+
 
 
 

@@ -63,6 +63,8 @@ It may take you 2-3 hours to go through it.
    i2c-intro
    soldering
    i2c-testing
+   i2c-com-lm75
+   i2c-interrupt-lm75
 
 Two extra sections will be added at the start of the Easter vacation:
 (i) a section to explain the use of the registers to configure the device,
