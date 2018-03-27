@@ -267,7 +267,7 @@ The representation we get from the sensor, stored in data_read, is not too far f
 		<td class="tg-yw4l">1024</td>
 		<td class="tg-yw4l">512</td>
 		<td class="tg-yw4l">256</td>
-		<td class="tg-yw4l">126</td>
+		<td class="tg-yw4l">128</td>
 		<td class="tg-yw4l">64</td>
 		<td class="tg-yw4l">32</td>
 		<td class="tg-yw4l">16</td>
@@ -526,22 +526,21 @@ Overall, the code with the new conversion function would be:
 
 **Comments regarding the sample code provided through the mbed compiler**
 
-Feel free at this stage to look again at the sample code provided with the mbed compiler. 
-You will recognise similar operations.
-However, because the code uses int (32 bits by default) instead of int16_t, the sign bit is not at the right position, and the sign manipulation has to be done carefully as a result.
-This code also creates the string array digit by digit rather than using the printf function.
-Finally, it only uses 9 bits on the data, as the shift "tempval >>= 7" destroys the values of D1 and D0, hence the 0.5 degree precision in the test code.
+Feel free at this stage to look again at the sample code provided with the mbed compiler:
+:ref:`i2c-sample-code`
 
-We encourage you to use the method explained above to record and display temperature data.
+You will recognise similar operations to transform the buffer into a number.
+However, because the code uses int (32 bits by default) instead of int16_t, the sign bit is not at the right position, and the conversion has to be done carefully as a result.
+On the bright side, bitwise operations on signed integers are not always well defined and this code is more likely to work on a broader set of platforms.
 
+Moreover, the mbed code only uses 9 bits on the data, as the shift "tempval >>= 7" destroys the values of D1 and D0, hence the 0.5 degree precision, most likely to ensure compatibility with older sensors operating with 9-bit precision.
 
-Note that a string is an array of bytes representing text characters according to what is called the `ascii table <https://www.asciitable.com/>`_.
+Note that the mbed code creates the string array digit by digit rather than using the printf function.
+A string is an array of bytes representing text characters according to what is called the `ascii table <https://www.asciitable.com/>`_.
 The characters "0" to "9" corresponds to values 30 to 39 in hexadecimal representation.
 So "k + 0x30" represents the ascii value of the character corresponding to the digit value k, with 0<=k<=9.
 
-
-
-
+We encourage you to use the method explained above (using the 16-bit integer) to record and display temperature data.
 
 In the next (and final) section, you will be given a code to test the interrupt mode of the sensor.
 
