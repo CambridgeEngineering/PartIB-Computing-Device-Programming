@@ -9,10 +9,10 @@ Hardware interrupt
 ------------------
 
 Read section 7.1 of the datasheet. 
-The OS pin of the sensor is useful to let the device monitor temperature in the background, and send a signal when the temperature exceed a threshold, Tos.
-A hysteresis temperature, Thyst, is defined to avoid noisy signal in the interrupt pin.
+The OS pin of the sensor is useful to let the device monitor temperature in the background, and send a signal when the temperature exceeds a threshold, Tos.
+A hysteresis temperature, Thyst, is also defined to avoid noisy signal in the interrupt pin.
 Fig 6 of the datasheet shows how the OS pin would be controlled for a certain temperature input.
-There are two different modes of operation for the device; in what follows, we use the interrupt mode.
+There are two different modes of operation for the interrupt in the device, defined in the second bit (B1) of the Config register; in what follows, we use the interrupt mode.
 
 
 
@@ -22,13 +22,13 @@ The sensor needs to be connected as previously, with in addition the OS pin link
 
 The code contains a couple of new elements:
 
-- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registers; the operation " & 0xFF80" essentially makes sure that we set to 0 the 7 least significant bits of i16.
+- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registers; the operation " & 0xFF80" is a bitwise AND operation on the 16-bit of data and the binary number "1111111110000000"; it essentially makes sure that we set to 0 the 7 least significant bits of i16.
 
-- The interrupt pin is active when its value is low, so we should trigger the interrupt when OS goes from high to low, hence the use of the function "fall" rather than "rise" as introduced in the previous activity.
+- The interrupt pin is active when its value is low, so we should trigger the interrupt when OS goes from high to low. We therefore set the interrupt using the function "fall" rather than "rise" as introduced in the previous activity.
 
 When the code is running, you should be able to raise the temperature enough with your fingers to trigger the interrupt and turn the blue led on.
 As the sensor cools down, as new interrupt is triggered once the temperature goes below 26 degree Celsius, turning the blue led off.
-Each time an interrupt is triggered, a red led should also flash on the sensor.
+Each time an interrupt is triggered, a red led should also flash on the sensor, indicating the state of the OS pin (led is on when OS is low).
 
 .. code-block:: c
 

@@ -531,7 +531,6 @@ Feel free at this stage to look again at the sample code provided with the mbed 
 
 You will recognise similar operations to transform the buffer into a number.
 However, because the code uses int (32 bits by default) instead of int16_t, the sign bit is not at the right position, and the conversion has to be done carefully as a result.
-On the bright side, bitwise operations on signed integers are not always well defined and this code is more likely to work on a broader set of platforms.
 
 Moreover, the mbed code only uses 9 bits on the data, as the shift "tempval >>= 7" destroys the values of D1 and D0, hence the 0.5 degree precision, most likely to ensure compatibility with older sensors operating with 9-bit precision.
 
