@@ -453,7 +453,7 @@ This is done using the bitwise OR operator, "|", between data_read[0] << 8 and d
 |
 
 To get the temperature in degree Celsius, we need to divide this number by 256, making sure the output is a floating point number.
-To indocate to the compiler that we want the floating point division, we write 256 with a decimal point, 256.0.
+To indicate to the compiler that we want the floating point division, we write 256 with a decimal point, 256.0.
 The conversion code therefore becomes:
 
 
