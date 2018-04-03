@@ -33,13 +33,13 @@ But it is important to understand the sequence of typical I2C communications to 
 
 A typical sequence to write in the data registers consists in sending through I2C the device address (7 bits and R/W bit set to W), followed by the value of the pointer register, to indicate which data register we want to write on, and the data to store on this register (see figs 7 and 11 in the datasheet).
 
-Note the the value of the data line (SDA) changes when the clock is low, and must not change with the clock (SCL) is high, as this is when it would be read. However there are two exceptions, which are particular signals to indicate the start and end of communications. To indicate a start of I2C communication, the master would take SDA from high to low while the SCL is high. To indicate the end of the communication, the master would take SDA from low to high while the SCL is high. You will spot these as START and STOP in figs 7 to 12.
+Note the the value of the data line (SDA) changes when the clock is low, and must not change when the clock (SCL) is high, as this is when it would be read. However there are two exceptions, which are particular signals to indicate the start and end of communications. To indicate a start of I2C communication, the master would take SDA from high to low while the SCL is high. To indicate the end of the communication, the master would take SDA from low to high while the SCL is high. You will spot these as START and STOP in figs 7 to 12.
 
-Note also that data is only send one byte at a time, followed by the acknowledgement bit.
+Note also that data is only sent one byte at a time, followed by the acknowledgement bit.
 
 To read, a similar precess is followed, but two steps are needed (See figs 8 and 11 in the datasheet).
 First, we send to the I2C bus the device address (7 bits and R/W bit set to W), followed by the value of the pointer register to indicate what we would want to read.
-The microcontroller would then send a follow this with another start signal.
+The microcontroller would then send another start signal.
 The next part involves sending again to the I2C bus the device address, but this time with the R/W bit set to R.
 The master (microcontroller) would continue to control the clock, but this time the slave (sensor) would control the data line, and send, one byte at a time, the data requested.
 
@@ -84,11 +84,12 @@ This is why in the code the address is defined as:
 
 *The data buffer:*
 
-Whether we need to write or read, we need a space to read this information.
+Whether we need to write or read, we need a bit of memory to handle this information.
 A byte array of the right size is therefore needed.
-To control the config register, we need two bytes, one to store the register pointer, and one of the register value.
-To write on any of the three temperature registers, we need three bytes, one for the register pointer, and two for the temperature value.
-To read any of the three temperature registers, we need to write one byte for the register pointer, and then read two for the temperature value.
+
+* To control the config register, we need two bytes, one to store the register pointer, and one of the register value.
+* To write on any of the three temperature registers, we need three bytes, one for the register pointer, and two for the temperature value.
+* To read any of the three temperature registers, we need to write one byte for the register pointer, and then read two for the temperature value.
 
 The following lines in the sample code define the relevant buffers:
 
