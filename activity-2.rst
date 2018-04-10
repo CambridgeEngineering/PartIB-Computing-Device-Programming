@@ -66,10 +66,6 @@ It may take you 2-3 hours to go through it.
    i2c-com-lm75
    i2c-interrupt-lm75
 
-Two extra sections will be added at the start of the Easter vacation:
-(i) a section to explain the use of the registers to configure the device,
-and (ii) a brief exercise to test the hardware interrupt that the sensor offers.
-
 
 
 Structure and timing of the activity

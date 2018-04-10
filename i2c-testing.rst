@@ -172,6 +172,9 @@ Getting your first temperature measurements
    You will need to catch the serial output to read the temperature, as explained in the corresponding tutorial section:
    :ref:`serial-tuto-label`
 
+   Use this code as it is, without necessarily trying to understand it at this point.
+   The next section will describe in detail how to communicate with the sensor and extract relevant informatoin from the data sheet, if you are not familiar with this yet.
+
 
 .. code-block:: c
 
@@ -246,11 +249,6 @@ Getting your first temperature measurements
 	 
 	}
 	
-The functions of the different registers are explained in the sensor data sheet.
-Some are used to configure the device, others to recover sensor data, and in particular temperature.
-
-
-
 
 
 
