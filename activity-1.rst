@@ -104,31 +104,6 @@ where you don't know at the start how many colours
 to record in the sequence.
 
 
-Structure and timing of the activity
-------------------------------------
-
-Once you have covered the preliminary material above, 
-you can start to work on the task described
-at the top of this page.
-The time you will need to complete it is likely to be very variable, 
-probably between 30 mins and 3 hours for most students.
-
-Think about the approach you want to develop first.
-Work with paper, sketch your algorithm.
-Find a way to use what you know to meet the requirements of the program
-you have to create, and keep it simple.
-Importantly, break down your progress in simple tasks that you can test individually.
-
-
-**Support**
-
-Support sessions in the DPO will be available to you during the first two weeks of Lent.
-
-
-**Deadline**
-
-You have until the **end of Lent week 2** to complete the activity.
-
 
 
 
