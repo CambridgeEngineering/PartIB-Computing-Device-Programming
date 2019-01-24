@@ -23,7 +23,7 @@ Here is a good introductory video (http://www.youtube.com/embed/f95i88OSWB4), an
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/f95i88OSWB4" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/f95i88OSWB4" frameborder="0" allowfullscreen></iframe>
 
 
 
