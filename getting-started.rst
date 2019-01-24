@@ -6,7 +6,7 @@ Getting started
 What is a microcontroller?
 --------------------------
 
-Watch this short video if you are not sure what a micro-controller is.
+Watch this short video (https://www.youtube.com/embed/jKT4H0bstH8) if you are not sure what a micro-controller is.
 
 .. raw:: html
 
@@ -48,12 +48,12 @@ Unboxing and testing
 Working with ARM's mbed development environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This video will explain to you the gist of how to program ARM based
+This video (https://www.youtube.com/embed/BAzKg3vcB88) will explain to you the gist of how to program ARM based
 microcontrollers using their mbed development environment.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/BAzKg3vcB88" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/BAzKg3vcB88" frameborder="0" allowfullscreen></iframe>
 
 
 
