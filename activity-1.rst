@@ -46,7 +46,7 @@ want to extend develop their skills beyond what is required for this activity.
 
 
 
-The video below presents a demo of the first option, so that you know what to aim for.
+The video below presents a demo of the first option, so that you know what to aim for: http://www.youtube.com/embed/PDv8u4roZXs.
 
 .. raw:: html
 
