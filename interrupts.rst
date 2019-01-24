@@ -144,7 +144,7 @@ Try the code and see what happens.
 You will find that this somehow works, but it is still slightly random.
 This is because the button is not perfect.
 When you press it, its state can fluctuate for a short time, a process
-called *bouncing*.
+called *bouncing* (http://www.youtube.com/embed/hAVQpKVck9s).
 
 
 .. raw:: html
