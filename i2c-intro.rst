@@ -12,7 +12,7 @@ I\ :sup:`2`\ C is for instance the protocol used under the hood during IDP to li
 In this section, you will find a brief introduction to I\ :sup:`2`\ C, with probably just enough information to get you started.
 Not everything will be crystal clear, but hopefully most of the relevant sections of the examples code will make sense, and you will manage to modify them to get them to do what you want.
 
-Start with the following intro to I\ :sup:`2`\ C, from NXP, the company who developed it a while ago, and also the manufacturer of the sensor you will use.
+Start with the following intro to I\ :sup:`2`\ C, from NXP, the company who developed it a while ago, and also the manufacturer of the sensor you will use (http://www.youtube.com/embed/qeJN_80CiMU).
 
 
 .. raw:: html
