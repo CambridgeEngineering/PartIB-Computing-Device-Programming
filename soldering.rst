@@ -19,7 +19,7 @@ The bottom of the page
 General information about soldering
 -----------------------------------
 
-Here is a good introductory video (http://www.youtube.com/embed/f95i88OSWB4), and a :download:`comic <docs/FullSolderComic_EN.PDF>` that will teach you what you need to get started.
+Here is a good introductory video (https://www.youtube.com/embed/f95i88OSWB4), and a :download:`comic <docs/FullSolderComic_EN.PDF>` that will teach you what you need to get started.
 
 .. raw:: html
 
@@ -27,11 +27,11 @@ Here is a good introductory video (http://www.youtube.com/embed/f95i88OSWB4), an
 
 
 
-This is a more advanced video (http://www.youtube.com/embed/t9LOtOBOTb0) that will show you many more soldering tips, certainly beyond what is needed here.
+This is a more advanced video (https://www.youtube.com/embed/t9LOtOBOTb0) that will show you many more soldering tips, certainly beyond what is needed here.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/t9LOtOBOTb0" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/t9LOtOBOTb0" frameborder="0" allowfullscreen></iframe>
 
 ..
 
@@ -63,15 +63,15 @@ Please use `this link <http://to.eng.cam.ac.uk/teaching/apps/cuedle/index.php?co
 
 **Where to find the soldering stations, and what equipment will you find there?**
 
-Youtube link 1: http://www.youtube.com/embed/OauRHzzIPMk
+Youtube link 1: https://www.youtube.com/embed/OauRHzzIPMk
 
-Youtube link 2: http://www.youtube.com/embed/77X4XcjcQV0
+Youtube link 2: https://www.youtube.com/embed/77X4XcjcQV0
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/OauRHzzIPMk" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/OauRHzzIPMk" frameborder="0" allowfullscreen></iframe>
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/77X4XcjcQV0" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/77X4XcjcQV0" frameborder="0" allowfullscreen></iframe>
 
 Note the safety warning:
 
@@ -84,15 +84,15 @@ Note the safety warning:
 
 **Soldering the components**
 
-Youtube link 1: http://www.youtube.com/embed/knjjIf9SR9c
+Youtube link 1: https://www.youtube.com/embed/knjjIf9SR9c
 
-Youtube link 2: http://www.youtube.com/embed/1SItk_6e-mc
+Youtube link 2: https://www.youtube.com/embed/1SItk_6e-mc
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/knjjIf9SR9c" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/knjjIf9SR9c" frameborder="0" allowfullscreen></iframe>
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/1SItk_6e-mc" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/1SItk_6e-mc" frameborder="0" allowfullscreen></iframe>
 
 
 .. DANGER::
@@ -103,15 +103,15 @@ Youtube link 2: http://www.youtube.com/embed/1SItk_6e-mc
 
 **Removing solder**
 
-Youtube link 1: http://www.youtube.com/embed/mcc2kdqpvKg
+Youtube link 1: https://www.youtube.com/embed/mcc2kdqpvKg
 
-Youtube link 2: http://www.youtube.com/embed/pWi0EyEDnEU
+Youtube link 2: https://www.youtube.com/embed/pWi0EyEDnEU
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/mcc2kdqpvKg" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/mcc2kdqpvKg" frameborder="0" allowfullscreen></iframe>
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/pWi0EyEDnEU" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/pWi0EyEDnEU" frameborder="0" allowfullscreen></iframe>
 
 
 
