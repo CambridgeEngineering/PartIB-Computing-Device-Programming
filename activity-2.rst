@@ -72,28 +72,12 @@ Structure and timing of the activity
 ------------------------------------
 
 
-**Deadline and recommended approach**
-
-You have until the **end of Easter week 2** to complete the activity.
+**Recommended approach**
 
 We recommend that, before the end of Lent term, you have soldered and tested your device using the code provided.
 This should take an hour of your time if all goes well.
-As always, please feel free to work as a group and tackle together the parts you may be struggling with on your own.
 
-Completing the task itself can be done during the Easter vacation.
-We would expect it to take another 3-4 hours in average, but may vary depending on how much you have to learn.
+We would expect completion of this activity to take another 3-4 hours in average, but this may vary depending on how much you have to learn.
 
 
-**Support**
-
-Support sessions in the DPO will be available to you during the first two weeks of Easter.
-You can also use the forum to ask questions
-
-
-**Assessment**
-
-
-You will be asked to answer a quiz on Moodle and submit your code.
-
-We may also ask you to bring your device for a mini demo/viva in the DPO. Tbc.
 
