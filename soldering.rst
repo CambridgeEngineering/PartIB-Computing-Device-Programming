@@ -64,6 +64,7 @@ Please use `this link <http://to.eng.cam.ac.uk/teaching/apps/cuedle/index.php?co
 **Where to find the soldering stations, and what equipment will you find there?**
 
 Youtube link 1: http://www.youtube.com/embed/OauRHzzIPMk
+
 Youtube link 2: http://www.youtube.com/embed/77X4XcjcQV0
 
 .. raw:: html
@@ -84,6 +85,7 @@ Note the safety warning:
 **Soldering the components**
 
 Youtube link 1: http://www.youtube.com/embed/knjjIf9SR9c
+
 Youtube link 2: http://www.youtube.com/embed/1SItk_6e-mc
 
 .. raw:: html
@@ -102,6 +104,7 @@ Youtube link 2: http://www.youtube.com/embed/1SItk_6e-mc
 **Removing solder**
 
 Youtube link 1: http://www.youtube.com/embed/mcc2kdqpvKg
+
 Youtube link 2: http://www.youtube.com/embed/pWi0EyEDnEU
 
 .. raw:: html
