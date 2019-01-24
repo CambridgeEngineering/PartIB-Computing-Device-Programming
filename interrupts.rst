@@ -144,12 +144,12 @@ Try the code and see what happens.
 You will find that this somehow works, but it is still slightly random.
 This is because the button is not perfect.
 When you press it, its state can fluctuate for a short time, a process
-called *bouncing* (http://www.youtube.com/embed/hAVQpKVck9s).
+called *bouncing* (https://www.youtube.com/embed/hAVQpKVck9s).
 
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="http://www.youtube.com/embed/hAVQpKVck9s" frameborder="0" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/hAVQpKVck9s" frameborder="0" allowfullscreen></iframe>
 
 
 
