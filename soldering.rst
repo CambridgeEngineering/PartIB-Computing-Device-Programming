@@ -19,7 +19,7 @@ The bottom of the page
 General information about soldering
 -----------------------------------
 
-Here is a good introductory video, and a :download:`comic <docs/FullSolderComic_EN.PDF>` that will teach you what you need to get started.
+Here is a good introductory video (http://www.youtube.com/embed/f95i88OSWB4), and a :download:`comic <docs/FullSolderComic_EN.PDF>` that will teach you what you need to get started.
 
 .. raw:: html
 
@@ -27,7 +27,7 @@ Here is a good introductory video, and a :download:`comic <docs/FullSolderComic_
 
 
 
-This is a more advanced video that will show you many more soldering tips, certainly beyond what is needed here.
+This is a more advanced video (http://www.youtube.com/embed/t9LOtOBOTb0) that will show you many more soldering tips, certainly beyond what is needed here.
 
 .. raw:: html
 
@@ -63,6 +63,9 @@ Please use `this link <http://to.eng.cam.ac.uk/teaching/apps/cuedle/index.php?co
 
 **Where to find the soldering stations, and what equipment will you find there?**
 
+Youtube link 1: http://www.youtube.com/embed/OauRHzzIPMk
+Youtube link 2: http://www.youtube.com/embed/77X4XcjcQV0
+
 .. raw:: html
 
    <iframe width="560" height="315" src="http://www.youtube.com/embed/OauRHzzIPMk" frameborder="0" allowfullscreen></iframe>
@@ -80,7 +83,8 @@ Note the safety warning:
 
 **Soldering the components**
 
-
+Youtube link 1: http://www.youtube.com/embed/knjjIf9SR9c
+Youtube link 2: http://www.youtube.com/embed/1SItk_6e-mc
 
 .. raw:: html
 
@@ -97,6 +101,8 @@ Note the safety warning:
 
 **Removing solder**
 
+Youtube link 1: http://www.youtube.com/embed/mcc2kdqpvKg
+Youtube link 2: http://www.youtube.com/embed/pWi0EyEDnEU
 
 .. raw:: html
 
