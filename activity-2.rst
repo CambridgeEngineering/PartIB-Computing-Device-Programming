@@ -68,11 +68,8 @@ It may take you 2-3 hours to go through it.
 
 
 
-Structure and timing of the activity
+Recommended approach
 ------------------------------------
-
-
-**Recommended approach**
 
 We recommend that, before the end of Lent term, you have soldered and tested your device using the code provided.
 This should take an hour of your time if all goes well.
