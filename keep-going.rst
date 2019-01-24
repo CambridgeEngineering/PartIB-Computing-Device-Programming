@@ -63,12 +63,12 @@ Let's refresh your mind regarding the declaration and use of functions in C/C++.
 
 
     For a more immersive experience, try your code while visiting
-    `this page <http://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
+    `this page <https://www.youtube.com/watch?v=q_F9Nrs7ODQ>`_ .
 
 
 .. admonition:: Task (optional)
 
-   **Program a LED sequence inspired by this** `video clip <http://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
+   **Program a LED sequence inspired by this** `video clip <https://www.youtube.com/watch?v=oNyXYPhnUIs>`_.
 
 |
 |
@@ -115,7 +115,7 @@ attached to the blue button.
 When pressed button is true (1) and false (0) otherwise. By assigning
 its value to the LED, we can control the LED with the button.
 
-The movie clip below explains some of this using external LED and
+The movie clip below (https://www.youtube.com/embed/XmWqP8laxxk) explains some of this using external LED and
 switch. Look at it if you would like more information.
 
 .. raw:: html
