@@ -46,7 +46,7 @@ want to extend develop their skills beyond what is required for this activity.
 
 
 
-The video below presents a demo of the first option, so that you know what to aim for: http://www.youtube.com/embed/PDv8u4roZXs.
+The video below presents a demo of the first option, so that you know what to aim for (http://www.youtube.com/embed/PDv8u4roZXs).
 
 .. raw:: html
 
@@ -107,11 +107,7 @@ to record in the sequence.
 
 
 
-**Assessment**
 
-
-Assessment will be light touch.
-You will be asked to answer a quiz on Moodle and submit your code.
 
 
 
