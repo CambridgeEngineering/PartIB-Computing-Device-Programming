@@ -50,13 +50,7 @@ DIY in the EIETL
 
 .. admonition:: Task
 
-   **Book a slot in the EIETL weeks 5-8, solder the headers and set the I2C address of your device**
-
-
-**How to book for a slot to solder the components?**
-
-Please use `this link <http://to.eng.cam.ac.uk/teaching/apps/cuedle/index.php?context=HeaderSoldering>`_ to sign up for a slot at the soldering station.
-
+   **Book a slot in the EIETL and solder the headers and set the I2C address of your device**
 
 
 
