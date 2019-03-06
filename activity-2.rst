@@ -20,9 +20,6 @@ You will also have to polish your soldering skills, and learn how to navigate a 
 Task to complete
 ----------------
 
-
-You have to collect from the Teaching Office a temperature sensor on a breakout board and a strip of 5 jumper wires to connect the sensor to your microcontroller.
-
 The data-sheet of your sensor is available :download:`here <docs/temp_sensor_lm75b.pdf>`.
 
 Using the sensor and your micro-controller, you will have to:
