@@ -13,7 +13,6 @@ You need to solder the header pins to the breadboard, and set the address of you
 
 Soldering is not difficult, but it is nonetheless a basic skill to learn.
 In this section, you will find various videos and links to get you started with soldering if you are not familiar with it already.
-The bottom of the page 
 
 
 General information about soldering
@@ -50,7 +49,7 @@ DIY in the EIETL
 
 .. admonition:: Task
 
-   **Book a slot in the EIETL and solder the headers and set the I2C address of your device**
+   **Solder the headers and set the I2C address of your device**
 
 
 
