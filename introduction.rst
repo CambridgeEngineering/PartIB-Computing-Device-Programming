@@ -39,6 +39,9 @@ A few words about sponsors
 
 This activity has been made possible by two sponsors.
 
+- ARM and STMicroelectronics have donated the Nucleo microcontrollers, one
+  per undergraduate student. We are very grateful to them.
+  
 - The University of Cambridge provided financial support through a
   Teaching And Learning Innovation Fund to run a number of student
   projects and promote the use of Open Source tools in undergraduate
@@ -46,6 +49,3 @@ This activity has been made possible by two sponsors.
   GM2, Technology for the poorest billion, as well as part of the
   running costs of this second year activity.
 
-- ARM and STMicroelectronics have donated the microcontrollers, one
-  for each undergraduate student. We are very grateful to them, and
-  hope that this arrangement will be maintained in future.
