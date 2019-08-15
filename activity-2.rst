@@ -24,11 +24,11 @@ The data-sheet of your sensor is available :download:`here <docs/temp_sensor_lm7
 
 Using the sensor and your micro-controller, you will have to:
 
-- record a temperature value every second in a buffer that will always contain the last minute of data (older data is replaced by new data).
+- record a temperature value every second in an array that will contain the last minute of data (older data is replaced by new data once the array is full).
 
-- if the temperature goes above a threshold value of 28 degree Celsius, get the sensor to trigger an interrupt that will get the LEDs on the microcontroller to flash an alarm signal (for you to imagine), and dump all the data in the buffer through the USB serial communication so that your computer can analyse it.
+- if the temperature goes above a threshold value of 28 degree Celsius, get the sensor to trigger an interrupt that will get the LEDs on the microcontroller to flash an alarm signal (for you to imagine), and transmit all the data available in the array to your computer by USB serial communication, so that the log may be analysed.
 
-
+- optional: if you are keen, you may try to capture and plot the temperature data on your computer using a python script.
 
 
 What you may need to learn
@@ -65,13 +65,7 @@ It may take you 2-3 hours to go through it.
 
 
 
-Recommended approach
-------------------------------------
 
-We recommend that, before the end of Lent term, you have soldered and tested your device using the code provided.
-This should take an hour of your time if all goes well.
-
-We would expect completion of this activity to take another 3-4 hours in average, but this may vary depending on how much you have to learn.
 
 
 
