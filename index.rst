@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=============================================
-Part IB Computing Device Programming Activity
-=============================================
+=====================================
+Computing Device Programming Activity
+=====================================
 
 This page contains the online material for the Computing activity on
-Device Programming, for the Second year Engineering students at the
+Device Programming, designed at the Engineering Department of the
 University of Cambridge.
 
 
