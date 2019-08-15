@@ -117,7 +117,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CUED-PartIB-Device-Programmingdoc'
+htmlhelp_basename = 'CUED-Device-Programmingdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'cued-partib-device-programming', u'CUED-PartIB-Device-Programming Documentation',
+    (master_doc, 'cued-device-programming', u'CUED-Device-Programming Documentation',
      [author], 1)
 ]
 
