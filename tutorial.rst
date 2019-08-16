@@ -41,5 +41,6 @@ panic if you can't!
    getting-started
    keep-going
    debugging
+   serial-communication
 
 http://www.st.com/en/evaluation-tools/nucleo-f746zg.html
