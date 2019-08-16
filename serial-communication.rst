@@ -100,9 +100,7 @@ The code below uses serial input and output to delegate a very simple task to th
 Python serial library
 ^^^^^^^^^^^^^^^^^^^^^
 
-Here is a piece of python code initiating a serial channel to the microcontroller, sends two strings representing numbers to add, and read the response of the micro-controller, as a string. The parameter "/dev/ttyACM0" depends on your operating system and the way it would label USB devices, as discussed in the debugging section.
-
-The characters "\n" are needed as they correspond to carriage return instructions that the microcontroller monitors before scaning the input.
+Here is a piece of python code initiating a serial channel to the microcontroller, sends two strings representing numbers to add, and read the response of the micro-controller, as a string. 
 
    .. code-block:: python
 
@@ -115,6 +113,9 @@ The characters "\n" are needed as they correspond to carriage return instruction
 	board.write(b'5\n')
 	board.readline()
 
+The port name ``"/dev/ttyACM0"`` depends on your operating system and the way it would label USB devices, as discussed in the debugging section. Replace by the port name on your system.
+
+The characters ``"\n"`` are needed as they correspond to carriage return instructions that the microcontroller monitors before scaning the input.
 
 As it is, it is not very elegant, but the coversions back and forth to strings could be packaged into a python function, only exposing to the user a relatively simple interface.
 
