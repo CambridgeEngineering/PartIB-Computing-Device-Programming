@@ -94,25 +94,34 @@ https://os.mbed.com/handbook/Debugging
 
 
 
+
+
+
 .. _serial-tuto-label:
 
-Communications between the computer and the microcontroller
------------------------------------------------------------
+
+Using the serial port to monitor and debug programs 
+---------------------------------------------------
+
 
 This section is more advanced, but really useful once you get it to
-work. What is difficult here is that it depends on the computer
-connected to the board. Different operating systems will use different
-software (that you may need to install) in order to talk to the board,
-different names for the port used to connect the board, and they would
-behave differently. Give it a try, but don't panic if it does not work
-for you straight away. You can go through the next activity without
-reading text from the board.
+work. Communications between the microcontroller and computer will be developed further in the following tutorial.
+
+Different operating systems will use different
+software (that you may need to install) in order to talk to the board.
+Each operating system will also have different naming conventions to identify the port used to connect to the board.
+Therefore, it is difficult to provide here generic instructions, and you will have to find your way through other docs and tutorials.
 
 
 
 Read the first half of the mbed doc on `debugging with printf() calls
 <https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/>`_,
 until the section *Printf() from an interrupt context*.
+
+
+Give it a try, but don't panic if it does not work
+for you straight away. You can go through the activity 1 without
+reading text from the board, but serial communication is required for activities 2 and 3.
 
 
 
@@ -194,6 +203,8 @@ Example
 	...
 
    Use this information to find the problem!
+
+
 
 
 Catching the output from Python
