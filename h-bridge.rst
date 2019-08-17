@@ -9,9 +9,16 @@ What is an H-bridge?
 
 Microcontrollers are logical devices that function with very modest power. They are not very good at driving loads, like actuators, which typically require power at their inputs. The problem can be solved through an interface capable of injecting power to the actuator as a function of the logical signals of the microcontroller. This is the role of a H-bridge. 
 
-An H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below (from [Wikipedia](https://en.wikipedia.org/wiki/H_bridge)). The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
+An H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below. The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
 
-![H Bridge Wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/H_bridge.svg)
+
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/d/d4/H_bridge.svg
+   :scale: 50 %
+   :alt: H bridge
+
+   H bridge. Source: Wikipedia
+
+
 
 The switches are typically controlled by the microcontroller.
 
@@ -26,12 +33,20 @@ MAX14870 Driver
 ---------------
 
 
-The MAX14870 Driver is a H-bridge that can be used with voltages between 4.5 V to 36 V and can supply up to about 1.7 A continuously, and  2.5 A peak. Documentation and a several additional resources can be found on [Pololu website](https://www.pololu.com/product/2961).
+The MAX14870 Driver is a H-bridge that can be used with voltages between 4.5 V to 36 V and can supply up to about 1.7 A continuously, and  2.5 A peak. Documentation and a several additional resources can be found on the `Pololu website <https://www.pololu.com/product/2961>`_.
 
-The image below, from the website, show control connections and power connections on different sides of the board. The driver is shipped with 
+The image below, from the website, shows control connections and power connections on different sides of the board. The driver is shipped with 
 two 1x5 pin breakaway that you will have to solder.
 
-![Pololu image](https://a.pololu-files.com/picture/0J6505.1200.jpg)
+
+.. figure:: https://a.pololu-files.com/picture/0J6505.1200.jpg
+   :scale: 50 %
+   :alt: H bridge
+
+   H bridge connections. Source: Pololu website
+
+
+
 
 - Connect the 9-volts power supply to the pins **VIN** and **GND**, paying attention to NOT reverse polarity (see figure).
 - The load will be connected to the pins **M1** and **M2**.

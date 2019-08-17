@@ -8,7 +8,7 @@ Preparation of a cell
 
 
 
-[Peltier cells](https://en.wikipedia.org/wiki/Thermoelectric_cooling) use the `Peltier effect <https://en.wikipedia.org/wiki/Thermoelectric_effect#Peltier_effect>`_ to pump heat from one plate to another of the device. The flux of heat is roughly proportional to the current passing through the peltier cell. The image below provides a schematic representation of a Peltier cell.
+`Peltier cells <https://en.wikipedia.org/wiki/Thermoelectric_cooling>`_ use the `Peltier effect <https://en.wikipedia.org/wiki/Thermoelectric_effect#Peltier_effect>`_ to pump heat from one plate to another of the device. The flux of heat is roughly proportional to the current passing through the peltier cell. The image below provides a schematic representation of a Peltier cell.
 
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/a/a2/Peltierelement.png
@@ -43,7 +43,7 @@ The following code drives the Peltier cell with a small voltage and monitors the
 The code to drive the Peltier cell is similar to the one for LED and bulb. 
 Setting and reading of the temperature sensor is realized through minor adaptations of the code you have developed in Activity 2. In fact, you will need to connect the temperature sensor to the pins **D14** and **D15** as in Activity 2.
 
-The code uses the [Ticker](https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.html) interface to set up recurring interrupts. Recurrent interrupts allow to read sensors and send information on the serial port at precise time intervals. 
+The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.html>`_ interface to set up recurring interrupts. Recurrent interrupts allow to read sensors and send information on the serial port at precise time intervals. 
 
 
 
@@ -161,7 +161,7 @@ This is about settings for the PWM driver. Please check that your MAX14870 Drive
 	Ticker dT_input;
 	volatile int read_input = 0;  
 
-This code is about settings for the temperature sensors (please refer to Activity 2). The ticker variable ```dT_input``` is used to trigger an interrupt at constant intervals of time. You will see that, as a consequence of the interrupt, the variable ```read_input``` will flip from $0$ to $1$ to inform the main routine that a sensor read must be performed. This variable is declared as ```volatile``` to inform the compiler that this is a sensitive variable whose state may change at any moment (therefore the compiler will not apply any optimization that could cause a delay in detecting its status).
+This code is about settings for the temperature sensors (please refer to Activity 2). The ticker variable ``dT_input`` is used to trigger an interrupt at constant intervals of time. You will see that, as a consequence of the interrupt, the variable ``read_input`` will flip from $0$ to $1$ to inform the main routine that a sensor read must be performed. This variable is declared as ``volatile`` to inform the compiler that this is a sensitive variable whose state may change at any moment (therefore the compiler will not apply any optimization that could cause a delay in detecting its status).
 
 
    .. code-block:: c
@@ -171,7 +171,7 @@ This code is about settings for the temperature sensors (please refer to Activit
 	Ticker dT_serial;
 	volatile int update_serial = 0;  
 
-This code is about setting for the serial comunication. Please note that the ticker variable ```dT_serial``` is used to trigger an interrupt at constant intervals of time, to request serial comunication. When the volatile variable ```update_serial``` is set to $1$, the main routine is informed that a serial comunication must be done.
+This code is about setting for the serial comunication. Please note that the ticker variable ``dT_serial`` is used to trigger an interrupt at constant intervals of time, to request serial comunication. When the volatile variable ``update_serial`` is set to 1, the main routine is informed that a serial comunication must be done.
 
 
    .. code-block:: c
@@ -180,8 +180,8 @@ This code is about setting for the serial comunication. Please note that the tic
 		read_input = 1;
 	}
 
-The function ```sensing()``` is called when the ticker ```dT_input``` triggers an interrupt. 
-The function flips the ```read_input``` variable to $1$, informing the main
+The function ``sensing()`` is called when the ticker ``dT_input`` triggers an interrupt. 
+The function flips the ``read_input`` variable to 1, informing the main
 code that a sensor reading must be done as soon as possible.
 
 
@@ -191,7 +191,7 @@ code that a sensor reading must be done as soon as possible.
 		update_serial = 1;
 	}
 
-The function ```serial_com()``` is called when the ticker ```dT_serial``` triggers an interrupt. The function flips the variable ```update_serial``` to $1$, informing the main
+The function ``serial_com()`` is called when the ticker ``dT_serial`` triggers an interrupt. The function flips the variable ``update_serial`` to 1, informing the main
 code that a serial comunicatoon must be done as soon as possible.
 
 
@@ -242,8 +242,8 @@ This code initialize the temperature sensor and define the float variable
 	printf("pwm set to %.2f %%\n", peltierpwm.read());
 
 
-This code set the Peltier PWM duty cycle at $10$%. You are encouraged to
-try different duty cycles but please never go above $50$% to avoid
+This code set the Peltier PWM duty cycle at 10%. You are encouraged to
+try different duty cycles but please never go above 50% to avoid
 termal issues with the cell (the cell may break).
 
 
@@ -254,12 +254,12 @@ termal issues with the cell (the cell may break).
 	dT_serial.attach(serial_com, 0.25);
 
 
-This code set the interval of the recurring interrupts. The first line sets a recurring interrupt every $0.01$ seconds, which calls repeadetly the function ``sensing()`` to request a sensor reading. The second line sets a recurring interrupt every 0.25 seconds, which calls the function ``serial_com()`` to request serial comunication.
+This code set the interval of the recurring interrupts. The first line sets a recurring interrupt every 0.01 seconds, which calls repeadetly the function ``sensing()`` to request a sensor reading. The second line sets a recurring interrupt every 0.25 seconds, which calls the function ``serial_com()`` to request serial comunication.
 
 You will notice that serial comunication happens at much slower rate than sensor reading. The reason for these differences will be clear later, when we will design a more complex actuation mechanism. The idea is that sensing and comunication with the user can occur at different rates. Typically, sensing and actuation need a very fast rate to avoid issues but comunication with the user (serial) can be done at a slower rate to save computational resources.
 
 Finally, the while loop constantly monitors the two variables
-``read_input`` and ``update_serial``. A sensor read is performed when ``read_input`` is detected equal to $1$. Consequently, ``read_input`` is set to $0$, in preparation for the next interrupt. Temperature and PWM status are comunicated to the user when ``update_serial`` is detected equal to $1$. After that, ``update_serial`` is set to $0$, in preparation for the next interrupt.
+``read_input`` and ``update_serial``. A sensor read is performed when ``read_input`` is detected equal to 1. Consequently, ``read_input`` is set to $0$, in preparation for the next interrupt. Temperature and PWM status are comunicated to the user when ``update_serial`` is detected equal to 1. After that, ``update_serial`` is set to 0, in preparation for the next interrupt.
 
 
    .. code-block:: c
