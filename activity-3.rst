@@ -1,4 +1,4 @@
-Activity 3: actuation and feedback
+Activity 3: Actuation and feedback
 ==================================
 
 

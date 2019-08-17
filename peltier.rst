@@ -8,9 +8,15 @@ Preparation of a cell
 
 
 
-[Peltier cells](https://en.wikipedia.org/wiki/Thermoelectric_cooling) use the [Peltier effect](https://en.wikipedia.org/wiki/Thermoelectric_effect#Peltier_effect) to pump heat from one plate to another of the device. The flux of heat is roughly proportional to the current passing through the peltier cell. The image below, from [Wikipedia](https://en.wikipedia.org/wiki/Thermoelectric_cooling), provides a schematic representation of a Peltier cell.
+[Peltier cells](https://en.wikipedia.org/wiki/Thermoelectric_cooling) use the `Peltier effect <https://en.wikipedia.org/wiki/Thermoelectric_effect#Peltier_effect>`_ to pump heat from one plate to another of the device. The flux of heat is roughly proportional to the current passing through the peltier cell. The image below provides a schematic representation of a Peltier cell.
 
-![Peltier cell, Wikipedia](https://upload.wikimedia.org/wikipedia/commons/a/a2/Peltierelement.png)
+
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/a/a2/Peltierelement.png
+   :scale: 50 %
+   :alt: Peltier cell
+
+   Peltier cell. Source: Wikipedia
+
 
 - One of the two plates of the Peltier cell is engineered to be hot. The other to be cold. Please attach the thermal adesive on both sides, then attach the heat sink to the cold side. To identify the hot side please refer to the [datasheet](./peltier_datasheet.pdf). For the particular model provided, place the cell on the bench/desk with the black cable on the right/down and red cable on the left/down, then the top plate is the hot plate. 
 
@@ -18,7 +24,14 @@ Preparation of a cell
 
 - Place the Peltier cell on your desk/bench with the heat sink in contact with the bench surface and the hot side exposed to the air. Then place the temperature sensor on the hot side (fix it with standard tape).
 
-![Peltier bench realization](./peltier_bench.jpg)
+
+.. figure:: images/peltier_bench.jpg
+   :scale: 50 %
+   :alt: Peltier cell
+
+   Peltier bench realization.
+
+
 
 
 Constant heat transfer and sensor readings
@@ -241,7 +254,7 @@ termal issues with the cell (the cell may break).
 	dT_serial.attach(serial_com, 0.25);
 
 
-This code set the interval of the recurring interrupts. The first line sets a recurring interrupt every $0.01$ seconds, which calls repeadetly the function ``sensing()`` to request a sensor reading. The second line sets a recurring interrupt every $0.25$ seconds, which calls the function ``serial_com()`` to request serial comunication.
+This code set the interval of the recurring interrupts. The first line sets a recurring interrupt every $0.01$ seconds, which calls repeadetly the function ``sensing()`` to request a sensor reading. The second line sets a recurring interrupt every 0.25 seconds, which calls the function ``serial_com()`` to request serial comunication.
 
 You will notice that serial comunication happens at much slower rate than sensor reading. The reason for these differences will be clear later, when we will design a more complex actuation mechanism. The idea is that sensing and comunication with the user can occur at different rates. Typically, sensing and actuation need a very fast rate to avoid issues but comunication with the user (serial) can be done at a slower rate to save computational resources.
 

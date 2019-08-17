@@ -232,7 +232,7 @@ sets the initial PWM duty cycle at 0. Also
 	dT_output.attach(actuation, 0.01);
 
 
-defines a recurrent interrupt every 0.01 seconds, which call the function ```actuation()```. 
+defines a recurrent interrupt every 0.01 seconds, which call the function ``actuation()``. 
 
 Finally, within the main while loop, the code
 
@@ -244,9 +244,9 @@ Finally, within the main while loop, the code
 		update_PWM(temperature); 
 	}  
 
-triggers an update of the PWM duty cycle whenever the variable ``write_output`` is detected equal to $1$. After that, ``write_output`` is set to $0$, in preparation for the next interrupt.
+triggers an update of the PWM duty cycle whenever the variable ``write_output`` is detected equal to 1. After that, ``write_output`` is set to 0, in preparation for the next interrupt.
 
-Actuation and sensing are updated every 0.01 seconds, a very fast rate. Serial updates to the user are just four each second, a much slower rate (enoigj for monitor reading).
+Actuation and sensing are updated every 0.01 seconds, a very fast rate. Serial updates to the user are just four each second, a much slower rate (enough for monitor reading).
 
 
 
