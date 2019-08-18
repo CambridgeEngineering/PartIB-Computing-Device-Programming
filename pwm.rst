@@ -25,12 +25,17 @@ Let's consider a few examples. Take a PWM frequency of 10kHz; this means that th
 
 This technique is so popular that you can find a full [Wikipedia](https://en.wikipedia.org/wiki/Pulse-width_modulation) page dedicated to it and several tutorials available on internet like `Arduino <https://www.arduino.cc/en/tutorial/PWM>`_ and `Sparkfun <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. You may find this video useful:
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/GQLED3gmONg" frameborder="0" allowfullscreen></iframe>
+
+..
+
+..
 
 
-
-*Embed this:* <https://www.youtube.com/watch?v=GQLED3gmONg>
-
-
+|
+|
 
 
 
