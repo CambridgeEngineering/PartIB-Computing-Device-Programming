@@ -3,7 +3,7 @@ Serial communication
 
 
 
-Many protocols exist to allow devices to communicate with each other. In this section, we briefly present the key steps required to exchange information between the microcontroller and a computer connected to it on a USB port. This port was primarilly used to so far to program the device, but as seen in the previous section, it can also be exploited to pass messages as strings of characters. We will first see how to pass strings from the computer to the device, and then develop a simple python interface to send and receive data, and delegate computational tasks.
+Many protocols exist to allow devices to communicate with each other. In this section, we briefly present the key steps required to exchange information between the microcontroller and a computer connected to it on a USB port. This port was primarilly used, so far, to program the device, but as seen in the previous section, it can also be exploited to pass messages as strings of characters. We will first see how to pass strings from the computer to the device, and then develop a simple python interface to send and receive data, and delegate computational tasks.
 
 
 
@@ -154,7 +154,7 @@ Why not try a more challenging task...
 
 .. admonition:: Exercise - part b
 
-   **Write a python function taking n as a parameter, and returning the n first element of the series as an array or list. The function must delegate the calculating to the microcontroller.**
+   **Write a python function taking n as a parameter, and returning the n first elements of the series as an array or list. The function must delegate the calculating to the microcontroller.**
 
 
 
