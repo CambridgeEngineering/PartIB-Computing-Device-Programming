@@ -5,7 +5,7 @@ Interrupts
 LED toggle
 ----------
 
-Let's look at one of the previous tutorial's example:
+Let's look at one of the previous tutorial's examples:
 
 
 .. code-block:: c
@@ -31,7 +31,7 @@ Let's look at one of the previous tutorial's example:
 
 What if we would like now to toggle the state of the LED each time we
 press the button: if the LED is off, pressing the button turns it on,
-but if the LED is off, pressing the button turns it off.
+but if the LED is on, pressing the button turns it off.
 
 Instinctively one would want to write the code below:
 
@@ -134,7 +134,7 @@ rise when you are pushing the button down... but this refers to the
 fact that the input (voltage) on the corresponding pin is transitioning
 from O to 1 (Vcc).
 
-The function onButtonPress is called a *callback function*.
+The function ``onButtonPress`` is called a *callback function*.
 It doesn't take any parameter, and doesn't return anything either.
 But it changes the state of the LED when the button is pressed.
 
@@ -163,13 +163,13 @@ There are different ways to solve this issue.
 Some involve hardware solutions, trying to prevent rapid oscillations
 for instance using low pass filters.
 But here we are stuck with this button on the board...
-So the way forward is to fix is with software, another common approach.
+So the way forward is to fix it with software, another common approach.
 
 We will see here a quick and dirty fix to confirm that the issue is indeed related to
 switch bouncing.
-In the next section, we will discuss about proper solutions to this problem.
+In the next section, we will discuss proper solutions to this problem.
 
-What we want is to prevent the onButtonPress function to be called multiple
+What we want is to prevent the ``onButtonPress`` function to be called multiple
 times when the button is pressed and its state fluctuates for a
 little while.
 To do this, we just need to force the program to wait a short time
@@ -192,7 +192,7 @@ You should find at this point that the toggle behaves properly.
 Hooray!
 
 
-In the next section, we will explain why this solution is not really good practice,
+In the next section, we will explain why this solution is not good practice,
 and develop a more complex example that will show you how to properly
 use interrupts.
 
