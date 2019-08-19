@@ -58,7 +58,7 @@ Then, you need to set the PWM period
    .. code-block:: c
 	pwmled.period_us(1000);
 
-The instruction above sets a ON/OFF cycle every $1000$ microseconds, that is, $1000$ cycles each second.
+The instruction above sets a ON/OFF cycle every 1000 microseconds, that is, 1000 cycles each second.
 
 Finally, the duty cycle is defined by
 
