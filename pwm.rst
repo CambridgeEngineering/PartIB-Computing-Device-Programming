@@ -48,6 +48,7 @@ First, you need to declare your PWM output
 
 
    .. code-block:: c
+   
 	PwmOut pwmled(LED2);
 
 The instruction above sets LED2 as pwm output. Any other digital output compatible with PWM would work. Check your microcontroller manual to know which pins are compatible with PWM.
@@ -56,6 +57,7 @@ Then, you need to set the PWM period
 
 
    .. code-block:: c
+   
 	pwmled.period_us(1000);
 
 The instruction above sets a ON/OFF cycle every 1000 microseconds, that is, 1000 cycles each second.
@@ -64,6 +66,7 @@ Finally, the duty cycle is defined by
 
 
    .. code-block:: c
+   
 	pwmled.write(0.1f); 
 
 The argument of the write function must be a float between 0 and 1. The instruction above sets the duty cycle at 10%. 
@@ -72,6 +75,7 @@ You can also read the current PWM duty cycle through the instruction
 
 
    .. code-block:: c
+   
 	pwmled.read(); 
 
 which returns a floating-point value. 
