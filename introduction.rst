@@ -25,7 +25,7 @@ the fairly generic expression of Internet of Things.
 The modern Engineer must therefore embrace this ubiquity, and make
 sure that whatever their specialisation is, they master the basic
 aspects of sensing and communication.  This series of practical
-activities is here to fill this gap and deliver all part I Engineers
+activities is here to fill this gap and provide engineering students
 with the computational and experimental skills to approach with more
 confidence the development of simple embedded devices to perform
 common tasks.  The tasks selected cover the basic operations of a
@@ -45,7 +45,7 @@ This activity has been made possible by two sponsors.
 - The University of Cambridge provided financial support through a
   Teaching And Learning Innovation Fund to run a number of student
   projects and promote the use of Open Source tools in undergraduate
-  education. This grant currently covers the cost of the IIA project
+  education. This grant currently covers the cost of the 3rd year (IIA) project
   GM2, Technology for the poorest billion, as well as part of the
   running costs of this second year activity.
 

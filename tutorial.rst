@@ -29,7 +29,7 @@ panic if you can't!
 **Requirements**
 
 
-#. STM32F746 STMicroelectronics development board (provided)
+#. `STM32F746 STMicroelectronics <http://www.st.com/en/evaluation-tools/nucleo-f746zg.html>`_ development board (provided)
 #. Micro-USB to USB cable (transmitting power & data)
 #. Computer with web browser, internet connection and USB port available.
 

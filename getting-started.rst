@@ -114,28 +114,31 @@ Dissecting the sample code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-This code is fairly self-explanatory, if you remember some of what you
-learned with the `Mars Lander exercise <https://www.vle.cam.ac.uk/pluginfile.php/1510531/mod_resource/content/6/handout.pdf>`_.
+Basic knowledge of C/C++ programming is now assumed.
+
 Do not hesitate to consult online documentation about C/C++
 when appropriate. There are so many good sources available to you!
 See for instance:
 
-http://www.tutorialspoint.com/cprogramming/
+Basic Introduction: https://www.geeksforgeeks.org/c-language-set-1-introduction/
+
+Good set of tutorials: http://www.tutorialspoint.com/cprogramming/
+
 
 Here are a few comments that may be helpful at this point:
 
-- "main()" is the function that is
+- ``main()`` is the function that is
   executed when the microcontroller starts.
 
-- In C/C++, a block is delimited by curly brackets, {}, and not
-  indentation as in python.
+- In C/C++, a line of code is terminated with ``;``, and a block is delimited by curly brackets ``{...}``. This is different from python where line returns and
+  indentation provide such information.
   Python style indentation is however good practice for the readability of your code.
 
 - The main program contains a single `"while" loop <https://www.tutorialspoint.com/cprogramming/c_while_loop.htm>`_.
   The term between parentheses after while should be 0 or false for the
   loop to end, so this loops never ends.
 
-- The variable "myled" controls the state of LED1.
+- The variable ``myled`` controls the state of LED1.
   Although it is manipulated as an integer, it is an
   instance of the class `DigitalOut
   <https://os.mbed.com/handbook/DigitalOut>`_. The pin number is
@@ -143,6 +146,8 @@ Here are a few comments that may be helpful at this point:
   it. LED1 is a shortcut for the pin number associated with the user
   LED1. These associations are board specific, and defined in the
   "mbed.h" header file - so we don't need to worry about them.
+
+- The variable  ``myled`` is defined at the top of the code, outside of any function. It is a `global variable <http://www.tutorialspoint.com/cprogramming/c_scope_rules.htm>`_ that will be available to all functions.
 
 
 
