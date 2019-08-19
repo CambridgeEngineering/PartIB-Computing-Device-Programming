@@ -26,6 +26,24 @@ University of Cambridge.
 
 
 
+.. rubric:: Document license and copyright
+
+These documents are licensed under a Creative Commons
+Attribution-ShareAlike 4.0 International License.  See
+http://creativecommons.org/licenses/by-sa/4.0/ for the license.
+
+Copyright 2017-2019 by A.J. Kabla, P.O. Kristensson, J. Durrell, F Forni.
+
+Contact: ajk61@cam.ac.uk
+
+
+.. rubric:: Documentation repository
+
+These documents are managed at:
+
+https://github.com/CambridgeEngineering/PartIB-Computing-Device-Programming
+
+
 ..	Indices and tables
 ..	==================
 
