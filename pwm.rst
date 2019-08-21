@@ -23,7 +23,7 @@ Let's consider a few examples. Take a PWM frequency of 10kHz; this means that th
    PWM. Source: Wikipedia
 
 
-This technique is so popular that you can find a full page on Wikipedia (https://en.wikipedia.org/wiki/Pulse-width_modulation) page dedicated to it and several tutorials available on internet like `Arduino <https://www.arduino.cc/en/tutorial/PWM>`_ and `Sparkfun <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. You may find this video useful:
+This technique is so popular that you can find a full page on Wikipedia (https://en.wikipedia.org/wiki/Pulse-width_modulation) dedicated to it and several tutorials available on internet like `Arduino <https://www.arduino.cc/en/tutorial/PWM>`_ and `Sparkfun <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. You may find this video useful:
 
 .. raw:: html
 
