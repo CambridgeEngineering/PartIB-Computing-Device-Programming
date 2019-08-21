@@ -37,7 +37,7 @@ What you may need to learn
 
 - Learn about Pulse-Width-Modulation and how to use it to adjust the brightness of a LED.
 
-- Learn what an H-Bridge is and how to use it to adjust the brightness of a halogen bulb.
+- Learn what a H-Bridge is and how to use it to adjust the brightness of a halogen bulb.
 
 - Learn what a Peltier cell is and how to drive it to transfer heat.
 
