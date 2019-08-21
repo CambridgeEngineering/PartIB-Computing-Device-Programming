@@ -37,7 +37,7 @@ Connecting an I\ :sup:`2`\ C device to your microcontroller
 ------------------------------------------------
 
 You need first to identify how to connect I\ :sup:`2`\ C devices to the microcontroller board.
-I\ :sup:`2`\ C sensors need at least 4 connections, two for power (VCC and GND), and two for communications (CLK for the clock signal and SDA for the data).
+I\ :sup:`2`\ C sensors need at least 4 connections, two for power (VCC and GND), and two for communications (SCL for the clock signal and SDA for the data).
 
 The :download:`user manual <docs/Nucleo-144_UserManual.pdf>` of your microcontroller should allow you to identify the default pins for these communications.
 You can also find the description of the pins on the `spec sheet online <https://os.mbed.com/platforms/ST-Nucleo-F746ZG>`_.
