@@ -161,7 +161,7 @@ This is about settings for the PWM driver. Please check that your MAX14870 Drive
 	Ticker dT_input;
 	volatile int read_input = 0;  
 
-This code is about settings for the temperature sensors (please refer to Activity 2). The ticker variable ``dT_input`` is used to trigger an interrupt at constant intervals of time. You will see that, as a consequence of the interrupt, the variable ``read_input`` will flip from $0$ to $1$ to inform the main routine that a sensor read must be performed. This variable is declared as ``volatile`` to inform the compiler that this is a sensitive variable whose state may change at any moment (therefore the compiler will not apply any optimization that could cause a delay in detecting its status).
+This code is about settings for the temperature sensors (please refer to Activity 2). The ticker variable ``dT_input`` is used to trigger an interrupt at constant intervals of time. You will see that, as a consequence of the interrupt, the variable ``read_input`` will flip from 0 to 1 to inform the main routine that a sensor read must be performed. This variable is declared as ``volatile`` to inform the compiler that this is a sensitive variable whose state may change at any moment (therefore the compiler will not apply any optimization that could cause a delay in detecting its status).
 
 
    .. code-block:: c

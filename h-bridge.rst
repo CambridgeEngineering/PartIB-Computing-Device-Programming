@@ -3,13 +3,13 @@ H-bridge and power
 
 
 
-What is an H-bridge?
+What is a H-bridge?
 --------------------
 
 
 Microcontrollers are logical devices that function with very modest power. They are not very good at driving loads, like actuators, which typically require power at their inputs. The problem can be solved through an interface capable of injecting power to the actuator as a function of the logical signals of the microcontroller. This is the role of a H-bridge. 
 
-An H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below. The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
+A H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below. The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
 
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/d/d4/H_bridge.svg

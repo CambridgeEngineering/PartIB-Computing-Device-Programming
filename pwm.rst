@@ -10,7 +10,7 @@ The idea is simple: if you switch the voltage of a circuit between ON (V\ :sub:`
 
 Let's consider a few examples. Take a PWM frequency of 10kHz; this means that the ON/OFF cycle repeats 10000 times a second).
 
-- A 50% duty cycle means that the circuit is ON for half of the cycle and OFF otherwise (first row in the image below, from [Wikipedia](https://en.wikipedia.org/wiki/Pulse-width_modulation)). Thus, the generated averaged voltage is about 0.5V\ :sub:`ref`\.
+- A 50% duty cycle means that the circuit is ON for half of the cycle and OFF otherwise (first row in the image below). Thus, the generated averaged voltage is about 0.5V\ :sub:`ref`\.
 
 - A 25% duty cycle means that the circuit is ON for a fourth of each cycle and and OFF otherwise (last row in the image below). The generated voltage is about 0.25 V\ :sub:`ref`\.
 
@@ -23,7 +23,7 @@ Let's consider a few examples. Take a PWM frequency of 10kHz; this means that th
    PWM. Source: Wikipedia
 
 
-This technique is so popular that you can find a full [Wikipedia](https://en.wikipedia.org/wiki/Pulse-width_modulation) page dedicated to it and several tutorials available on internet like `Arduino <https://www.arduino.cc/en/tutorial/PWM>`_ and `Sparkfun <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. You may find this video useful:
+This technique is so popular that you can find a full page on Wikipedia (https://en.wikipedia.org/wiki/Pulse-width_modulation) dedicated to it and several tutorials available on internet like `Arduino <https://www.arduino.cc/en/tutorial/PWM>`_ and `Sparkfun <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. You may find this video useful:
 
 .. raw:: html
 
