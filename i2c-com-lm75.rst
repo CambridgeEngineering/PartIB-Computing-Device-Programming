@@ -1,4 +1,4 @@
-I2C communication with the LM75 sensor
+I\ :sup:`2`\ C communication with the LM75 sensor
 ======================================
 
 In this tutorial, we assume that the device is connected and returns already a meaningful temperature, as introduced in the previous section.
@@ -16,7 +16,7 @@ Device registers
 ----------------
 
 Section 7.4 of the datasheet lists the four data registers present in the sensor (see table 5 in datasheet).
-The configuration register controls the different modes of operation of the device; you can read or write on it, although you would most write on it to set the desired behaviour of the sensor.
+The configuration register controls the different modes of operation of the device; you can read or write on it, although you would most likely simply write on it to set the desired behaviour of the sensor.
 The temp register contains the last temperature reading; it is read only, as expected.
 The other two registers contain the information needed to control the threshold temperatures, and will be further discussed in the next section of the tutorial.
 
@@ -50,13 +50,13 @@ I\ :sup:`2`\ C library functions
 We will use here the write and read functions of the `mbed library <https://os.mbed.com/docs/latest/reference/i2c.html>`_ to performs a complete write/read transactions. Both functions handle the start, stop and acknowledgements for us.
 
 
-**Write to an I\ :sup:`2`\ C slave**
+**Write to a slave device**
 
 .. code-block:: c
 
 	int	write (int address, const char *data, int length, bool repeated=false)
 
-**Read from an I\ :sup:`2`\ C slave**
+**Read from a slave device**
 
 .. code-block:: c
 
@@ -115,12 +115,13 @@ This would set the value of the configuration buffer:
 
 By default, the read and write commands would complete the transaction with the STOP signal (repeated=false).
 See for instance:
+
 .. code-block:: c
 
     int status = i2c.write(LM75_ADDR, data_write, 2, 0);
 
 However, to read data, we need two steps, one to indicate, with a write command which register we want to read, followed by a read.
-The write call should in this case be sent with repeated=true.
+The write call should in this case be sent with ``repeated=true``.
 
 .. code-block:: c
 
