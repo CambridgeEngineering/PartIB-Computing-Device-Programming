@@ -18,7 +18,7 @@ Preparation of a cell
    Peltier cell. Source: Wikipedia
 
 
-- One of the two plates of the Peltier cell is engineered to be hot. The other to be cold. Please attach the thermal adesive on both sides, then attach the heat sink to the cold side. To identify the hot side please refer to the [datasheet](./peltier_datasheet.pdf). For the particular model provided, place the cell on the bench/desk with the black cable on the right/down and red cable on the left/down, then the top plate is the hot plate. 
+- One of the two plates of the Peltier cell is engineered to be hot. The other to be cold. Please attach the thermal adesive on both sides, then attach the heat sink to the cold side. To identify the hot side please refer to the :download:`datasheet <docs/peltier_datasheet.pdf>`. For the particular model provided, place the cell on the bench/desk with the black cable on the right/down and red cable on the left/down, then the top plate is the hot plate. 
 
 - Connect the Peltier cell to the MAX14870 Driver. The red cable to the **M1** pin and the black cable to the **M2** pin (but first be sure that your duty cycle is at zero!)
 
