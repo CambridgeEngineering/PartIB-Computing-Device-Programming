@@ -139,7 +139,7 @@ We will use this later to tell the microcontroller what to do (i.e. what code to
 
 For now, let's just look at a typical situation where this would be useful.
 Imagine that you want to find the second derivative of a function :math:`f`.
-To find a good numerical estimate, you can use the `central finite different
+To find a good numerical estimate, you can use the `central finite difference
 <https://en.wikipedia.org/wiki/Finite_difference_coefficient>`_ relationship that you studied in first year:
 
 .. math::
