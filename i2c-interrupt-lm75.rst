@@ -57,7 +57,9 @@ Each time an interrupt is triggered, a red led should also flash on the sensor, 
 	void blue_flip()
 	{
 		blue=!blue;
-		pc.printf("Interrupt triggered!\r\n");
+		// The instruction below may create problems on the latest mbed compilers. 
+		// Avoid using printf in interrupts anyway as it takes too long to execute. 
+		// pc.printf("Interrupt triggered!\r\n");
 	}
 
 	int main()
