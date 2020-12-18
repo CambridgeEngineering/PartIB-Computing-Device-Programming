@@ -165,7 +165,7 @@ Getting your first temperature measurements
 
 .. admonition:: Task
 
-   **Start a new project, and select the template called** *Read external LM75 temperature sensor using I2C master*. **The code below should now be available to you.
+   **Start a new project, and select the basic template** *"mbed OS Blinky LED Hello World"*. **Replace the content of main.cpp with the code below.
    Compile it and try it on your board. 
    Hold the sensor between your fingers, and monitor the evolution of the temperature.**
 
@@ -173,7 +173,7 @@ Getting your first temperature measurements
    :ref:`serial-tuto-label`
 
    Use this code as it is, without necessarily trying to understand it at this point.
-   The next section will describe in detail how to communicate with the sensor and extract relevant informatoin from the data sheet, if you are not familiar with this yet.
+   The next section will describe in detail how to communicate with the sensor and extract relevant information from the data sheet, if you are not familiar with this yet.
 
 
 .. code-block:: c
