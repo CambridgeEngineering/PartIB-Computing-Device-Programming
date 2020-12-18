@@ -176,6 +176,9 @@ To do this, we just need to force the program to wait a short time
 after each call of the callback function.
 This can be achieve by adding a wait function call in the callback function.
 
+Because it is not good practice to add a wait call in an interrupt (interrupt calls should execute fast),
+the latest mbed compilers only allow the wait_us function ("us" stands for microseconds) to be used.
+
 Try to change the code of the callback function to:
 
 .. code-block:: c
@@ -183,7 +186,7 @@ Try to change the code of the callback function to:
 	void onButtonPress() 
 	{
 		led1 = !led1;
-		wait(0.3);
+		wait_us(300000);
 	}
  
 
