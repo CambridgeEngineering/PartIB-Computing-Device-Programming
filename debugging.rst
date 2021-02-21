@@ -75,13 +75,18 @@ As it happens, the pin D9 does support PWM, so all works fine. But pin
 D8 does not.  **Try changing the pin D9 to D8 in the code and observe the
 result.**
 
-**The code should compile without error. But LED 1 will start flashing
-with a pattern of 4 long and 4 short blinks.  This is the signal that
+**The code should compile without error. But the board will then display its default runtime-error behaviour.
+This behaviour may depend on the version of the hardware and libraries you are using. 
+You may notice the Ethernet port LED flashing irregularly, or LED 1 flashing
+with a pattern of 4 long and 4 short blinks. This is the signal that
 the controller has experienced a runtime error.**
 
 The compiler does not fully check the suitability of the pins when the
 code is compiled, causing the microcontroller to crash when it tries
 to execute the program on inappropriate pins.
+
+These errors are more subtle to detect as the signals from the board are not clearly documented.
+If you struggle with this, progress to the next section.
 
 
 Debugging strategies
