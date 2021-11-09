@@ -85,8 +85,9 @@ The compiler does not fully check the suitability of the pins when the
 code is compiled, causing the microcontroller to crash when it tries
 to execute the program on inappropriate pins.
 
-These errors are more subtle to detect as the signals from the board are not clearly documented.
-If you struggle with this, progress to the next section.
+These errors are more subtle to detect as the signals from the board are not clearly documented and not always consistent.
+If you struggle to identify the runtime error, don't get stuck and progress to the next section.
+Just remember that such errors exist, and note the importance of testing as you go along, for instance using LED blink patterns to monitor your progress along the executiong of the code, or using the technique introduced below.
 
 
 Debugging strategies
@@ -105,11 +106,14 @@ Communications between the computer and the microcontroller
 -----------------------------------------------------------
 
 This section is more advanced, but really useful once you get it to
-work. What is difficult here is that it depends on the computer
+work.
+
+You can get your board to send text messages to your computer using Serial communications.
+What is difficult here is that it depends on the computer
 connected to the board. Different operating systems will use different
-software (that you may need to install) in order to talk to the board,
+software (that you may need to install) to communicate with the board,
 different names for the port used to connect the board, and they would
-behave differently. Give it a try, but don't panic if it does not work
+behave slightly differently. Give it a try, but don't panic if it does not work
 for you straight away. You can go through the next activity without
 reading text from the board.
 
@@ -119,6 +123,11 @@ Read the first half of the mbed doc on `debugging with printf() calls
 <https://docs.mbed.com/docs/mbed-os-handbook/en/latest/debugging/printf/>`_,
 until the section *Printf() from an interrupt context*.
 
+You will need to use a Terminal to handle the communication with the board
+and display text. This page may be useful to install one:
+
+https://os.mbed.com/handbook/Terminals
+
 
 
 Example
@@ -127,8 +136,10 @@ Example
 .. admonition:: Exercise
 
    The program below should cycle the three LEDs, but doesn't work
-   quite as expected. You suspect at first that your third LED is
-   faulty.
+   quite as expected. You can try it on your device. 
+   The third LED is not blinking, and you may assume at first that
+   it is faulty:update
+   .
 
    .. code-block:: c
 
@@ -174,6 +185,8 @@ Example
 	          select_led(t);
 	          pc.printf("LED %d is ON.\r\n", t);
 	          wait(0.5);
+              // cycles the values of t
+              // check how the modulo operation (%) works if unsure
 	          t=(t+1)%3;
 
 	    }
