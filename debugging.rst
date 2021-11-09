@@ -138,8 +138,7 @@ Example
    The program below should cycle the three LEDs, but doesn't work
    quite as expected. You can try it on your device. 
    The third LED is not blinking, and you may assume at first that
-   it is faulty:update
-   .
+   it is faulty.
 
    .. code-block:: c
 

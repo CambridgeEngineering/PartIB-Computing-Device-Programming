@@ -27,7 +27,7 @@ We could start with the following code:
 	void onButtonPress() 
 	{
 		led1 = !led1;
-		wait(0.3);
+		wait_us(300000);
 	}
 	 
 	int main() 

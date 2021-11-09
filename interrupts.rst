@@ -169,7 +169,7 @@ We will see here a quick and dirty fix to confirm that the issue is indeed relat
 switch bouncing.
 In the next section, we will discuss about proper solutions to this problem.
 
-What we want is to prevent the onButtonPress function to be called multiple
+What we want is to prevent the `onButtonPress` function to be called multiple
 times when the button is pressed and its state fluctuates for a
 little while.
 To do this, we just need to force the program to wait a short time
@@ -177,7 +177,9 @@ after each call of the callback function.
 This can be achieve by adding a wait function call in the callback function.
 
 Because it is not good practice to add a wait call in an interrupt (interrupt calls should execute fast),
-the latest mbed compilers only allow the wait_us function ("us" stands for microseconds) to be used.
+the latest mbed compilers only allow us to use the `wait_us` function.
+Here, "us" stands for microseconds, which is the unit of the duration to be passed as parameter.
+We will see in the next tutorial how to use properly interrupts without relying on the wait functions.
 
 Try to change the code of the callback function to:
 
