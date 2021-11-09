@@ -173,7 +173,7 @@ Here are a few comments that may be helpful at this point:
 - The variable "myled" controls the state of LED1.
   Although it is manipulated as an integer, it is an
   instance of the class `DigitalOut
-  <https://os.mbed.com/handbook/DigitalOut>`_. The pin number is
+  <https://os.mbed.com/docs/mbed-os/latest/apis/digitalout.html>`_. The pin number is
   specified when the object is declared, and remains attached to
   it. LED1 is a shortcut for the pin number associated with the user
   LED1. These associations are board specific, and defined in the
