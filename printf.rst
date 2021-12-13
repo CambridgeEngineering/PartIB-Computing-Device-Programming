@@ -7,7 +7,7 @@ Simple text output
 ^^^^^^^^^^^^^^^^^^
 
 **printf** is a built-in function in what is known as the standard library.
- printf (print formatted) takes as input a format string and a series of variables.
+ ``printf`` (print formatted) takes as input a format string and a series of variables.
 
 The format string tells printf what to print and how it should appear.
 A simple example is:
@@ -19,7 +19,7 @@ A simple example is:
 which will print the ASCII characters 't', 'e', 's' and 't'. The text "test" is shown in the terminal.
 
 If we then call printf again with the same function argument ("test") we would observe "testtest" in the terminal.
-This is why printf format strings often contain control characters such as \n or \r.
+This is why ``printf`` format strings often contain control characters such as ``\n`` or ``\r`` to force a new line.
 The backslash indicates to printf that the next character should be interpreted as a control character.
 This is why:
 
