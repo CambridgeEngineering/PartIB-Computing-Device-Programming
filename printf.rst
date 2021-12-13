@@ -47,13 +47,15 @@ The string is a format string which instructs printf how to arrange the printout
 
 	printf("x: %d\r\n", x);
 
-sends the string `x: %d\r\n` to `printf`.
-The `%d` part in the string is a format instruction to `printf`.
-It means substitute `%d` for an integer variable.
-`printf` will read the contents of the variable `x` (which is an `int`) and splice it into the format string at the location of the formatting instruction.
-For instance, if `x` is equal to 20 then printf will generate the string `"x: 20\r\n"`.
+sends the string ``x: %d\r\n`` to ``printf``.
+The ``%d`` part in the string is a format instruction to ``printf``.
+It means substitute ``%d`` for an integer variable.
+``printf`` will read the contents of the variable ``x`` (which is an ``int``) and splice it into the format string at the location of the formatting instruction.
+For instance, if ``x`` is equal to 20 then printf will generate the string ``"x: 20\r\n"``.
 
-The code below prints out the contents of both x and y:
+The code below prints out the contents of both ``x`` and ``y``:
+
+.. code-block:: c
 
 	#include "mbed.h"
 
@@ -63,4 +65,4 @@ The code below prints out the contents of both x and y:
 	    printf("x: %d y: %d\r\n", x, y);
 	}
 	
-Run the code on your Mbed device and ensure the terminal output is as expected. Using `printf` is very useful for quick debugging as it enables you to print out variable values at specific points in your code.
+Run the code on your Mbed device and ensure the terminal output is as expected. Using ``printf`` is very useful for quick debugging as it enables you to print out variable values at specific points in your code.
