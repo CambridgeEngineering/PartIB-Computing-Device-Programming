@@ -76,6 +76,8 @@ You are ready to start coding!
 
 
 
+.. code-block:: c
+
 A first project
 ---------------
 
@@ -84,9 +86,40 @@ Creation of a new project
 
 - Create new project by clicking on "New",
 
-- Make sure that the platform is correct, and select the template "Blinky LED test for the ST Nucleo boards",
+- Make sure that the platform (i.e. the micro-controller model) is correct, and select the template "mbed OS Blinky LED Hello World",
 
 - Open the "main.cpp" file. The code should look like this:
+
+
+.. code-block:: c
+
+	/* mbed Microcontroller Library
+	 * Copyright (c) 2019 ARM Limited
+	 * SPDX-License-Identifier: Apache-2.0
+	 */
+
+	#include "mbed.h"
+	#include "platform/mbed_thread.h"
+
+
+	// Blinking rate in milliseconds
+	#define BLINKING_RATE_MS   	  500
+
+
+	int main()
+	{
+	    // Initialise the digital pin LED1 as an output
+	    DigitalOut led(LED1);
+
+	    while (true) {
+		led = !led;
+		thread_sleep_for(BLINKING_RATE_MS);
+	    }
+	}
+
+
+To get us started, we will use the code below as a first example. Please delete the sample code above and replace it with the code below.
+
 
 .. code-block:: c
 
@@ -107,6 +140,8 @@ Creation of a new project
 - Press the compile button. If there is no error in your code, a file
   is then downloaded on your computer, ready to be installed on your
   microcontroller.
+
+You will notice a number of warning messages related to the use of the function "wait". As you will see in this lab, this function is ineffective as it keeps the processor busy doing nothing. The original template code did a better job. You can read more about this `in the documentation <https://os.mbed.com/docs/mbed-os/v6.5/feature-i2c-doxy/group__platform__wait__api.html>`_ if you want, but for now we will continue to use the wait function.
 
 
 
@@ -141,7 +176,7 @@ Here are a few comments that may be helpful at this point:
 - The variable ``myled`` controls the state of LED1.
   Although it is manipulated as an integer, it is an
   instance of the class `DigitalOut
-  <https://os.mbed.com/handbook/DigitalOut>`_. The pin number is
+  <https://os.mbed.com/docs/mbed-os/latest/apis/digitalout.html>`_. The pin number is
   specified when the object is declared, and remains attached to
   it. LED1 is a shortcut for the pin number associated with the user
   LED1. These associations are board specific, and defined in the

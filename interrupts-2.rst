@@ -27,7 +27,7 @@ We could start with the following code:
 	void onButtonPress() 
 	{
 		led1 = !led1;
-		wait(0.3);
+		wait_us(300000);
 	}
 	 
 	int main() 
@@ -105,8 +105,8 @@ This is done with the following statement:
 
 	event_timeout.attach(event_callback_function, time_interval);
 
-where ``event_callback_function`` is the name of the function to call,
-and ``time_interval`` is expressed in milliseconds.
+where `event_callback_function` is the name of the function to call,
+and `time_interval` is expressed in seconds.
 Time is counted from the moment when the callback function is attached.
 
 

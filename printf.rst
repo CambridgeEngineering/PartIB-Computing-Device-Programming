@@ -7,7 +7,7 @@ Simple text output
 ^^^^^^^^^^^^^^^^^^
 
 **printf** is a built-in function in what is known as the standard library.
- printf (print formatted) takes as input a format string and a series of variables.
+ ``printf`` (print formatted) takes as input a format string and a series of variables.
 
 The format string tells printf what to print and how it should appear.
 A simple example is:
@@ -19,7 +19,7 @@ A simple example is:
 which will print the ASCII characters 't', 'e', 's' and 't'. The text "test" is shown in the terminal.
 
 If we then call printf again with the same function argument ("test") we would observe "testtest" in the terminal.
-This is why printf format strings often contain control characters such as \n or \r.
+This is why ``printf`` format strings often contain control characters such as ``\n`` or ``\r`` to force a new line.
 The backslash indicates to printf that the next character should be interpreted as a control character.
 This is why:
 
@@ -45,21 +45,24 @@ The string is a format string which instructs printf how to arrange the printout
 
 .. code-block:: c
 
-printf("x: %d\r\n", x);
+	printf("x: %d\r\n", x);
 
-sends the string x: %d\r\n (which really is the character sequence x, :, , %, d, \r, \n, \0) to printf.
-The %d part in the string is a format instruction to printf.
-It means substitute %d for an integer variable.
-printf will read the contents of the variable x (which is an int) and splice it into the format string at the location of the formatting instruction.
-For instance, if x = 20 then printf will generate the string "x: 20\r\n" (x, :x, , 2, 0, \r, \n, \0).
+sends the string ``x: %d\r\n`` to ``printf``.
+The ``%d`` part in the string is a format instruction to ``printf``.
+It means substitute ``%d`` for an integer variable.
+``printf`` will read the contents of the variable ``x`` (which is an ``int``) and splice it into the format string at the location of the formatting instruction.
+For instance, if ``x`` is equal to 20 then printf will generate the string ``"x: 20\r\n"``.
 
-The code below prints out the contents of both x and y:
+The code below prints out the contents of both ``x`` and ``y``:
 
-#include "mbed.h"
+.. code-block:: c
 
-int main() {
-    int x = 20;
-    int y = 40;
-    printf("x: %d y: %d\r\n", x, y);
-}
-Run the code on your Mbed device and ensure the terminal output is as expected. Using printf is very useful for quick debugging as it enables you to print out variable values at specific points in your code.
+	#include "mbed.h"
+
+	int main() {
+	    int x = 20;
+	    int y = 40;
+	    printf("x: %d y: %d\r\n", x, y);
+	}
+	
+Run the code on your Mbed device and ensure the terminal output is as expected. Using ``printf`` is very useful for quick debugging as it enables you to print out variable values at specific points in your code.

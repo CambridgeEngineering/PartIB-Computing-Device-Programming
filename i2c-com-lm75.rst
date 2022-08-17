@@ -47,7 +47,7 @@ The master (microcontroller) would continue to control the clock, but this time 
 I\ :sup:`2`\ C library functions
 ---------------------
 
-We will use here the write and read functions of the `mbed library <https://os.mbed.com/docs/latest/reference/i2c.html>`_ to performs a complete write/read transactions. Both functions handle the start, stop and acknowledgements for us.
+We will use here the write and read functions of the `mbed library <https://os.mbed.com/docs/latest/apis/i2c.html>`_ to performs a complete write/read transactions. Both functions handle the start, stop and acknowledgement signals for us.
 
 
 **Write to a slave device**
