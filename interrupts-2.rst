@@ -97,7 +97,7 @@ To use a time interrupt, we need to declare a variable of type ``Timeout``.
 
 	Timeout event_timeout;
 
-We can now attach to event_timeout a callback function and indicate the time
+We can now attach to the object ``event_timeout`` a callback function and indicate the time
 interval before it is called.
 This is done with the following statement:
 
@@ -105,8 +105,8 @@ This is done with the following statement:
 
 	event_timeout.attach(event_callback_function, time_interval);
 
-where `event_callback_function` is the name of the function to call,
-and `time_interval` is expressed in seconds.
+where ``event_callback_function`` is the name of the function to call,
+and ``time_interval`` is expressed in seconds.
 Time is counted from the moment when the callback function is attached.
 
 
