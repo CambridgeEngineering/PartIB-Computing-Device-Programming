@@ -134,7 +134,7 @@ Function pointers
 -----------------
 
 Pointers can also contain the address of a section of compiled code in memory, rather than data.
-This allows us to pass a function as a parameter to another function, by passing the address of its code.
+This allows us to pass a function as a parameter to another function by passing the address of its code in memory.
 We will use this later to tell the microcontroller what to do (i.e. what code to execute) when particular events occur.
 
 For now, let's just look at a typical situation where this would be useful.
@@ -189,14 +189,18 @@ to output results, which is useful here to monitor what happens.
 
 	}
 
-
+Note that we need to specify fully in the declaration of second_derivative the types of the input and output of the function we will pass: ``float (*f)(float)``. This makes sure the compiler also knows how to interact with the function, i.e. how to package its input, and how to interpret its output. 
 
 This example may look confusing if you are reading attentively enough.
+<<<<<<< HEAD
 Why didn't we pass the address of the function, using ``second_derivative(&f_1, 1)``?
 Why didn't we call the function f using ``(*f)(x)`` in the second_derivative function?
+=======
+Since second_derivative takes a pointer to a function as parameter, why didn't we pass the address of the function, using second_derivative(&f_1, 1)? Why didn't we call the function f using (\*f)(x) in the second_derivative function?
+>>>>>>> master
 
-The reason is that a function name is treated by the compiler as a pointer.
-You could also have used the following syntax for the calculation of the second derivative:
+The reason is that a function name is already treated by the compiler as a pointer to the function code, to make the program more readable.
+There is some flexibility in the syntax though, and you could also have used the following syntax for the calculation of the second derivative:
 
 .. code-block:: c
 

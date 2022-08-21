@@ -61,7 +61,7 @@ To complete the task, you may need to learn a few important aspects of
 low level programming:
 
 - To record a sequence, a data structure is needed.
-	In python, or during the Mars Lander exercise, you used clever data
+	In python, you can use clever data
 	structures that could easily change size to accommodate more data.
 	When programming simple devices, one tends to keep tighter control on
 	memory, allocating buffers with a specific size. We will look at how

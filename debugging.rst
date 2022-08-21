@@ -126,7 +126,6 @@ different names for the port used to connect the board, and they would
 behave slightly differently. Give it a try, but don't panic if it does not work
 for you straight away. You can go through the next activity without
 reading text from the board.
->>>>>>> master
 
 
 
