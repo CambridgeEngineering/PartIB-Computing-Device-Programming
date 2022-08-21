@@ -137,7 +137,7 @@ To get us started, we will use the code below as a first example. Please delete 
   
 - Whilst the code if compiling, lots of messages will be printed in the output panel under the editing window. If there is no error in your code, it will eventually tell you that the build was a success!
  
- - A file is then downloaded by the web browser on your computer, ready to be installed on your microcontroller. The file name would be something like mbed-os-example-blinky-5.NUCLEO_F746ZG.bin
+- A file is then downloaded by the web browser on your computer, ready to be installed on your microcontroller. The file name would be something like mbed-os-example-blinky-5.NUCLEO_F746ZG.bin
 
 If you pay attention, you will notice a number of warning messages related to the use of the function "wait". These are listed in the Problems panel, next to the output panel. As you will see in this lab, this function is ineffective as it keeps the processor busy doing nothing. The original template code did a better job. You can read more about this `in the documentation <https://os.mbed.com/docs/mbed-os/v6.5/feature-i2c-doxy/group__platform__wait__api.html>`_ if you want, but for now we will continue to use the wait function.
 
