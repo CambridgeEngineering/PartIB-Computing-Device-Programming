@@ -18,7 +18,7 @@ Let's consider a few examples. Take a PWM frequency of 10kHz; this means that th
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png
    :scale: 50 %
-   :alt: Peltier cell
+   :alt: Duty_cycle_PWM 
 
    PWM. Source: Wikipedia
 
@@ -42,7 +42,7 @@ This technique is so popular that you can find a full page on Wikipedia (https:/
 The PWM library
 ---------------
 
-The `MbedOS PWM library <https://os.mbed.com/docs/mbed-os/v5.13/apis/pwmout.html>`_ simplifies the use PWM on the microcontroller. 
+The `MbedOS PWM library <https://os.mbed.com/docs/mbed-os/v6.15/apis/pwmout.html>`_ simplifies the use PWM on the microcontroller. 
 
 First, you need to declare your PWM output
 
@@ -79,7 +79,7 @@ You can also read the current PWM duty cycle through the instruction
 	pwmled.read(); 
 
 which returns a floating-point value. 
-For more details, please refer to the `PwmOut API <https://os.mbed.com/docs/mbed-os/v5.13/apis/pwmout.html#pwmout-class-reference>`_.
+For more details, please refer to the `PwmOut API <https://os.mbed.com/docs/mbed-os/v6.15/apis/pwmout.html>`_.
 
 
 LED brightness through PWM
@@ -101,17 +101,12 @@ By now the following code should be quite readable.
 		printf("pwm set to %.2f %%\n", pwmled.read());    
 	}
 
-The code switches ON and OFF the LED 10000 times a second. Within each cycle the LED is ON only for 10% of the time. Your eyes cannot see such fast frequencies and you will perceive the overal switching pattern as low brightness.
-
-Try different duty cycles to adjust the brightness of the LED. Do you see a linear relation between duty cycle and brightness?
+The code switches ON and OFF the LED 1000 times a second. Within each cycle the LED is ON only for 10% of the time. Your eyes cannot see such fast frequencies and you will perceive an average brightness.
 
 
-Tasks
------
+.. admonition:: Task
 
-- Modify the code to change brightness levels by pressing the button.
-
-- Modify the code to make brightness slowly pulsating from low brightness to high brightness and back.
+   **Modify the code to make brightness slowly pulsating from low brightness to high brightness and back.**
 
 
 
