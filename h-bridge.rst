@@ -40,7 +40,7 @@ The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V
 The image below, from the breakout board datasheet, shows the different inputs and outputs of the circuit. 
 
 .. figure:: images/L298N-driver.png
-   :scale: 50 %
+   :scale: 40 %
    :alt: L298N
 
    L298N H bridge connections. 
@@ -80,80 +80,80 @@ Regulation of the speed and rotation direction of a DC motor
 
    .. code-block:: c
 
-  #include "mbed.h"
+    #include "mbed.h"
 
 
-  DigitalOut ledgreen(LED1);
-  PwmOut pwmblue(LED2);
-  PwmOut pwmred(LED3);
+    DigitalOut ledgreen(LED1);
+    PwmOut pwmblue(LED2);
+    PwmOut pwmred(LED3);
 
-  // Pins used for the H-bridge control
-  PwmOut pwmload(D11);
-  DigitalOut in_A(D8);
-  DigitalOut in_B(D9);
+    // Pins used for the H-bridge control
+    PwmOut pwmload(D11);
+    DigitalOut in_A(D8);
+    DigitalOut in_B(D9);
 
-  // We use the LEDs to communicate the state of the H-bridge
-  // LED1 (green) when not enabled
-  // LED2 when in the positive direction
-  // LED3 when in the negative direction
-  DigitalOut ledgreen(LED1);
-  PwmOut pwmblue(LED2);
-  PwmOut pwmred(LED3);
-
-
-  void setload(float x)
-  {
-    if (x>0)
-      { in_A = 1;
-      in_B = 0;
-      pwmload.write(x);
-      pwmred.write(x);
-      pwmblue.write(0.0);
-      ledgreen = 0;
-      }
-    else if (x<0)
-      { in_A = 0;
-      in_B = 1;
-      pwmload.write(-x);
-      pwmred.write(0.0);
-      pwmblue.write(-x);
-      ledgreen = 0;
-      }
-    else
-      { in_A = 0;
-      in_B = 0;
-      pwmload.write(0.0);
-      pwmred.write(0.0);
-      pwmblue.write(0.0);
-      ledgreen = 1;
-      }
-  }
+    // We use the LEDs to communicate the state of the H-bridge
+    // LED1 (green) when not enabled
+    // LED2 when in the positive direction
+    // LED3 when in the negative direction
+    DigitalOut ledgreen(LED1);
+    PwmOut pwmblue(LED2);
+    PwmOut pwmred(LED3);
 
 
-
-  int main() 
-  {
-    float load = 0.0;
-    for (load = 0; load <=1; load += 0.025)
+    void setload(float x)
     {
-      setload(load);
-      wait(0.1);
+      if (x>0)
+        { in_A = 1;
+        in_B = 0;
+        pwmload.write(x);
+        pwmred.write(x);
+        pwmblue.write(0.0);
+        ledgreen = 0;
+        }
+      else if (x<0)
+        { in_A = 0;
+        in_B = 1;
+        pwmload.write(-x);
+        pwmred.write(0.0);
+        pwmblue.write(-x);
+        ledgreen = 0;
+        }
+      else
+        { in_A = 0;
+        in_B = 0;
+        pwmload.write(0.0);
+        pwmred.write(0.0);
+        pwmblue.write(0.0);
+        ledgreen = 1;
+        }
     }
-    while(true)
+
+
+
+    int main() 
     {
-      for (load = 1; load >=-1; load -= 0.025)
+      float load = 0.0;
+      for (load = 0; load <=1; load += 0.025)
       {
         setload(load);
         wait(0.1);
       }
-      for (load = -1; load <=1; load += 0.025)
+      while(true)
       {
-        setload(load);
-        wait(0.1);
+        for (load = 1; load >=-1; load -= 0.025)
+        {
+          setload(load);
+          wait(0.1);
+        }
+        for (load = -1; load <=1; load += 0.025)
+        {
+          setload(load);
+          wait(0.1);
+        }
       }
-    }
 
-  }
+    }
 
 
 .. admonition:: Task
