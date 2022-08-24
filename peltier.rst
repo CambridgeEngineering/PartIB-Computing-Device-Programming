@@ -60,7 +60,7 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
 
 	// *** Temperature sensor: pins and variables 
 	#define LM75_REG_TEMP (0x00) // Temperature Register
-	#define LM75_REG_CONF (0x00) // Configuration Register
+	#define LM75_REG_CONF (0x01) // Configuration Register
 	#define LM75_ADDR     (0x90) // LM75 address
 	I2C i2c(I2C_SDA, I2C_SCL);  //D14 and D15
 	Ticker dT_input;
