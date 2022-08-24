@@ -5,11 +5,9 @@ Activity 3: Actuation and feedback
 Learning objectives
 -------------------
 
+Microcontroller do logic and mechanics, but you can't really get power out of them. In this activity, you will learn how to deliver power to a device attached to the microcontroller, and how to control this power to achieve a certain goal. This will transform the logical/mathematical capabilities of your micro-controller into actions that have effect on the real world. 
+The activity relies on the skills that you have learned in the previous activities - you will use interrupts, read sensors, and maybe even solder again!
 
-
-In this third activity you will learn about actuation, which transforms the logical/mathematical capabilities of your micro-controller into actions that have effect on the real world. The activity relies on the skills that you have learned in the first and second activities - you will have to use interrupts, read sensors, and solder again!
-
-You will implement a temperature controller. The controller will acquire data from the temperature sensor and will drive a Peltier cell to achieve the desired temperature.  
 
 
 
@@ -18,14 +16,9 @@ You will implement a temperature controller. The controller will acquire data fr
 Task to complete
 ----------------
 
+The aim is to implement a simple temperature controller. 
 
-
-
-- Adjust the brightness of a LED and of a halogen bulb.
-
-- Use a Peltier cell to transfer a constant amount of heat.
- 
-- Temperature regulation: use temperature sensor and Peltier cell to regulate the temperature of a given test-surface to a desired temperature.
+Using a temperature sensor attached against one of the sides of a Peltier cell, your task is to keep constant the temperature it measures by transferring heat using the Peltier cell. The target temperature will be set in the code, and possibly changed by the user using the integrated button. The range of target temperatures should be close to ambient temperature (say within 5 degrees) to keep currents low enough.
 
 
 
@@ -37,7 +30,7 @@ What you may need to learn
 
 - Learn about Pulse-Width-Modulation and how to use it to adjust the brightness of a LED.
 
-- Learn what a H-Bridge is and how to use it to adjust the brightness of a halogen bulb.
+- Learn what a H-Bridge is and how to use it to adjust the electric power delivered to a device. As an example, you can regulate the speed and direction of a DC motor.
 
 - Learn what a Peltier cell is and how to drive it to transfer heat.
 
