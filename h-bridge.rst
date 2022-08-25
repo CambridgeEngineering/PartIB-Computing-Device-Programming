@@ -83,10 +83,6 @@ Regulation of the speed and rotation direction of a DC motor
     #include "mbed.h"
 
 
-    DigitalOut ledgreen(LED1);
-    PwmOut pwmblue(LED2);
-    PwmOut pwmred(LED3);
-
     // Pins used for the H-bridge control
     PwmOut pwmload(D11);
     DigitalOut in_A(D8);
