@@ -35,7 +35,7 @@ L298N Driver
 ---------------
 
 
-The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V to 40 V and can supply up to 2 A per bridge. To know more about this driver, consults the relevant data-sheet from manufacturers of the `driver integrated circuit <docs/L298N.pdf>` and the manufacturer of the `breakout board <docs/L298N-Motor-Driver-Datasheet.pdf>`. 
+The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V to 40 V and can supply up to 2 A per bridge. To know more about this driver, consults the relevant data-sheet from manufacturers of the :download:`driver integrated circuit <docs/L298N.pdf>` and the manufacturer of the :download:`breakout board <docs/L298N-Motor-Driver-Datasheet.pdf>`. 
 
 The image below, from the breakout board datasheet, shows the different inputs and outputs of the circuit. 
 

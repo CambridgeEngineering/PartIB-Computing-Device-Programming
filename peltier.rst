@@ -18,9 +18,12 @@ Preparation of a cell
    Peltier cell. Source: Wikipedia
 
 
-- One of the two plates of the Peltier cell is engineered to be hot. The other to be cold. Please attach the thermal adesive on both sides, then attach the heat sink to the cold side. To identify the hot side please refer to the :download:`datasheet <docs/peltier_datasheet.pdf>`. For the particular model provided, place the cell on the bench/desk with the black cable on the right/down and red cable on the left/down, then the top plate is the hot plate. 
+One of the two plates of the Peltier cell is engineered to be hot. The other to be cold. Please attach the thermal adhesive on both sides, then attach the heat sink to the cold side. To identify the hot side please refer to the :download:`datasheet <docs/peltier_datasheet.pdf>`. For the particular model provided, place the cell on the bench/desk with the black cable on the right/down and red cable on the left/down, then the top plate is the hot plate. 
 
-- Connect the Peltier cell to the H-bridge output. Set the power supply to 9 V and 3 A max. Reuse the code you wrote in the previous section to test the Peltier cell and make sure that the cold side get cooler, and how side warmer when the load is positive. If it works the otherway around, either you change your code, or you switch the cable of the Peltier cell.
+
+.. admonition:: Task
+
+   **Connect the Peltier cell to the H-bridge output. Set the power supply to 9 V and 1 A max. Reuse the code you wrote in the previous section to test the Peltier cell and make sure that the cold side get cooler, and hot side warmer when the load is positive. You should be able to determine this by carefully touching the surfaces with your fingers. Be careful as it may get hot! If it works the otherway around, either you change your code, or you switch the cable of the Peltier cell.**
 
 - Place the Peltier cell on your desk/bench with the heat sink in contact with the bench surface and the hot side exposed to the air. Then place the temperature sensor on the hot side (fix it with standard tape).
 
@@ -42,6 +45,8 @@ The following code drives the Peltier cell with a small voltage and monitors the
 
 The code to drive the Peltier cell is similar to the one for LED and motor. 
 Setting and reading of the temperature sensor is realized through minor adaptations of the code you have developed in Activity 2. In fact, you will need to connect the temperature sensor to the pins **D14** and **D15** as in Activity 2.
+
+You will need to attach the sensor to one of the surfaces of the Peltier cell. Normal tape should help you do this. Make sure the side of the sensor with the integrated circuit is in contact, and not the other one.
 
 The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.html>`_ interface to set up recurring interrupts. Recurrent interrupts allow to read sensors and send information on the serial port at precise time intervals. 
 
@@ -89,25 +94,16 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
         { in_A = 1;
         in_B = 0;
         pwmload.write(x);
-        pwmred.write(x);
-        pwmblue.write(0.0);
-        ledgreen = 0;
         }
       else if (x<0)
         { in_A = 0;
         in_B = 1;
         pwmload.write(-x);
-        pwmred.write(0.0);
-        pwmblue.write(-x);
-        ledgreen = 0;
         }
       else
         { in_A = 0;
         in_B = 0;
         pwmload.write(0.0);
-        pwmred.write(0.0);
-        pwmblue.write(0.0);
-        ledgreen = 1;
         }
     }
 
@@ -142,7 +138,7 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
         
         //*** PWM drive configuration
         pwmload.period_us(1000);
-        setload(0.1f); // Be careful not to set it too high
+        setload(0.2f); // Be careful not to set it too high
         printf("pwm set to %.2f %%\n", pwmload.read());
 
         //***  Interrupt configuration   
