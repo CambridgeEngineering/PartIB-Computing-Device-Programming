@@ -20,7 +20,7 @@ The aim is to implement a simple temperature controller.
 
 Using a temperature sensor attached against one of the sides of a Peltier cell, your task is to keep constant the temperature it measures by transferring heat using the Peltier cell. The target temperature will be set in the code, and possibly changed by the user using the integrated button. The range of target temperatures should be close to ambient temperature (say within 5 degrees) to keep currents low enough.
 
-Set the target temperature through buttons. 
+As an extra, you may want to consider ways to set the target temperature through the button. 
 
 
 

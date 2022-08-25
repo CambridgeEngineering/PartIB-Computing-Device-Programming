@@ -49,8 +49,8 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
 
    .. code-block:: c
 
-	#include "mbed.h"
-	#include "stdint.h"
+    #include "mbed.h"
+    #include "stdint.h"
 
     // Pins used for the H-bridge control
     PwmOut pwmload(D11);
@@ -58,30 +58,30 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
     DigitalOut in_B(D9);
 
 
-	// *** Temperature sensor: pins and variables 
-	#define LM75_REG_TEMP (0x00) // Temperature Register
-	#define LM75_REG_CONF (0x01) // Configuration Register
-	#define LM75_ADDR     (0x90) // LM75 address
-	I2C i2c(I2C_SDA, I2C_SCL);  //D14 and D15
-	Ticker dT_input;
-	volatile int read_input = 0;  
+    // *** Temperature sensor: pins and variables 
+    #define LM75_REG_TEMP (0x00) // Temperature Register
+    #define LM75_REG_CONF (0x01) // Configuration Register
+    #define LM75_ADDR     (0x90) // LM75 address
+    I2C i2c(I2C_SDA, I2C_SCL);  //D14 and D15
+    Ticker dT_input;
+    volatile int read_input = 0;  
 
-	// *** Serial communication: variables 
-	Serial pc(SERIAL_TX, SERIAL_RX);
-	Ticker dT_serial;
-	volatile int update_serial = 0;  
+    // *** Serial communication: variables 
+    Serial pc(SERIAL_TX, SERIAL_RX);
+    Ticker dT_serial;
+    volatile int update_serial = 0;  
 
-	// *** Interrupt functions 
-	void sensing() {
-		read_input = 1;
-	}
+    // *** Interrupt functions 
+    void sensing() {
+        read_input = 1;
+    }
 
-	void serial_com() {
-		update_serial = 1;
-	}
+    void serial_com() {
+        update_serial = 1;
+    }
 
 
-	// *** General functions 
+    // *** General functions 
 
     void setload(float x)
     {
@@ -112,54 +112,54 @@ The code uses the `Ticker <https://os.mbed.com/docs/mbed-os/v5.13/apis/ticker.ht
     }
 
 
-	float read_temperature() {
-		// Read temperature register
-		char data_write[2];
-		char data_read[2];
-		data_write[0] = LM75_REG_TEMP;
-		i2c.write(LM75_ADDR, data_write, 1, 1); // no stop
-		i2c.read(LM75_ADDR, data_read, 2, 0);
+    float read_temperature() {
+        // Read temperature register
+        char data_write[2];
+        char data_read[2];
+        data_write[0] = LM75_REG_TEMP;
+        i2c.write(LM75_ADDR, data_write, 1, 1); // no stop
+        i2c.read(LM75_ADDR, data_read, 2, 0);
 
-		// Calculate temperature value in Celcius
-		int16_t i16 = (data_read[0] << 8) | data_read[1];
-		// Read data as twos complement integer so sign is correct
-		float temperature = i16 / 256.0;
-		// Return temperature
-		return temperature;   
-	}
+        // Calculate temperature value in Celcius
+        int16_t i16 = (data_read[0] << 8) | data_read[1];
+        // Read data as twos complement integer so sign is correct
+        float temperature = i16 / 256.0;
+        // Return temperature
+        return temperature;   
+    }
 
 
-	int main() {
+    int main() {
 
-		//*** temperature sensing configuration 
-		//Sensor configuration
-		char data_write[2];
-		data_write[0] = LM75_REG_CONF;
-		data_write[1] = 0x02;
-		i2c.write(LM75_ADDR, data_write, 2, 0);
-		//variables
-		float temperature = 0;
-		
-		//*** PWM drive configuration
-		pwmload.period_us(1000);
-		setload(0.1f); // Be careful not to set it too high
-		printf("pwm set to %.2f %%\n", pwmload.read());
+        //*** temperature sensing configuration 
+        //Sensor configuration
+        char data_write[2];
+        data_write[0] = LM75_REG_CONF;
+        data_write[1] = 0x02;
+        i2c.write(LM75_ADDR, data_write, 2, 0);
+        //variables
+        float temperature = 0;
+        
+        //*** PWM drive configuration
+        pwmload.period_us(1000);
+        setload(0.1f); // Be careful not to set it too high
+        printf("pwm set to %.2f %%\n", pwmload.read());
 
-		//***  Interrupt configuration   
-		dT_input.attach(sensing, 0.01);
-		dT_serial.attach(serial_com, 0.25);
-		
-		while(1) {
-			if (read_input == 1) {
-				read_input = 0;
-				temperature = read_temperature();             
-			}
-			if (update_serial == 1) {
-				update_serial = 0;
-				pc.printf("Pwm set to %.2f, Temperature = %.3f\r\n ",pwmload.read(), temperature); 
-			}
-		}   
-	}
+        //***  Interrupt configuration   
+        dT_input.attach(sensing, 0.01);
+        dT_serial.attach(serial_com, 0.25);
+        
+        while(1) {
+            if (read_input == 1) {
+                read_input = 0;
+                temperature = read_temperature();             
+            }
+            if (update_serial == 1) {
+                update_serial = 0;
+                pc.printf("Pwm set to %.2f, Temperature = %.3f\r\n ",pwmload.read(), temperature); 
+            }
+        }   
+    }
 
 
 
