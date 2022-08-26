@@ -40,7 +40,7 @@ The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V
 The image below, from the breakout board datasheet, shows the different inputs and outputs of the circuit. 
 
 .. figure:: images/L298N-Module-Pinout.jpg
-   :scale: 40 %
+   :scale: 80 %
    :alt: L298N
 
    L298N H bridge connections. 
