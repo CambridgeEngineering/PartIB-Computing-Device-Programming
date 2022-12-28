@@ -138,7 +138,7 @@ Each time an interrupt is triggered, a red led should also flash on the sensor, 
 .. code-block:: c
 
 		data_write[0] = LM75_REG_CONF;
-		data_write[1] = 0x02;
+		data_write[1] = 0x00;
 		int status = i2c.write(LM75_ADDR, data_write, 2, 0);
 
 
