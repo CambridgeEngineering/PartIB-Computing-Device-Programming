@@ -28,8 +28,9 @@ Reading and writing on the registers
 ------------------------------------
 
 Each register has an address. There is a special register in the device called pointer register that sets which data register will be involved in the following reading or writing operation.
-We do not need to worry to much about the details, as communications will be handled by special functions in the mbed I2C library.
+We do not need to worry too much about the details, as communications will be handled by special functions in the mbed I2C library.
 But it is important to understand the sequence of typical I\ :sup:`2`\ C communications to be able to use properly these high level functions.
+
 
 A typical sequence to write in the data registers consists in sending through I\ :sup:`2`\ C the device address (7 bits and R/W bit set to W), followed by the value of the pointer register, to indicate which data register we want to write on, and the data to store on this register (see figs 7 and 11 in the datasheet).
 
@@ -37,7 +38,8 @@ Note the the value of the data line (SDA) changes when the clock is low, and mus
 
 Note also that data is only sent one byte at a time, followed by the acknowledgement bit.
 
-To read, a similar precess is followed, but two steps are needed (See figs 8 and 11 in the datasheet).
+
+To read, a similar process is followed, but two steps are needed (See figs 8 and 11 in the datasheet).
 First, we send to the I\ :sup:`2`\ C bus the device address (7 bits and R/W bit set to W), followed by the value of the pointer register to indicate what we would want to read.
 The microcontroller would then send another start signal.
 The next part involves sending again to the I\ :sup:`2`\ C bus the device address, but this time with the R/W bit set to R.
@@ -113,15 +115,17 @@ This would set the value of the configuration buffer:
 
 *Repeated start:*
 
-By default, the read and write commands would complete the transaction with the STOP signal (repeated=false).
+By default, the read and write commands would complete the transaction with the STOP signal (``repeated=false``).
 See for instance:
 
 .. code-block:: c
 
     int status = i2c.write(LM75_ADDR, data_write, 2, 0);
 
-However, to read data, we need two steps, one to indicate, with a write command which register we want to read, followed by a read.
-The write call should in this case be sent with ``repeated=true``.
+
+However, to read data, we need two steps: first, we need to indicate, with a write command, which register we want to read; next, we need to read the register we previously expressed interest for.
+The write call should in this case be sent with the last parameter (``repeated``) set to true or 1.
+
 
 .. code-block:: c
 

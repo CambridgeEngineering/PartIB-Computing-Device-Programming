@@ -45,17 +45,23 @@ Try the code. ``LED3`` should blink, and the button toggle the state of ``LED1``
 So all seems to work. But...
 
 
+Callback functions need to be small
+-----------------------------------
+
+Focus now on what happens to the task running in the main function loop, flashing periodically the LED 3.
+This loop stops for a little while when the button is pressed,
+i.e. when the micro-controller is running the wait statement in the callback function.
+Although we need this time delay to prevent bouncing, this also prevents the potentially important code running in the main function to be executed properly.
+Large callback functions would also block other interrupts that may be required to handle additional events in a more
+complex application. For this reason, it is not appropriate to include time consumming code in a callback function.
+
+**It is a general rule to spend as little time as possible in interrupts. Commands such as wait, printf and communications with other ports including Serial or I2C, may cause your micro-controller to not behave properly. Allocating and reallocating memory should also be avoided within a callback function. The compiler may even refuse to compile a code that includes such time consumming tasks in the callback functions.**
 
 
-Focus now on what happens to the very important task, flashing the LED.
-It stops for a little while when the button is pressed,
-while the micro-controller is running the ``wait`` statement in the callback function.
-As seen previously, we need this time delay to prevent bouncing.
-But this also prevents the important task to be performed properly.
-It would also block other interrupts that may be required to handle additional events in a more
-complex application.
-**It is a general rule to spend as little time as possible in interrupts. Comments such as wait, or even printf, may cause your micro-controller to not behave properly.**
+What if you really would like to excute longer tasks in an interrupt? You will need to think about alternative ways to execute the time consuming tasks outside of the interrupt. For instance, you could introduce a global boolean variable that the interrupt sets to a particular value to indicate the interrupt code was executed. The main function loop may then monitor this variable and execute the relevant code when appropriate. 
 
+
+Back to our LED toggle example... 
 The wait statement is only here to prevent the button to trigger multiple
 interrupts when pressed.
 We could do this differently: get the callback function to deactivate the

@@ -12,17 +12,18 @@ Read section 7.1 of the datasheet.
 The OS pin of the sensor is useful to let the device monitor temperature in the background, and send a signal when the temperature exceeds a threshold, Tos.
 A hysteresis temperature, Thyst, is also defined to avoid noisy signal in the interrupt pin.
 Fig 6 of the datasheet shows how the OS pin would be controlled for a certain temperature input.
-There are two different modes of operation for the interrupt in the device, defined in the second bit (B1) of the Config register; in what follows, we use the interrupt mode.
-
+There are two different modes of operation for the interrupt in the device, the interrupt mode and the comparator mode. They are selected using the second bit (B1) of the Config register. 
 
 
 The code below illustrates the use of interrupts.
+We use here the interrupt mode, but the same task can be achieved with the comparator mode.
+
 Start a new project, and paste this code in.
 The sensor needs to be connected as previously, with in addition the OS pin linked to the pin D7 of the microcontroller.
 
 The code contains a couple of new elements:
 
-- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registers; the operation " & 0xFF80" is a bitwise AND operation on the 16-bit of data and the binary number "1111111110000000"; it essentially makes sure that we set to 0 the 7 least significant bits of i16.
+- the address of the registers TOS and THYST are introduced, as well as some code to set the interrupt and hysteresis temperatures. The code essentially does the opposite of what we did to read the temperature. There are only 9 meaningful bits for these registers; the operation " & 0xFF80" is a bitwise AND operation on the 16-bit of data and the binary number "1111111110000000"; it essentially makes sure that we set to 0 the 7 least significant bits of the i16 variable.
 
 - The interrupt pin is active when its value is low, so we should trigger the interrupt when OS goes from high to low. We therefore set the interrupt using the function "fall" rather than "rise" as introduced in the previous activity.
 
@@ -52,7 +53,7 @@ Each time an interrupt is triggered, a red led should also flash on the sensor, 
 
 	Serial pc(SERIAL_TX, SERIAL_RX);
 
-	int16_t i16; // This variable needs to be 16 bits wide for the TOS and THYST conversion to work - can you see why
+	int16_t i16; // This variable needs to be 16 bits wide for the TOS and THYST conversion to work - can you see why?
 
 	void blue_flip()
 	{
@@ -126,3 +127,18 @@ Each time an interrupt is triggered, a red led should also flash on the sensor, 
 	}
 
  
+
+ 
+.. admonition:: Task (optional)
+
+   **Could you program the same behaviour using the comparator mode of the sensor, instead of the interrupt mode?** 
+   Hint: You need to change the value of the configuration register (see section 7.4.2 of the datasheet). The code below would set its relevant bit to select the comparator mode. You will also need to set different behaviours for the rising and falling edges of the interrupt pin.
+
+ 
+.. code-block:: c
+
+		data_write[0] = LM75_REG_CONF;
+		data_write[1] = 0x00;
+		int status = i2c.write(LM75_ADDR, data_write, 2, 0);
+
+
