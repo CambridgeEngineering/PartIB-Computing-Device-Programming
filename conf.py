@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'CUED PartIB Device Programming'
-copyright = u'2017, A.J. Kabla, P.O. Kristensson, J. Durrell'
-author = u'A.J. Kabla, P.O. Kristensson, J. Durrell'
+project = u'Device Programming'
+copyright = u'2017-19, A.J. Kabla, P.O. Kristensson, J. Durrell, F Forni'
+author = u'A.J. Kabla, P.O. Kristensson, J. Durrell, F. Forni (Cambridge University, Engineering Department)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -117,7 +117,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CUED-PartIB-Device-Programmingdoc'
+htmlhelp_basename = 'CUED-Device-Programmingdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -144,8 +144,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'CUED-PartIB-Device-Programming.tex', u'CUED-PartIB-Device-Programming Documentation',
-     u'AJ Kabla, PO Kristensson, J Durrell', 'manual'),
+    (master_doc, 'CUED-Device-Programming.tex', u'CUED-Device-Programming Documentation',
+     u'AJ Kabla, PO Kristensson, J Durrell, F Forni', 'manual'),
 ]
 
 
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'cued-partib-device-programming', u'CUED-PartIB-Device-Programming Documentation',
+    (master_doc, 'cued-device-programming', u'CUED-Device-Programming Documentation',
      [author], 1)
 ]
 
@@ -165,7 +165,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'CUED-PartIB-Device-Programming', u'CUED-PartIB-Device-Programming Documentation',
-     author, 'CUED-PartIB-Device-Programming', 'One line description of project.',
+    (master_doc, 'CUED-Device-Programming', u'CUED-Device-Programming Documentation',
+     author, 'CUED-Device-Programming', 'Self-learning activity about device programming.',
      'Miscellaneous'),
 ]

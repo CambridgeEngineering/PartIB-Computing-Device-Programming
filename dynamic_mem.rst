@@ -89,11 +89,11 @@ Therefore, in practice, to allocate memory for 8 integers we would write:
 	
 The sizeof operator returns the size of type int (4 bytes on your Mbed device), which we then multiply by 8 to get the total number of bytes we need to allocate from the system.
 
-The (int *) part before malloc is known as *casting*.
+The ``(int *)`` command before malloc is known as *casting*.
 Just like in a theatre play, where an actor can be recast into many roles, a return value or variable can be recast into a different type.
-The casting operator changes the return type of malloc from void * (a pointer to any type) to int * (a pointer to an integer).
+The casting operator changes the return type of ``malloc`` from ``void *`` (a pointer to any type) to ``int *`` (a pointer to an integer).
 
-Having allocated the memory and cast the returned pointer to a pointer of type int \*, we can now read and write to the memory area by dereferencing the pointer and using pointer arithmetic:
+Having allocated the memory and cast the returned pointer to a pointer of type ``int *``, we can now read and write to the memory area by dereferencing the pointer and using pointer arithmetic:
 
 
 .. code-block:: c

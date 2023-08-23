@@ -1,4 +1,4 @@
-I2C communication with the LM75 sensor
+I\ :sup:`2`\ C communication with the LM75 sensor
 ======================================
 
 In this tutorial, we assume that the device is connected and returns already a meaningful temperature, as introduced in the previous section.
@@ -16,7 +16,7 @@ Device registers
 ----------------
 
 Section 7.4 of the datasheet lists the four data registers present in the sensor (see table 5 in datasheet).
-The configuration register controls the different modes of operation of the device; you can read or write on it, although you would most write on it to set the desired behaviour of the sensor.
+The configuration register controls the different modes of operation of the device; you can read or write on it, although you would most likely simply write on it to set the desired behaviour of the sensor.
 The temp register contains the last temperature reading; it is read only, as expected.
 The other two registers contain the information needed to control the threshold temperatures, and will be further discussed in the next section of the tutorial.
 
@@ -29,34 +29,36 @@ Reading and writing on the registers
 
 Each register has an address. There is a special register in the device called pointer register that sets which data register will be involved in the following reading or writing operation.
 We do not need to worry too much about the details, as communications will be handled by special functions in the mbed I2C library.
-But it is important to understand the sequence of typical I2C communications to be able to use properly these high level functions.
+But it is important to understand the sequence of typical I\ :sup:`2`\ C communications to be able to use properly these high level functions.
 
-A typical sequence to write in the data registers consists in sending through I2C the device address (7 bits and R/W bit set to W), followed by the value of the pointer register, to indicate which data register we want to write on, and the data to store on this register (see figs 7 and 11 in the datasheet).
 
-Note the the value of the data line (SDA) changes when the clock is low, and must not change when the clock (SCL) is high, as this is when it would be read. However there are two exceptions, which are particular signals to indicate the start and end of communications. To indicate a start of I2C communication, the master would take SDA from high to low while the SCL is high. To indicate the end of the communication, the master would take SDA from low to high while the SCL is high. You will spot these as START and STOP in figs 7 to 12.
+A typical sequence to write in the data registers consists in sending through I\ :sup:`2`\ C the device address (7 bits and R/W bit set to W), followed by the value of the pointer register, to indicate which data register we want to write on, and the data to store on this register (see figs 7 and 11 in the datasheet).
+
+Note the the value of the data line (SDA) changes when the clock is low, and must not change when the clock (SCL) is high, as this is when it would be read. However there are two exceptions, which are particular signals to indicate the start and end of communications. To indicate a start of I\ :sup:`2`\ C communication, the master would take SDA from high to low while the SCL is high. To indicate the end of the communication, the master would take SDA from low to high while the SCL is high. You will spot these as START and STOP in figs 7 to 12.
 
 Note also that data is only sent one byte at a time, followed by the acknowledgement bit.
 
+
 To read, a similar process is followed, but two steps are needed (See figs 8 and 11 in the datasheet).
-First, we send to the I2C bus the device address (7 bits and R/W bit set to W), followed by the value of the pointer register to indicate what we would want to read.
+First, we send to the I\ :sup:`2`\ C bus the device address (7 bits and R/W bit set to W), followed by the value of the pointer register to indicate what we would want to read.
 The microcontroller would then send another start signal.
-The next part involves sending again to the I2C bus the device address, but this time with the R/W bit set to R.
+The next part involves sending again to the I\ :sup:`2`\ C bus the device address, but this time with the R/W bit set to R.
 The master (microcontroller) would continue to control the clock, but this time the slave (sensor) would control the data line, and send, one byte at a time, the data requested.
 
 
-I2C library functions
+I\ :sup:`2`\ C library functions
 ---------------------
 
 We will use here the write and read functions of the `mbed library <https://os.mbed.com/docs/latest/apis/i2c.html>`_ to performs a complete write/read transactions. Both functions handle the start, stop and acknowledgement signals for us.
 
 
-**Write to an I2C slave**
+**Write to a slave device**
 
 .. code-block:: c
 
 	int	write (int address, const char *data, int length, bool repeated=false)
 
-**Read from an I2C slave**
+**Read from a slave device**
 
 .. code-block:: c
 
@@ -67,7 +69,7 @@ Let's look at what these parameters are, and shed some light on the sample code 
 
 *The address:*
 
-The mbed documentation says: "address: 8-bit I2C slave address [ addr | 0 ]".
+The mbed documentation says: "address: 8-bit I\ :sup:`2`\ C slave address [ addr | 0 ]".
 The address should therefore be passed as 8 bits, including the 7 bits for the address, followed by the read/write bit (as the least significant bit).
 The value of this bit actually doesn't matter as it is overridden by the library.
 So how to determine this value from the datasheet?
@@ -113,15 +115,17 @@ This would set the value of the configuration buffer:
 
 *Repeated start:*
 
-By default, the read and write commands would complete the transaction with the STOP signal (repeated=false).
+By default, the read and write commands would complete the transaction with the STOP signal (``repeated=false``).
 See for instance:
 
 .. code-block:: c
 
     int status = i2c.write(LM75_ADDR, data_write, 2, 0);
 
+
 However, to read data, we need two steps: first, we need to indicate, with a write command, which register we want to read; next, we need to read the register we previously expressed interest for.
-The write call should in this case be sent with the last parameter (repeated) set to true or 1.
+The write call should in this case be sent with the last parameter (``repeated``) set to true or 1.
+
 
 .. code-block:: c
 

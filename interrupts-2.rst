@@ -57,6 +57,7 @@ complex application. For this reason, it is not appropriate to include time cons
 
 **It is a general rule to spend as little time as possible in interrupts. Commands such as wait, printf and communications with other ports including Serial or I2C, may cause your micro-controller to not behave properly. Allocating and reallocating memory should also be avoided within a callback function. The compiler may even refuse to compile a code that includes such time consumming tasks in the callback functions.**
 
+
 What if you really would like to excute longer tasks in an interrupt? You will need to think about alternative ways to execute the time consuming tasks outside of the interrupt. For instance, you could introduce a global boolean variable that the interrupt sets to a particular value to indicate the interrupt code was executed. The main function loop may then monitor this variable and execute the relevant code when appropriate. 
 
 
@@ -64,7 +65,7 @@ Back to our LED toggle example...
 The wait statement is only here to prevent the button to trigger multiple
 interrupts when pressed.
 We could do this differently: get the callback function to deactivate the
-button interrupt for a short time, and then turn it back on again.
+button interrupt for a short time, and then call another function later on to turn it back on again.
 During this time interval, we want of course the main function to continue its
 important job of flashing the LED.
 
@@ -74,15 +75,15 @@ We could deactivate an interrupt with the following statement:
 
 	button.rise(NULL);
 
-NULL is a generic C/C++ constant.
-When a pointer value is NULL, it indicates that the pointer points to nothing.
+``NULL`` is a generic C/C++ constant.
+When a pointer value is ``NULL``, it indicates that the pointer points to nothing.
 The code line above therefore replaces the address of the callback function with a value
 that unambiguously indicates that there is no call-back function to call.
 
 
 But how to reattach the interrupt to the callback function after a while,
-without using a wait statement?
-Time to talk about timers and time interrupts!
+without using a ``wait`` statement?
+Time to talk about timers and time interrupts.
 
 Time interrupts
 ---------------
@@ -168,20 +169,20 @@ Note the line:
 
 It seems that we declare the function twice. Why?
 
-This is because the functions onButtonStopDebouncing and onButtonPress
+This is because the functions ``onButtonStopDebouncing`` and ``onButtonPress``
 call each other.
 
-If you remove the first declaration of onButtonStopDebouncing, the compiler will
-tell you that onButtonStopDebouncing is not defined in the function onButtonPress,
+If you remove the first declaration of ``onButtonStopDebouncing``, the compiler will
+tell you that ``onButtonStopDebouncing`` is not defined in the function ``onButtonPress``,
 which is correct, because it is defined further down in the code. 
 But if you swap the order of the function, then the compiler will complain that
-onButtonPress is not declared in onButtonStopDebouncing.
+``onButtonPress`` is not declared in ``onButtonStopDebouncing``.
 
 This is why we have to introduce an early declaration of
-onButtonStopDebouncing
-before we write the code of the function onButtonPress.
-It tells the compiler what the function onButtonPress will be (types of parameters and output)
-which is essentially the information needed to compile onButtonPress properly.
+``onButtonStopDebouncing``
+before we write the code of the function ``onButtonPress``.
+It tells the compiler what the function ``onButtonPress`` will be (types of parameters and output),
+which is all the information it needs to compile ``onButtonPress`` properly.
 
 
 
@@ -195,7 +196,7 @@ The solution above is very satisfactory.
 We are not wasting time any more in the interrupts.
 Having done this, it now looks like the code inside the main function is 
 not optimal either;
-we are still wasting time stuck during wait statements.
+we are still wasting time stuck in a wait statements.
 Maybe there is also a better way to blink a LED while allowing the processor
 to focus on more important tasks?
 
@@ -255,7 +256,7 @@ We don't even need the while loop in the main function.
 	}
 
 
-Note that the main function could still access the state of
+Note that the ``main`` function could still access the state of
 the button or LEDs at any time. 
 
 
