@@ -16,7 +16,7 @@ The code below shows how to capture information from the user through the Serial
 
    .. code-block:: c
 
-	include "mbed.h"
+	#include "mbed.h"
 
 	Serial pc(SERIAL_TX, SERIAL_RX);
 
