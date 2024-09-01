@@ -140,7 +140,7 @@ We will use this later to tell the microcontroller what to do (i.e. what code to
 For now, let's just look at a typical situation where this would be useful.
 Imagine that you want to find the second derivative of a function :math:`f`.
 To find a good numerical estimate, you can use the `central finite difference
-<https://en.wikipedia.org/wiki/Finite_difference_coefficient>`_ relationship that you studied in first year:
+<https://en.wikipedia.org/wiki/Finite_difference_coefficient>`_ relationship (that you may remember from your computing course):
 
 .. math::
 
@@ -192,12 +192,9 @@ to output results, which is useful here to monitor what happens.
 Note that we need to specify fully in the declaration of second_derivative the types of the input and output of the function we will pass: ``float (*f)(float)``. This makes sure the compiler also knows how to interact with the function, i.e. how to package its input, and how to interpret its output. 
 
 This example may look confusing if you are reading attentively enough.
-<<<<<<< HEAD
-Why didn't we pass the address of the function, using ``second_derivative(&f_1, 1)``?
-Why didn't we call the function f using ``(*f)(x)`` in the second_derivative function?
-=======
-Since second_derivative takes a pointer to a function as parameter, why didn't we pass the address of the function, using second_derivative(&f_1, 1)? Why didn't we call the function f using (\*f)(x) in the second_derivative function?
->>>>>>> master
+
+Since ``second_derivative`` takes a pointer to a function as parameter, why didn't we pass the address of the function, using ``second_derivative(&f_1, 1)``? Why didn't we call the function f using ``(\*f)(x)`` in the second_derivative function?
+
 
 The reason is that a function name is already treated by the compiler as a pointer to the function code, to make the program more readable.
 There is some flexibility in the syntax though, and you could also have used the following syntax for the calculation of the second derivative:

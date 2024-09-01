@@ -174,7 +174,7 @@ times when the button is pressed and its state fluctuates for a
 little while.
 To do this, we just need to force the program to wait a short time
 after each call of the callback function.
-This can be achieve by adding a wait function call in the callback function.
+This can be achieved by adding a wait function call in the callback function.
 
 Because it is not good practice to add a wait call in an interrupt (interrupt calls should execute fast),
 the latest mbed compilers only allow us to use the `wait_us` function.

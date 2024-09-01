@@ -21,7 +21,6 @@ University of Cambridge.
 
    activity-1
    activity-2
-   activity-3
 
 
 
@@ -32,7 +31,7 @@ These documents are licensed under a Creative Commons
 Attribution-ShareAlike 4.0 International License.  See
 http://creativecommons.org/licenses/by-sa/4.0/ for the license.
 
-Copyright 2017-2022 by A.J. Kabla, P.O. Kristensson, J. Durrell, F Forni.
+Copyright 2017-2023 by A.J. Kabla, P.O. Kristensson, J. Durrell, F Forni.
 
 Contact: ajk61@cam.ac.uk
 
