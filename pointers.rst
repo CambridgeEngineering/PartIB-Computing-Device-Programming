@@ -170,7 +170,7 @@ to output results, which is useful here to monitor what happens.
 
 	float second_derivative( float (*f)(float), float x)
 	{
-		float h = 0.001;
+		float h = 0.01;
 		float d2fdx2;
 		d2fdx2 = ( f(x-h) - 2 * f(x) + f(x+h) ) / (h*h);
 		return d2fdx2;
