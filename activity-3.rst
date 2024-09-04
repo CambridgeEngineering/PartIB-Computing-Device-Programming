@@ -5,7 +5,7 @@ Activity 3: Actuation and feedback
 Learning objectives
 -------------------
 
-Microcontrollers do logic and mechanics, but you can't really get power out of them. In this activity, you will learn how to deliver power to a device attached to the microcontroller, and how to control this power to achieve a certain goal. This will transform the logical/mathematical capabilities of your micro-controller into actions that have effect on the real world. 
+Microcontrollers do logic and mathematics, but you can't really get power out of them. In this activity, you will learn how to deliver power to a device attached to the microcontroller, and how to control this power to achieve a certain goal. This will transform the logical/mathematical capabilities of your micro-controller into actions that have effect on the real world. 
 The activity relies on the skills that you have learned in the previous activities - you will use interrupts, read sensors, and maybe even solder again!
 
 
