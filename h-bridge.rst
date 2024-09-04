@@ -7,9 +7,9 @@ What is a H-bridge?
 --------------------
 
 
-Microcontrollers are logical devices that function with very modest power. They are not very good at driving loads, like actuators, which typically require power at their inputs. The problem can be solved through an interface capable of injecting power to the actuator as a function of the logical signals of the microcontroller. This is the role of a H-bridge. 
+Microcontrollers are logical devices that function with very modest power. They are not very good at driving loads, such as actuators, which typically require more power at their inputs. The problem can be solved through an interface capable of injecting power to the actuator as a function of the logical signals of the microcontroller. This is the role of a H-bridge. 
 
-A H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below. The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
+A H-bridge is a simple device. It is just a switching circuit connected to a large power generator, as shown in the figure below. The circuit is called an H-bridge because its schematic resembles the letter 'H'. The four switches S1-S4 route power to the load, represented in the figure by an encircled M (a motor, in this example). 
 
 
 .. figure:: https://upload.wikimedia.org/wikipedia/commons/d/d4/H_bridge.svg
@@ -35,7 +35,7 @@ L298N Driver
 ---------------
 
 
-The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V to 40 V and can supply up to 2 A per bridge. To know more about this driver, consults the relevant data-sheet from manufacturers of the :download:`driver integrated circuit <docs/L298N.pdf>` and the manufacturer of the :download:`breakout board <docs/L298N-Motor-Driver-Datasheet.pdf>`. 
+The L298N driver is a dual H-bridge that can be used with voltages between 3.2 V to 40 V and can supply up to 2 A per bridge. To know more about this driver, consult the relevant data-sheet from the manufacturer of the :download:`driver integrated circuit <docs/L298N.pdf>` and the manufacturer of the :download:`breakout board <docs/L298N-Motor-Driver-Datasheet.pdf>`. 
 
 The image below, from the breakout board datasheet, shows the different inputs and outputs of the circuit. 
 
@@ -45,7 +45,7 @@ The image below, from the breakout board datasheet, shows the different inputs a
 
    L298N H bridge connections. 
 
-- Connect an external DC power supply to the ground and +12V Power pins terminal. The power voltage doesn't need to be 12 V. Any value from 3.2 V to 40 V would work. This power must not be taken from the microcontroller itself. Pay attention to NOT reverse polarity.
+- Connect an external DC power supply to the ground and +12V Power pins terminal. The power voltage doesn't need to be 12 V. Any value from 3.2 V to 40 V would work. This power must not be taken from the microcontroller itself. Pay attention to NOT reverse polarity. Always double-check your connections before powering on the circuit to avoid damaging your components.
 
 
 - Here, we will use only one of the two H-bridges. The load will be connected to the Output A terminals. 
